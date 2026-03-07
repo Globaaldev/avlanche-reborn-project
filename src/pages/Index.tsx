@@ -21,7 +21,16 @@ const NAV_ITEMS = [
 ];
 
 const Index = () => {
-  const [hoverArtistes, setHoverArtistes] = useState(false);
+  const [showArtistes, setShowArtistes] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setShowArtistes(true);
+  };
+  const handleLeave = () => {
+    timeoutRef.current = setTimeout(() => setShowArtistes(false), 300);
+  };
 
   return (
     <div className="relative h-screen w-screen bg-background overflow-hidden">
