@@ -32,7 +32,7 @@ const Artistes = () => {
   const activeArtist = ARTISTS.find((a) => a.slug === activeTab) || ARTISTS[0];
 
   return (
-    <div className="relative min-h-screen w-screen bg-background flex flex-col">
+    <div className="relative min-h-screen w-screen bg-gradient-to-br from-white via-neutral-50 to-neutral-100 flex flex-col">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         <a href="/" className="block">
