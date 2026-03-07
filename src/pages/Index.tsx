@@ -1,6 +1,6 @@
 import avlancheLogo from "@/assets/avlanche-logo-white.webp";
 import avlancheBg from "@/assets/avlanche-bg.jpg";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const ARTISTS = [
   { name: "Sherifflazone", slug: "sherifflazone" },
