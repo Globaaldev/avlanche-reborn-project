@@ -19,7 +19,7 @@ const Index = () => {
           <img
             src={avlancheLogo}
             alt="Avlanche Logo"
-            className="h-10 md:h-[70px] w-auto"
+            className="h-8 md:h-[55px] w-auto"
           />
         </a>
         <a
