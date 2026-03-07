@@ -1,6 +1,6 @@
 import avlancheLogo from "@/assets/avlanche-logo-white.webp";
 import avlancheBg from "@/assets/avlanche-bg.jpg";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const ARTISTS = [
   { name: "Sherifflazone", slug: "sherifflazone" },
@@ -21,7 +21,16 @@ const NAV_ITEMS = [
 ];
 
 const Index = () => {
-  const [hoverArtistes, setHoverArtistes] = useState(false);
+  const [showArtistes, setShowArtistes] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setShowArtistes(true);
+  };
+  const handleLeave = () => {
+    timeoutRef.current = setTimeout(() => setShowArtistes(false), 300);
+  };
 
   return (
     <div className="relative h-screen w-screen bg-background overflow-hidden">
@@ -50,8 +59,8 @@ const Index = () => {
         {/* ARTISTES with hover menu */}
         <div
           className="relative"
-          onMouseEnter={() => setHoverArtistes(true)}
-          onMouseLeave={() => setHoverArtistes(false)}
+          onMouseEnter={handleEnter}
+          onMouseLeave={handleLeave}
         >
           <a
             href="/artistes"
@@ -60,17 +69,17 @@ const Index = () => {
             ARTISTES
           </a>
 
-          {/* Hover dropdown — just artist names */}
+          {/* Hover dropdown — no container, just names */}
           <div
-            className={`absolute bottom-full left-0 mb-1 pb-2 bg-background/90 backdrop-blur-md border border-border px-5 py-4 min-w-[180px] transition-all duration-200 ${
-              hoverArtistes ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"
+            className={`absolute bottom-full left-0 mb-3 flex flex-col gap-1 transition-all duration-200 ${
+              showArtistes ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"
             }`}
           >
             {ARTISTS.map((artist) => (
               <a
                 key={artist.slug}
                 href={`/artistes?tab=${artist.slug}`}
-                className="text-foreground text-xs md:text-sm tracking-[0.15em] font-light hover:opacity-70 transition-opacity block py-1.5"
+                className="text-foreground text-xs md:text-sm tracking-[0.15em] font-light hover:opacity-70 transition-opacity py-1 whitespace-nowrap"
               >
                 {artist.name}
               </a>
