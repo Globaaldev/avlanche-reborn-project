@@ -39,12 +39,12 @@ const Artistes = () => {
           <img
             src={avlancheLogo}
             alt="Avlanche Logo"
-            className="h-8 md:h-[55px] w-auto"
+            className="h-8 md:h-[55px] w-auto invert"
           />
         </a>
         <a
           href="/contact"
-          className="text-foreground text-sm md:text-base tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase"
+          className="text-neutral-900 text-sm md:text-base tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase"
         >
           Contact
         </a>
