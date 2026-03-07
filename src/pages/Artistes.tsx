@@ -134,7 +134,7 @@ const Artistes = () => {
                 ))}
               </div>
             ) : (
-              <p className="text-muted-foreground text-sm italic">
+              <p className="text-neutral-400 text-sm italic">
                 Bientôt disponible
               </p>
             )}
