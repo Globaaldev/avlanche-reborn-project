@@ -1,4 +1,5 @@
 import avlancheLogo from "@/assets/avlanche-logo-white.webp";
+import avlancheBg from "@/assets/avlanche-bg.jpg";
 
 const NAV_ITEMS = [
   { label: "ARTISTES", href: "/artistes" },
@@ -9,8 +10,8 @@ const NAV_ITEMS = [
 const Index = () => {
   return (
     <div className="relative h-screen w-screen bg-background overflow-hidden">
-      {/* Background video placeholder - will be replaced with actual video */}
-      <div className="absolute inset-0 bg-background" />
+      {/* Background image */}
+      <img src={avlancheBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
 
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
