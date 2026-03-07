@@ -1,7 +1,6 @@
 import avlancheLogo from "@/assets/avlanche-logo-white.webp";
 
 const NAV_ITEMS = [
-  { label: "CONTACT", href: "/contact" },
   { label: "ARTISTES", href: "/artistes" },
   { label: "ABOUT", href: "/about" },
   { label: "STUDIO", href: "https://avlanchestudio.fr", external: true },
