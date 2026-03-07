@@ -92,7 +92,7 @@ const Artistes = () => {
 
           {/* Photos de presse */}
           <div>
-            <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-muted-foreground mb-6">
+            <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-neutral-400 mb-6">
               Photos de presse
             </h3>
             {activeArtist.photos.length > 0 ? (
