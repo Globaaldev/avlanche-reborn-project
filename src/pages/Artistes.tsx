@@ -143,10 +143,10 @@ const Artistes = () => {
       </main>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 z-20 flex items-center justify-between px-6 py-5 md:px-10 md:py-8 bg-background/80 backdrop-blur-md">
-        <a href="/artistes" className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
-        <a href="/about" className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ABOUT</a>
-        <a href="https://avlanchestudio.fr" target="_blank" rel="noopener noreferrer" className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">STUDIO</a>
+      <nav className="fixed bottom-0 left-0 right-0 z-20 flex items-center justify-between px-6 py-5 md:px-10 md:py-8 bg-white/80 backdrop-blur-md">
+        <a href="/artistes" className="text-neutral-900 text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
+        <a href="/about" className="text-neutral-900 text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ABOUT</a>
+        <a href="https://avlanchestudio.fr" target="_blank" rel="noopener noreferrer" className="text-neutral-900 text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">STUDIO</a>
       </nav>
     </div>
   );
