@@ -69,7 +69,7 @@ const Artistes = () => {
 
       {/* Active Artist Content */}
       <main className="flex-1 px-6 md:px-10 py-12 md:py-20 pb-28">
-        <h1 className="text-3xl md:text-6xl tracking-[0.15em] uppercase font-light text-foreground mb-14">
+        <h1 className="text-3xl md:text-6xl tracking-[0.15em] uppercase font-light text-neutral-900 mb-14">
           {activeArtist.name}
         </h1>
 
