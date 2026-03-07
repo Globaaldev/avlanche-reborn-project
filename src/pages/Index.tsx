@@ -60,32 +60,20 @@ const Index = () => {
             ARTISTES
           </a>
 
-          {/* Hover dropdown */}
+          {/* Hover dropdown — just artist names */}
           <div
-            className={`absolute bottom-full left-0 mb-3 bg-background/90 backdrop-blur-md border border-border px-5 py-4 min-w-[200px] transition-all duration-200 ${
+            className={`absolute bottom-full left-0 mb-1 pb-2 bg-background/90 backdrop-blur-md border border-border px-5 py-4 min-w-[180px] transition-all duration-200 ${
               hoverArtistes ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"
             }`}
           >
             {ARTISTS.map((artist) => (
-              <div key={artist.slug} className="mb-3 last:mb-0">
-                <a
-                  href={`/artistes#${artist.slug}`}
-                  className="text-foreground text-xs md:text-sm tracking-[0.15em] font-light hover:opacity-70 transition-opacity block mb-1"
-                >
-                  {artist.name}
-                </a>
-                <div className="flex gap-3 pl-2">
-                  {SUB_CATEGORIES.map((cat) => (
-                    <a
-                      key={cat.section}
-                      href={`/artistes#${artist.slug}`}
-                      className="text-muted-foreground text-[10px] md:text-xs tracking-wider hover:text-foreground transition-colors"
-                    >
-                      {cat.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
+              <a
+                key={artist.slug}
+                href={`/artistes?tab=${artist.slug}`}
+                className="text-foreground text-xs md:text-sm tracking-[0.15em] font-light hover:opacity-70 transition-opacity block py-1.5"
+              >
+                {artist.name}
+              </a>
             ))}
           </div>
         </div>
