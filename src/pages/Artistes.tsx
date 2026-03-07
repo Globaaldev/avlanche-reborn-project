@@ -1,5 +1,6 @@
 import avlancheLogo from "@/assets/avlanche-logo-white.webp";
 import { ExternalLink } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 
 const ARTISTS = [
   {
@@ -26,10 +27,14 @@ const ARTISTS = [
 ];
 
 const Artistes = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get("tab") || ARTISTS[0].slug;
+  const activeArtist = ARTISTS.find((a) => a.slug === activeTab) || ARTISTS[0];
+
   return (
-    <div className="relative min-h-screen w-screen bg-background">
+    <div className="relative min-h-screen w-screen bg-background flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-5 md:px-10 md:py-8 bg-background/80 backdrop-blur-md">
+      <header className="flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         <a href="/" className="block">
           <img
             src={avlancheLogo}
@@ -45,88 +50,96 @@ const Artistes = () => {
         </a>
       </header>
 
-      {/* Artist sections */}
-      <main className="px-6 md:px-10 pb-24">
-        {ARTISTS.map((artist, index) => (
-          <section
+      {/* Artist Tabs */}
+      <div className="flex gap-6 md:gap-10 px-6 md:px-10 border-b border-border">
+        {ARTISTS.map((artist) => (
+          <button
             key={artist.slug}
-            id={artist.slug}
-            className={`py-16 md:py-24 ${index < ARTISTS.length - 1 ? "border-b border-border" : ""}`}
+            onClick={() => setSearchParams({ tab: artist.slug })}
+            className={`pb-3 text-sm md:text-base tracking-[0.15em] uppercase font-light transition-all border-b-2 ${
+              activeTab === artist.slug
+                ? "text-foreground border-foreground"
+                : "text-muted-foreground border-transparent hover:text-foreground"
+            }`}
           >
-            {/* Artist name */}
-            <h2 className="text-3xl md:text-6xl tracking-[0.15em] uppercase font-light text-foreground mb-12 md:mb-16">
-              {artist.name}
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
-              {/* Linktree */}
-              <div>
-                <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-muted-foreground mb-6">
-                  Plateformes
-                </h3>
-                <a
-                  href={artist.linktree}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-foreground text-sm md:text-base tracking-wide hover:opacity-70 transition-opacity border border-border px-5 py-3"
-                >
-                  Linktree
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Photos de presse */}
-              <div>
-                <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-muted-foreground mb-6">
-                  Photos de presse
-                </h3>
-                {artist.photos.length > 0 ? (
-                  <div className="grid grid-cols-2 gap-3">
-                    {artist.photos.map((photo, i) => (
-                      <img
-                        key={i}
-                        src={photo}
-                        alt={`${artist.name} press photo ${i + 1}`}
-                        className="w-full aspect-[3/4] object-cover"
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-muted-foreground text-sm italic">
-                    Bientôt disponible
-                  </p>
-                )}
-              </div>
-
-              {/* Clips */}
-              <div>
-                <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-muted-foreground mb-6">
-                  Clips
-                </h3>
-                {artist.clips.length > 0 ? (
-                  <div className="space-y-3">
-                    {artist.clips.map((clip, i) => (
-                      <a
-                        key={i}
-                        href={clip.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-foreground text-sm tracking-wide hover:opacity-70 transition-opacity"
-                      >
-                        {clip.title}
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-muted-foreground text-sm italic">
-                    Bientôt disponible
-                  </p>
-                )}
-              </div>
-            </div>
-          </section>
+            {artist.name}
+          </button>
         ))}
+      </div>
+
+      {/* Active Artist Content */}
+      <main className="flex-1 px-6 md:px-10 py-12 md:py-20 pb-28">
+        <h1 className="text-3xl md:text-6xl tracking-[0.15em] uppercase font-light text-foreground mb-14">
+          {activeArtist.name}
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+          {/* Linktree */}
+          <div>
+            <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-muted-foreground mb-6">
+              Plateformes
+            </h3>
+            <a
+              href={activeArtist.linktree}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-foreground text-sm md:text-base tracking-wide hover:opacity-70 transition-opacity border border-border px-5 py-3"
+            >
+              Linktree
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          {/* Photos de presse */}
+          <div>
+            <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-muted-foreground mb-6">
+              Photos de presse
+            </h3>
+            {activeArtist.photos.length > 0 ? (
+              <div className="grid grid-cols-2 gap-3">
+                {activeArtist.photos.map((photo, i) => (
+                  <img
+                    key={i}
+                    src={photo}
+                    alt={`${activeArtist.name} press photo ${i + 1}`}
+                    className="w-full aspect-[3/4] object-cover"
+                  />
+                ))}
+              </div>
+            ) : (
+              <p className="text-muted-foreground text-sm italic">
+                Bientôt disponible
+              </p>
+            )}
+          </div>
+
+          {/* Clips */}
+          <div>
+            <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-muted-foreground mb-6">
+              Clips
+            </h3>
+            {activeArtist.clips.length > 0 ? (
+              <div className="space-y-3">
+                {activeArtist.clips.map((clip, i) => (
+                  <a
+                    key={i}
+                    href={clip.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-foreground text-sm tracking-wide hover:opacity-70 transition-opacity"
+                  >
+                    {clip.title}
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <p className="text-muted-foreground text-sm italic">
+                Bientôt disponible
+              </p>
+            )}
+          </div>
+        </div>
       </main>
 
       {/* Bottom Navigation */}
