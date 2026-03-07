@@ -115,7 +115,7 @@ const Artistes = () => {
 
           {/* Clips */}
           <div>
-            <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-muted-foreground mb-6">
+            <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-neutral-400 mb-6">
               Clips
             </h3>
             {activeArtist.clips.length > 0 ? (
