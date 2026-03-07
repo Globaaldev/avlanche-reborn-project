@@ -126,7 +126,7 @@ const Artistes = () => {
                     href={clip.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-foreground text-sm tracking-wide hover:opacity-70 transition-opacity"
+                    className="flex items-center gap-2 text-neutral-900 text-sm tracking-wide hover:opacity-70 transition-opacity"
                   >
                     {clip.title}
                     <ExternalLink className="w-3.5 h-3.5" />
