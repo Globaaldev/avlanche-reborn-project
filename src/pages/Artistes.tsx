@@ -76,14 +76,14 @@ const Artistes = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
           {/* Linktree */}
           <div>
-            <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-muted-foreground mb-6">
+            <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-neutral-400 mb-6">
               Plateformes
             </h3>
             <a
               href={activeArtist.linktree}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-foreground text-sm md:text-base tracking-wide hover:opacity-70 transition-opacity border border-border px-5 py-3"
+              className="inline-flex items-center gap-2 text-neutral-900 text-sm md:text-base tracking-wide hover:opacity-70 transition-opacity border border-neutral-300 px-5 py-3"
             >
               Linktree
               <ExternalLink className="w-3.5 h-3.5" />
