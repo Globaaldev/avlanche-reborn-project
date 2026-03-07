@@ -51,15 +51,15 @@ const Artistes = () => {
       </header>
 
       {/* Artist Tabs */}
-      <div className="flex gap-6 md:gap-10 px-6 md:px-10 border-b border-border">
+      <div className="flex gap-6 md:gap-10 px-6 md:px-10 border-b border-neutral-200">
         {ARTISTS.map((artist) => (
           <button
             key={artist.slug}
             onClick={() => setSearchParams({ tab: artist.slug })}
             className={`pb-3 text-sm md:text-base tracking-[0.15em] uppercase font-light transition-all border-b-2 ${
               activeTab === artist.slug
-                ? "text-foreground border-foreground"
-                : "text-muted-foreground border-transparent hover:text-foreground"
+                ? "text-neutral-900 border-neutral-900"
+                : "text-neutral-400 border-transparent hover:text-neutral-700"
             }`}
           >
             {artist.name}
