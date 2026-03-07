@@ -83,10 +83,10 @@ const Artistes = () => {
               href={activeArtist.linktree}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-neutral-900 text-sm md:text-base tracking-wide hover:opacity-70 transition-opacity border border-neutral-300 px-5 py-3"
+              className="inline-flex items-center gap-2 text-neutral-900 text-sm md:text-base tracking-wide hover:opacity-60 transition-all group"
             >
-              Linktree
-              <ExternalLink className="w-3.5 h-3.5" />
+              <span className="border-b border-neutral-300 group-hover:border-neutral-900 transition-colors pb-0.5">Linktree</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
             </a>
           </div>
 
