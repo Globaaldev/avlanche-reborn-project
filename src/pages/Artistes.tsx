@@ -91,8 +91,8 @@ const Artistes = () => {
           {activeArtist.name}
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-          {/* Linktree */}
+        {/* Info row */}
+        <div className="flex flex-wrap gap-12 md:gap-16 mb-16">
           <div>
             <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-neutral-400 mb-6">
               Plateformes
@@ -108,7 +108,6 @@ const Artistes = () => {
             </a>
           </div>
 
-          {/* Photos de presse */}
           <div>
             <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-neutral-400 mb-6">
               Photos de presse
@@ -125,76 +124,70 @@ const Artistes = () => {
                 ))}
               </div>
             ) : (
-              <p className="text-neutral-400 text-sm italic">
-                Bientôt disponible
-              </p>
-            )}
-          </div>
-
-          {/* Clips */}
-          <div className="md:col-span-1">
-            <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-neutral-400 mb-6">
-              Clips
-            </h3>
-            {activeArtist.clips.length > 0 ? (
-              <div className="space-y-4">
-                {activeArtist.clips.map((clip, i) => {
-                  const videoId = getYouTubeId(clip.url);
-                  const isPlaying = playingId === videoId;
-
-                  return (
-                    <div key={i} className="group">
-                      {videoId && (
-                        <div className="relative aspect-video w-full overflow-hidden rounded-sm mb-1.5">
-                          {isPlaying ? (
-                            <>
-                              <iframe
-                                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
-                                title={clip.title}
-                                className="absolute inset-0 w-full h-full"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                              />
-                              <button
-                                onClick={() => setPlayingId(null)}
-                                className="absolute top-2 right-2 z-10 bg-black/60 hover:bg-black/80 text-white rounded-full p-1 transition-colors"
-                              >
-                                <X className="w-4 h-4" />
-                              </button>
-                            </>
-                          ) : (
-                            <button
-                              onClick={() => setPlayingId(videoId)}
-                              className="relative w-full h-full cursor-pointer"
-                            >
-                              <img
-                                src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-                                alt={clip.title}
-                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                              />
-                              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                                <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                                  <Play className="w-5 h-5 text-neutral-900 ml-0.5" fill="currentColor" />
-                                </div>
-                              </div>
-                            </button>
-                          )}
-                        </div>
-                      )}
-                      <span className="text-neutral-900 text-sm tracking-wide font-medium">
-                        {clip.title}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            ) : (
-              <p className="text-neutral-400 text-sm italic">
-                Bientôt disponible
-              </p>
+              <p className="text-neutral-400 text-sm italic">Bientôt disponible</p>
             )}
           </div>
         </div>
+
+        {/* Clips grid - full width */}
+        {activeArtist.clips.length > 0 && (
+          <div>
+            <h3 className="text-xs md:text-sm tracking-[0.25em] uppercase text-neutral-400 mb-6">
+              Clips
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {activeArtist.clips.map((clip, i) => {
+                const videoId = getYouTubeId(clip.url);
+                const isPlaying = playingId === videoId;
+
+                return (
+                  <div key={i} className="group">
+                    {videoId && (
+                      <div className="relative aspect-video w-full overflow-hidden rounded-sm mb-2">
+                        {isPlaying ? (
+                          <>
+                            <iframe
+                              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
+                              title={clip.title}
+                              className="absolute inset-0 w-full h-full"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                            <button
+                              onClick={() => setPlayingId(null)}
+                              className="absolute top-2 right-2 z-10 bg-black/60 hover:bg-black/80 text-white rounded-full p-1 transition-colors"
+                            >
+                              <X className="w-4 h-4" />
+                            </button>
+                          </>
+                        ) : (
+                          <button
+                            onClick={() => setPlayingId(videoId)}
+                            className="relative w-full h-full cursor-pointer"
+                          >
+                            <img
+                              src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+                              alt={clip.title}
+                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                              <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <Play className="w-5 h-5 text-neutral-900 ml-0.5" fill="currentColor" />
+                              </div>
+                            </div>
+                          </button>
+                        )}
+                      </div>
+                    )}
+                    <span className="text-neutral-900 text-sm tracking-wide font-medium">
+                      {clip.title}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </main>
 
       {/* Bottom Navigation */}
