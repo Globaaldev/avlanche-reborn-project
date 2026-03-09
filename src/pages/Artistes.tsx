@@ -7,7 +7,13 @@ const ARTISTS = [
     name: "Sherifflazone",
     slug: "sherifflazone",
     linktree: "https://linktr.ee/sherifflazone",
-    clips: [] as { title: string; url: string }[],
+    clips: [
+      { title: "NEMO", url: "https://www.youtube.com/watch?v=UU1AgwnReLQ" },
+      { title: "NO BAP", url: "https://www.youtube.com/watch?v=BSyfY7J_Jpk" },
+      { title: "SHERIFF", url: "https://www.youtube.com/watch?v=zetv9yg5wHA" },
+      { title: "FUTURAMA", url: "https://www.youtube.com/watch?v=XZYCpI5fs5k" },
+      { title: "Dans ma bulle", url: "https://www.youtube.com/watch?v=Lhx2llMul6g" },
+    ],
     photos: [] as string[],
   },
   {
