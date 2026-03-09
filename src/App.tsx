@@ -6,6 +6,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Artistes from "./pages/Artistes";
+import StudioLayout from "./components/StudioLayout";
+import StudioHome from "./pages/studio/StudioHome";
+import StudioAbout from "./pages/studio/StudioAbout";
+import StudioServices from "./pages/studio/StudioServices";
+import StudioContact from "./pages/studio/StudioContact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
