@@ -38,7 +38,7 @@ const EquipmentSection = ({ title, items }: { title: string; items: string[] }) 
       {items.map((item, i) => (
         <li
           key={i}
-          className="text-foreground/80 text-xs md:text-sm font-light tracking-wide py-2.5 border-b border-foreground/[0.06]"
+          className="text-foreground/90 text-sm md:text-base font-light tracking-wide py-2.5 border-b border-foreground/[0.06]"
         >
           {item}
         </li>
