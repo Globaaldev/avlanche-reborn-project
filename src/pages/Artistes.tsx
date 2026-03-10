@@ -120,23 +120,25 @@ const Artistes = () => {
 
         {/* Photos de presse — horizontal scroll */}
         {activeArtist.photos.length > 0 && (
-          <section className="mb-20 -mx-6 md:-mx-10" aria-label="Photos de presse">
-            <h3 className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground/30 mb-6 px-6 md:px-10">
+          <section className="mb-20" aria-label="Photos de presse">
+            <h3 className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground/30 mb-6">
               Photos de presse
             </h3>
-            <div className="flex gap-3 md:gap-4 overflow-x-auto px-6 md:px-10 pb-4 scrollbar-hide snap-x snap-mandatory">
-              {activeArtist.photos.map((photo, i) => (
-                <div key={i} className="shrink-0 w-[70vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] overflow-hidden rounded-xl snap-start">
-                  <img
-                    src={photo}
-                    alt={`${activeArtist.name} photo de presse ${i + 1}`}
-                    loading="lazy"
-                    className="w-full aspect-[3/4] object-cover hover:scale-[1.03] transition-transform duration-700"
-                  />
-                </div>
-              ))}
-              {/* Spacer for last photo padding */}
-              <div className="shrink-0 w-1" />
+            <div className="relative -mr-6 md:-mr-10">
+              <div className="flex gap-3 md:gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory pr-6 md:pr-10">
+                {activeArtist.photos.map((photo, i) => (
+                  <div key={i} className="shrink-0 w-[70vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] overflow-hidden rounded-xl snap-start">
+                    <img
+                      src={photo}
+                      alt={`${activeArtist.name} photo de presse ${i + 1}`}
+                      loading="lazy"
+                      className="w-full aspect-[3/4] object-cover hover:scale-[1.03] transition-transform duration-700"
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* Fade hint on right edge */}
+              <div className="absolute top-0 right-0 bottom-4 w-20 md:w-32 pointer-events-none bg-gradient-to-l from-background to-transparent" />
             </div>
           </section>
         )}
