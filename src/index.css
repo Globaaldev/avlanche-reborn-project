@@ -45,6 +45,5 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--nav-font);
-    overflow: hidden;
   }
 }
