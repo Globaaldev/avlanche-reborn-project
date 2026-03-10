@@ -47,7 +47,7 @@ const Artistes = () => {
   const [playingId, setPlayingId] = useState<string | null>(null);
 
   return (
-    <div className="relative min-h-screen w-screen bg-gradient-to-br from-white via-neutral-50 to-neutral-100 flex flex-col overflow-y-auto">
+    <div className="relative w-screen bg-gradient-to-br from-white via-neutral-50 to-neutral-100 flex flex-col min-h-screen">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         <a href="/" className="block">
