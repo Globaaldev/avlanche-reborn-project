@@ -40,9 +40,12 @@ const StudioLayout = () => {
             </span>
           </div>
         </div>
-        <span className="text-foreground/60 text-xs md:text-sm tracking-[0.2em] font-light uppercase">
-          Studio
-        </span>
+        <a
+          href="/studio/contact"
+          className="text-foreground text-xs md:text-base tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase"
+        >
+          Contact
+        </a>
       </header>
 
       {/* Content */}
