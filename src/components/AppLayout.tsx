@@ -22,21 +22,21 @@ const AppLayout = () => {
       />
 
       {/* Header */}
-      <header className="relative z-20 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
+      <header className="relative z-20 flex items-center justify-between px-4 py-4 md:px-10 md:py-8">
         {/* Left — music / studio toggle */}
-        <div className="flex items-baseline gap-1 md:gap-2 min-w-[120px]">
+        <div className="flex items-baseline gap-1 md:gap-2 shrink-0">
           <button
             onClick={() => { if (isStudio) navigate("/"); }}
-            className={`text-xs md:text-xl tracking-[0.12em] font-light transition-all duration-300 cursor-pointer ${
+            className={`text-[10px] md:text-xl tracking-[0.12em] font-light transition-all duration-300 cursor-pointer ${
               !isStudio ? "text-foreground" : "text-foreground/25 hover:text-foreground/70"
             }`}
           >
             music
           </button>
-          <span className="text-foreground/25 text-[8px] md:text-sm font-light">/</span>
+          <span className="text-foreground/25 text-[7px] md:text-sm font-light">/</span>
           <button
             onClick={() => { if (!isStudio) navigate("/studio"); }}
-            className={`text-xs md:text-xl tracking-[0.12em] font-light transition-all duration-300 cursor-pointer ${
+            className={`text-[10px] md:text-xl tracking-[0.12em] font-light transition-all duration-300 cursor-pointer ${
               isStudio ? "text-foreground" : "text-foreground/25 hover:text-foreground/70"
             }`}
             style={isStudio ? { color: "hsl(var(--studio-accent))" } : undefined}
@@ -53,14 +53,14 @@ const AppLayout = () => {
           <img
             src={avlancheLogo}
             alt="Avlanche"
-            className="h-6 md:h-[55px] w-auto brightness-0"
+            className="h-5 md:h-[55px] w-auto brightness-0"
           />
         </a>
 
         {/* Right — Contact */}
         <a
           href={contactHref}
-          className="text-foreground text-xs md:text-base tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase min-w-[120px] text-right"
+          className="text-foreground text-[10px] md:text-base tracking-[0.12em] md:tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase shrink-0"
         >
           Contact
         </a>
