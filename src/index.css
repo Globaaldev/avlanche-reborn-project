@@ -59,5 +59,27 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--nav-font);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better touch targets on mobile */
+  @media (max-width: 768px) {
+    a, button {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  /* Optimize images globally */
+  img {
+    content-visibility: auto;
   }
 }
