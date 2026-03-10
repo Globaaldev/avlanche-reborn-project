@@ -91,8 +91,6 @@ const Index = () => {
           <a
             key={item.label}
             href={item.href}
-            target={item.external ? "_blank" : undefined}
-            rel={item.external ? "noopener noreferrer" : undefined}
             className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase"
           >
             {item.label}
