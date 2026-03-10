@@ -4,6 +4,15 @@ import { useState } from "react";
 import VideoGrid from "@/components/VideoGrid";
 import SEOHead from "@/components/SEOHead";
 import sherifflazoneProfile from "@/assets/sherifflazone-profile.png";
+import sheriffPress1 from "@/assets/sheriff-press-1.jpg";
+import sheriffPress2 from "@/assets/sheriff-press-2.jpg";
+import sheriffPress3 from "@/assets/sheriff-press-3.jpg";
+import sheriffPress4 from "@/assets/sheriff-press-4.jpg";
+import sheriffPress5 from "@/assets/sheriff-press-5.jpg";
+import sheriffPress6 from "@/assets/sheriff-press-6.jpg";
+import sheriffPress7 from "@/assets/sheriff-press-7.jpeg";
+import sheriffPress8 from "@/assets/sheriff-press-8.jpeg";
+import sheriffPress9 from "@/assets/sheriff-press-9.jpg";
 
 const ARTISTS = [
   {
@@ -20,7 +29,7 @@ const ARTISTS = [
       { title: "FUTURAMA", url: "https://www.youtube.com/watch?v=XZYCpI5fs5k" },
       { title: "Dans ma bulle", url: "https://www.youtube.com/watch?v=Lhx2llMul6g" },
     ],
-    photos: [] as string[],
+    photos: [sheriffPress1, sheriffPress2, sheriffPress3, sheriffPress4, sheriffPress5, sheriffPress6, sheriffPress7, sheriffPress8, sheriffPress9],
   },
   {
     name: "Marguier",
@@ -117,7 +126,7 @@ const Artistes = () => {
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               {activeArtist.photos.map((photo, i) => (
-                <div key={i} className="overflow-hidden">
+                <div key={i} className="overflow-hidden rounded-xl">
                   <img
                     src={photo}
                     alt={`${activeArtist.name} photo de presse ${i + 1}`}
