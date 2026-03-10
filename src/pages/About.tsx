@@ -16,7 +16,7 @@ const About = () => {
           <p>44 rue Jules Vanzuppe</p>
           <p>94200 Ivry-sur-Seine</p>
         </address>
-        <div className="space-y-1 text-sm md:text-base">
+        <div className="space-y-1 text-base md:text-lg">
           <p>
             <a href="mailto:studio@avlanche.fr" className="text-foreground hover:opacity-70 transition-opacity">
               studio@avlanche.fr

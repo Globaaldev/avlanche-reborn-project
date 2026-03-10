@@ -106,7 +106,7 @@ const StudioAbout = () => {
           href="https://avlanchestudio.simplybook.me"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-foreground/40 text-xs tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
+          className="text-foreground/50 text-sm tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
         >
           Réserver →
         </a>
