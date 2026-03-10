@@ -86,7 +86,7 @@ const VideoGrid = ({ clips, playingId, onPlay, onStop }: VideoGridProps) => {
     <div className="space-y-4">
       {/* Featured clip — large */}
       {featuredId && (
-        <div className="relative aspect-video w-full overflow-hidden">
+        <div className="relative aspect-video w-full overflow-hidden rounded-xl">
           {playingId === featuredId ? (
             <VideoEmbed videoId={featuredId} title={featured.title} onStop={onStop} />
           ) : (
@@ -102,7 +102,7 @@ const VideoGrid = ({ clips, playingId, onPlay, onStop }: VideoGridProps) => {
             const videoId = getYouTubeId(clip.url);
             if (!videoId) return null;
             return (
-              <div key={i} className="relative aspect-video overflow-hidden">
+              <div key={i} className="relative aspect-video overflow-hidden rounded-lg">
                 {playingId === videoId ? (
                   <VideoEmbed videoId={videoId} title={clip.title} onStop={onStop} />
                 ) : (
