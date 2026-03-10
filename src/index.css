@@ -36,6 +36,8 @@
     --sidebar-ring: 0 0% 100%;
 
     --nav-font: 'Darker Grotesque', sans-serif;
+    
+    --studio-accent: 35 50% 50%;
   }
 
   * {
