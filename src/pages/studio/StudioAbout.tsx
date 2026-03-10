@@ -141,11 +141,11 @@ const StudioAbout = () => {
           href="https://open.spotify.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-foreground/40 text-sm tracking-[0.25em] uppercase hover:text-foreground/70 transition-colors duration-300 pb-0.5 border-b border-foreground/10 hover:border-foreground/40"
+          className="text-foreground/70 text-base md:text-lg tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/30 hover:border-foreground/60"
         >
           Rec / Mix by Avlanche
         </a>
-        <span className="text-foreground/30 text-sm tracking-wide font-normal">
+        <span className="text-foreground/50 text-base tracking-wide font-normal">
           — Playlist des morceaux enregistrés par Avlanche
         </span>
       </div>
