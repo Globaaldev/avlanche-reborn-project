@@ -1,6 +1,7 @@
 import studioConsole from "@/assets/studio-console.jpg";
 import studioSalon from "@/assets/studio-salon.jpg";
 import studioCabine from "@/assets/studio-cabine.png";
+import SEOHead from "@/components/SEOHead";
 
 const EQUIPMENT = {
   hardware: [
@@ -33,26 +34,31 @@ const EquipmentSection = ({ title, items }: { title: string; items: string[] }) 
     <h4 className="text-foreground/30 text-[10px] md:text-xs tracking-[0.3em] uppercase mb-4 md:mb-6 font-light">
       {title}
     </h4>
-    <div className="space-y-0">
+    <ul className="space-y-0">
       {items.map((item, i) => (
-        <div
+        <li
           key={i}
           className="text-foreground/80 text-xs md:text-sm font-light tracking-wide py-2.5 border-b border-foreground/[0.06]"
         >
           {item}
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   </div>
 );
 
 const StudioAbout = () => {
   return (
     <div className="px-6 md:px-16 lg:px-24 py-10 md:py-16 space-y-24 md:space-y-32 max-w-6xl mx-auto">
-      {/* Hero — full-width immersive photo */}
-      <div className="space-y-10">
+      <SEOHead
+        title="Le Studio — Avlanche Studio"
+        description="Découvrez Avlanche Studio : équipement haut de gamme, cabine d'enregistrement, salon et espace de création à Ivry-sur-Seine."
+        path="/studio/about"
+      />
+      {/* Hero */}
+      <section className="space-y-10">
         <div className="space-y-4 max-w-2xl">
-          <h1 className="text-foreground text-3xl md:text-5xl tracking-[0.15em] font-light uppercase">
+          <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.15em] font-light uppercase">
             Le Studio
           </h1>
           <p className="text-foreground/50 text-sm md:text-base font-light leading-relaxed tracking-wide">
@@ -60,36 +66,39 @@ const StudioAbout = () => {
           </p>
         </div>
 
-        {/* Immersive photo grid — asymmetric layout */}
-        <div className="grid grid-cols-12 gap-3 md:gap-4">
-          <div className="col-span-12 md:col-span-7 overflow-hidden">
+        {/* Photo grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 md:gap-4">
+          <div className="sm:col-span-7 overflow-hidden">
             <img
               src={studioConsole}
               alt="Console d'enregistrement Avlanche Studio"
-              className="w-full h-72 md:h-[28rem] object-cover hover:scale-[1.02] transition-transform duration-1000"
+              loading="eager"
+              className="w-full h-56 sm:h-72 md:h-[28rem] object-cover hover:scale-[1.02] transition-transform duration-1000"
             />
           </div>
-          <div className="col-span-12 md:col-span-5 flex flex-col gap-3 md:gap-4">
+          <div className="sm:col-span-5 flex flex-row sm:flex-col gap-3 md:gap-4">
             <div className="overflow-hidden flex-1">
               <img
                 src={studioSalon}
                 alt="Espace détente du studio"
-                className="w-full h-36 md:h-full object-cover hover:scale-[1.02] transition-transform duration-1000"
+                loading="lazy"
+                className="w-full h-36 sm:h-full object-cover hover:scale-[1.02] transition-transform duration-1000"
               />
             </div>
             <div className="overflow-hidden flex-1">
               <img
                 src={studioCabine}
                 alt="Cabine d'enregistrement"
-                className="w-full h-36 md:h-full object-cover hover:scale-[1.02] transition-transform duration-1000"
+                loading="lazy"
+                className="w-full h-36 sm:h-full object-cover hover:scale-[1.02] transition-transform duration-1000"
               />
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* CTA — minimal, centered */}
-      <div className="flex flex-col items-center text-center space-y-6">
+      {/* CTA */}
+      <section className="flex flex-col items-center text-center space-y-6">
         <p className="text-foreground text-lg md:text-2xl tracking-[0.1em] font-light">
           Réservez votre session
         </p>
@@ -101,32 +110,32 @@ const StudioAbout = () => {
         >
           Réserver →
         </a>
-      </div>
+      </section>
 
       {/* Fiche technique */}
-      <div>
+      <section>
         <h2 className="text-foreground text-xl md:text-3xl tracking-[0.15em] font-light uppercase mb-12 md:mb-16">
           Fiche technique
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-x-20 md:gap-y-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-x-20 md:gap-y-16">
           <EquipmentSection title="Hardware" items={EQUIPMENT.hardware} />
           <EquipmentSection title="Micros" items={EQUIPMENT.micros} />
           <EquipmentSection title="Enceintes" items={EQUIPMENT.enceintes} />
           <EquipmentSection title="Claviers" items={EQUIPMENT.claviers} />
         </div>
-      </div>
+      </section>
 
-      {/* Ils nous ont fait confiance */}
-      <div>
+      {/* Confiance */}
+      <section>
         <h2 className="text-foreground text-xl md:text-3xl tracking-[0.15em] font-light uppercase mb-8">
           Ils nous ont fait confiance
         </h2>
         <p className="text-foreground/40 text-sm md:text-base font-light leading-relaxed tracking-wide max-w-3xl">
           {TRUSTED_BY}
         </p>
-      </div>
+      </section>
 
-      {/* Playlist CTA — discret */}
+      {/* Playlist */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-10">
         <a
           href="https://open.spotify.com"

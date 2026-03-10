@@ -2,6 +2,7 @@ import { ExternalLink } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import VideoGrid from "@/components/VideoGrid";
+import SEOHead from "@/components/SEOHead";
 
 const ARTISTS = [
   {
@@ -43,8 +44,13 @@ const Artistes = () => {
 
   return (
     <div className="relative flex-1 flex flex-col overflow-y-auto">
+      <SEOHead
+        title={`${activeArtist.name} — Avlanche Artistes`}
+        description={`Découvrez ${activeArtist.name} sur Avlanche. Clips, photos et liens.`}
+        path="/artistes"
+      />
       {/* Artist Tabs */}
-      <div className="flex gap-8 md:gap-12 px-6 md:px-10 pt-2 pb-0">
+      <nav className="flex gap-6 sm:gap-8 md:gap-12 px-6 md:px-10 pt-2 pb-0 overflow-x-auto" aria-label="Artistes">
         {ARTISTS.map((artist) => (
           <button
             key={artist.slug}
@@ -52,11 +58,12 @@ const Artistes = () => {
               setSearchParams({ tab: artist.slug });
               setPlayingId(null);
             }}
-            className={`text-xs md:text-sm tracking-[0.2em] uppercase font-light transition-all duration-300 pb-3 relative ${
+            className={`text-xs md:text-sm tracking-[0.2em] uppercase font-light transition-all duration-300 pb-3 relative whitespace-nowrap ${
               activeTab === artist.slug
                 ? "text-foreground"
                 : "text-foreground/30 hover:text-foreground/60"
             }`}
+            aria-current={activeTab === artist.slug ? "page" : undefined}
           >
             {artist.name}
             {activeTab === artist.slug && (
@@ -64,18 +71,18 @@ const Artistes = () => {
             )}
           </button>
         ))}
-      </div>
+      </nav>
 
       {/* Thin separator */}
-      <div className="mx-6 md:mx-10 h-[1px] bg-foreground/10" />
+      <div className="mx-6 md:mx-10 h-[1px] bg-foreground/10" role="separator" />
 
       {/* Active Artist Content */}
-      <main className="flex-1 px-6 md:px-10 py-16 md:py-24 pb-32 max-w-6xl">
-        <h1 className="text-foreground text-4xl md:text-7xl tracking-[0.08em] uppercase font-extralight mb-4">
+      <main className="flex-1 px-6 md:px-10 py-10 md:py-24 pb-32 max-w-6xl">
+        <h1 className="text-foreground text-3xl sm:text-4xl md:text-7xl tracking-[0.08em] uppercase font-extralight mb-4">
           {activeArtist.name}
         </h1>
 
-        <div className="mb-16">
+        <div className="mb-12 md:mb-16">
           <a
             href={activeArtist.linktree}
             target="_blank"
@@ -89,27 +96,28 @@ const Artistes = () => {
 
         {/* Photos de presse */}
         {activeArtist.photos.length > 0 && (
-          <div className="mb-20">
+          <section className="mb-20" aria-label="Photos de presse">
             <h3 className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground/30 mb-8">
               Photos de presse
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               {activeArtist.photos.map((photo, i) => (
                 <div key={i} className="overflow-hidden">
                   <img
                     src={photo}
-                    alt={`${activeArtist.name} press photo ${i + 1}`}
+                    alt={`${activeArtist.name} photo de presse ${i + 1}`}
+                    loading="lazy"
                     className="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               ))}
             </div>
-          </div>
+          </section>
         )}
 
         {/* Clips */}
         {activeArtist.clips.length > 0 && (
-          <div>
+          <section aria-label="Clips vidéo">
             <h3 className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground/30 mb-8">
               Clips
             </h3>
@@ -119,17 +127,17 @@ const Artistes = () => {
               onPlay={(id) => setPlayingId(id)}
               onStop={() => setPlayingId(null)}
             />
-          </div>
+          </section>
         )}
       </main>
 
       {/* Bottom Navigation */}
       <nav
-        className="sticky bottom-0 z-20 flex items-center justify-between px-6 py-5 md:px-10 md:py-6"
+        className="sticky bottom-0 z-20 flex items-center justify-center px-6 py-5 md:px-10 md:py-6"
         style={{ background: "linear-gradient(to top, hsl(var(--background)) 60%, transparent)" }}
+        aria-label="Navigation principale"
       >
         <a href="/artistes" className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
-        <a href="/about" className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ABOUT</a>
       </nav>
     </div>
   );

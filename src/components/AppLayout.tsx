@@ -13,7 +13,7 @@ const AppLayout = () => {
   const contactHref = isStudio ? "/studio/contact" : "/contact";
 
   return (
-    <div className={`relative h-screen w-screen overflow-hidden flex flex-col ${isStudio ? "studio-theme" : ""}`}>
+    <div className={`relative h-screen w-screen overflow-hidden flex flex-col ${isStudio ? "studio-theme" : ""}`} role="document">
       {/* Animated background */}
       <motion.div
         className="absolute inset-0 z-0"

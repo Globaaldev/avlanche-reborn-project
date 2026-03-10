@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import SEOHead from "@/components/SEOHead";
 
 const ARTISTS = [
   { name: "Sherifflazone", slug: "sherifflazone" },
@@ -20,6 +21,11 @@ const Index = () => {
 
   return (
     <div className="relative flex-1 flex items-center justify-center">
+      <SEOHead
+        title="Avlanche — Label, Édition & Studio"
+        description="Avlanche est un label de musique, une maison d'édition et un studio d'enregistrement, de mixage et de mastering à Ivry-sur-Seine."
+        path="/"
+      />
       {/* Central text */}
       <div className="text-center max-w-2xl px-6">
         <p className="text-foreground/50 text-sm md:text-lg font-light leading-relaxed tracking-wide">
