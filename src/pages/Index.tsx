@@ -22,7 +22,7 @@ const Index = () => {
   };
 
   return (
-    <div className="relative h-screen w-screen bg-background overflow-hidden">
+    <div className="relative h-screen w-screen bg-background overflow-hidden flex items-center justify-center">
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         <div className="flex items-baseline gap-0">
