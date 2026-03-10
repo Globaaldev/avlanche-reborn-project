@@ -128,12 +128,12 @@ const Artistes = () => {
             <div className="relative -mr-6 md:-mr-10">
               <div className="flex gap-3 md:gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory pr-6 md:pr-10">
                 {activeArtist.photos.map((photo, i) => (
-                  <div key={i} className="shrink-0 w-[70vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] overflow-hidden rounded-xl snap-start">
+                  <div key={i} className="shrink-0 h-[60vh] md:h-[70vh] overflow-hidden rounded-xl snap-start">
                     <img
                       src={photo}
                       alt={`${activeArtist.name} photo de presse ${i + 1}`}
                       loading="lazy"
-                      className="w-full aspect-[3/4] object-cover hover:scale-[1.03] transition-transform duration-700"
+                      className="h-full w-auto object-cover hover:scale-[1.03] transition-transform duration-700"
                     />
                   </div>
                 ))}
