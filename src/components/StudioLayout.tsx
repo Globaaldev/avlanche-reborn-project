@@ -19,13 +19,13 @@ const StudioLayout = () => {
 
       {/* Header */}
       <header className="relative z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
-        <a href="/studio" className="block">
+        <Link to="/studio" className="block">
           <img
             src={avlancheLogo}
             alt="Avlanche Studio"
             className="h-8 md:h-[55px] w-auto"
           />
-        </a>
+        </Link>
         <span className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light uppercase opacity-60">
           Studio
         </span>
