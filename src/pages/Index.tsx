@@ -22,7 +22,7 @@ const Index = () => {
   };
 
   return (
-    <div className="relative h-screen w-screen bg-background overflow-hidden">
+    <div className="relative h-screen w-screen bg-background overflow-hidden flex items-center justify-center">
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         <div className="flex items-baseline gap-0">
@@ -53,6 +53,13 @@ const Index = () => {
           Contact
         </a>
       </header>
+
+      {/* Central text */}
+      <div className="text-center max-w-2xl px-6">
+        <p className="text-foreground/50 text-sm md:text-lg font-light leading-relaxed tracking-wide">
+          Avlanche est un label de musique, une maison d'édition et un studio d'enregistrement, de mixage et de mastering.
+        </p>
+      </div>
 
       {/* Bottom Navigation */}
       <nav className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
