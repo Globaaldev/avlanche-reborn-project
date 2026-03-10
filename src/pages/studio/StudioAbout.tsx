@@ -68,7 +68,7 @@ const StudioAbout = () => {
 
         {/* Photo grid */}
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 md:gap-4">
-          <div className="sm:col-span-7 overflow-hidden">
+          <div className="sm:col-span-7 overflow-hidden rounded-xl">
             <img
               src={studioConsole}
               alt="Console d'enregistrement Avlanche Studio"
@@ -77,7 +77,7 @@ const StudioAbout = () => {
             />
           </div>
           <div className="sm:col-span-5 flex flex-row sm:flex-col gap-3 md:gap-4">
-            <div className="overflow-hidden flex-1">
+            <div className="overflow-hidden rounded-xl flex-1">
               <img
                 src={studioSalon}
                 alt="Espace détente du studio"
@@ -85,7 +85,7 @@ const StudioAbout = () => {
                 className="w-full h-36 sm:h-full object-cover hover:scale-[1.02] transition-transform duration-1000"
               />
             </div>
-            <div className="overflow-hidden flex-1">
+            <div className="overflow-hidden rounded-xl flex-1">
               <img
                 src={studioCabine}
                 alt="Cabine d'enregistrement"
