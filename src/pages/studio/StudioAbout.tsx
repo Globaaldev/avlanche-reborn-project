@@ -31,14 +31,14 @@ const TRUSTED_BY = "LaFève, Niska, Meryl, BbTrickz, Theodora, Skuna, LaMano, Mo
 
 const EquipmentSection = ({ title, items }: { title: string; items: string[] }) => (
   <div>
-    <h4 className="text-foreground/30 text-[10px] md:text-xs tracking-[0.3em] uppercase mb-4 md:mb-6 font-light">
+    <h4 className="text-foreground/40 text-xs md:text-sm tracking-[0.3em] uppercase mb-4 md:mb-6 font-light">
       {title}
     </h4>
     <ul className="space-y-0">
       {items.map((item, i) => (
         <li
           key={i}
-          className="text-foreground/80 text-xs md:text-sm font-light tracking-wide py-2.5 border-b border-foreground/[0.06]"
+          className="text-foreground/90 text-sm md:text-base font-light tracking-wide py-2.5 border-b border-foreground/[0.06]"
         >
           {item}
         </li>
@@ -61,7 +61,7 @@ const StudioAbout = () => {
           <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.15em] font-light uppercase">
             Le Studio
           </h1>
-          <p className="text-foreground/50 text-sm md:text-base font-light leading-relaxed tracking-wide">
+          <p className="text-foreground/60 text-base md:text-lg font-light leading-relaxed tracking-wide">
             Un studio moderne et chaleureux, conçu pour créer dans les meilleures conditions.
           </p>
         </div>
@@ -106,7 +106,7 @@ const StudioAbout = () => {
           href="https://avlanchestudio.simplybook.me"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-foreground/40 text-xs tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
+          className="text-foreground/50 text-sm tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
         >
           Réserver →
         </a>
@@ -130,7 +130,7 @@ const StudioAbout = () => {
         <h2 className="text-foreground text-xl md:text-3xl tracking-[0.15em] font-light uppercase mb-8">
           Ils nous ont fait confiance
         </h2>
-        <p className="text-foreground/40 text-sm md:text-base font-light leading-relaxed tracking-wide max-w-3xl">
+        <p className="text-foreground/50 text-base md:text-lg font-light leading-relaxed tracking-wide max-w-3xl">
           {TRUSTED_BY}
         </p>
       </section>

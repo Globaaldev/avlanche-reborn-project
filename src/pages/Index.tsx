@@ -28,7 +28,7 @@ const Index = () => {
       />
       {/* Central text */}
       <div className="text-center max-w-2xl px-6">
-        <p className="text-foreground/50 text-lg md:text-xl font-light leading-relaxed tracking-wide">
+        <p className="text-foreground/60 text-xl md:text-2xl font-light leading-relaxed tracking-wide">
           Avlanche est un label de musique, une maison d'édition et un studio d'enregistrement, de mixage et de mastering.
         </p>
       </div>
@@ -42,7 +42,7 @@ const Index = () => {
         >
           <a
             href="/artistes"
-            className="story-link text-red-500 text-sm md:text-lg tracking-[0.2em] font-light transition-all duration-300 uppercase hover:tracking-[0.35em]"
+            className="story-link text-red-500 text-base md:text-xl tracking-[0.2em] font-light transition-all duration-300 uppercase hover:tracking-[0.35em]"
           >
             ARTISTES
           </a>
@@ -55,7 +55,7 @@ const Index = () => {
               <a
                 key={artist.slug}
                 href={`/artistes?tab=${artist.slug}`}
-                className="text-foreground text-xs md:text-sm tracking-[0.15em] font-light hover:opacity-70 transition-opacity py-1 whitespace-nowrap"
+                className="text-foreground text-sm md:text-base tracking-[0.15em] font-light hover:opacity-70 transition-opacity py-1 whitespace-nowrap"
               >
                 {artist.name}
               </a>

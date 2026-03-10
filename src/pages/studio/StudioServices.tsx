@@ -19,7 +19,7 @@ const StudioServices = () => {
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
         {/* Enregistrement */}
         <div>
-          <h3 className="text-foreground text-base md:text-lg tracking-[0.1em] font-light mb-6">
+          <h3 className="text-foreground text-lg md:text-xl tracking-[0.1em] font-light mb-6">
             Enregistrement
           </h3>
           <div className="space-y-0">
@@ -31,7 +31,7 @@ const StudioServices = () => {
               ["Journée (8h)", "320€"],
               ["Soirée (8h)", "400€"],
             ].map(([label, price]) => (
-              <div key={label} className="flex justify-between text-foreground/70 text-xs md:text-sm font-light tracking-wide py-3 border-b border-foreground/[0.06]">
+              <div key={label} className="flex justify-between text-foreground/80 text-sm md:text-base font-light tracking-wide py-3 border-b border-foreground/[0.06]">
                 <span>{label}</span>
                 <span className="text-foreground/90">{price}</span>
               </div>
@@ -41,10 +41,10 @@ const StudioServices = () => {
 
         {/* Mix */}
         <div>
-          <h3 className="text-foreground text-base md:text-lg tracking-[0.1em] font-light mb-6">
+          <h3 className="text-foreground text-lg md:text-xl tracking-[0.1em] font-light mb-6">
             Mix
           </h3>
-          <div className="flex justify-between text-foreground/70 text-xs md:text-sm font-light tracking-wide py-3 border-b border-foreground/[0.06]">
+          <div className="flex justify-between text-foreground/80 text-sm md:text-base font-light tracking-wide py-3 border-b border-foreground/[0.06]">
             <span>Par titre</span>
             <span className="text-foreground/90">350€</span>
           </div>
@@ -52,10 +52,10 @@ const StudioServices = () => {
 
         {/* Master */}
         <div>
-          <h3 className="text-foreground text-base md:text-lg tracking-[0.1em] font-light mb-6">
+          <h3 className="text-foreground text-lg md:text-xl tracking-[0.1em] font-light mb-6">
             Master
           </h3>
-          <div className="flex justify-between text-foreground/70 text-xs md:text-sm font-light tracking-wide py-3 border-b border-foreground/[0.06]">
+          <div className="flex justify-between text-foreground/80 text-sm md:text-base font-light tracking-wide py-3 border-b border-foreground/[0.06]">
             <span>Par titre</span>
             <span className="text-foreground/90">70€</span>
           </div>
@@ -91,14 +91,14 @@ const StudioServices = () => {
             },
           ].map((pack) => (
             <div key={pack.name} className="border border-foreground/[0.08] rounded-md p-5 md:p-8 space-y-4 hover:border-foreground/20 transition-colors duration-300">
-              <h4 className="text-foreground text-xs md:text-sm tracking-[0.25em] uppercase font-light">
+              <h4 className="text-foreground text-sm md:text-base tracking-[0.25em] uppercase font-light">
                 {pack.name}
               </h4>
               <div className="space-y-0">
                 {pack.items.map(([label, price]) => (
-                  <div key={label} className="flex justify-between text-foreground/60 text-xs md:text-sm font-light py-2">
+                  <div key={label} className="flex justify-between text-foreground/70 text-sm md:text-base font-light py-2">
                     <span>{label}</span>
-                    <span className="text-foreground/40">{price}</span>
+                    <span className="text-foreground/50">{price}</span>
                   </div>
                 ))}
               </div>
@@ -112,14 +112,14 @@ const StudioServices = () => {
 
       {/* Note + CTA */}
       <section className="flex flex-col items-center text-center space-y-6 pb-10">
-        <p className="text-foreground/40 text-xs md:text-sm font-light leading-relaxed tracking-wide max-w-2xl">
+        <p className="text-foreground/50 text-sm md:text-base font-light leading-relaxed tracking-wide max-w-2xl">
           Pour toute demande concernant les forfaits, séminaires, tournages, releases & listening parties, veuillez nous contacter par mail ou téléphone.
         </p>
         <a
           href="https://avlanchestudio.simplybook.me"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-foreground/40 text-xs tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
+          className="text-foreground/50 text-sm tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
         >
           Réserver →
         </a>

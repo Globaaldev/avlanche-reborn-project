@@ -72,7 +72,7 @@ const Artistes = () => {
                 setSearchParams({ tab: artist.slug });
                 setPlayingId(null);
               }}
-              className={`text-xs md:text-sm tracking-[0.2em] uppercase font-light transition-all duration-300 pb-3 relative whitespace-nowrap ${
+              className={`text-sm md:text-base tracking-[0.2em] uppercase font-light transition-all duration-300 pb-3 relative whitespace-nowrap ${
                 activeTab === artist.slug
                   ? "text-foreground"
                   : "text-foreground/30 hover:text-foreground/60"
@@ -111,7 +111,7 @@ const Artistes = () => {
               href={activeArtist.linktree}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-foreground/40 text-xs md:text-sm tracking-[0.15em] uppercase hover:text-foreground/70 transition-colors group"
+              className="inline-flex items-center gap-1.5 text-foreground/50 text-sm md:text-base tracking-[0.15em] uppercase hover:text-foreground/70 transition-colors group"
             >
               <span>Linktree</span>
               <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
@@ -122,7 +122,7 @@ const Artistes = () => {
         {/* Photos de presse — horizontal scroll */}
         {activeArtist.photos.length > 0 && (
           <section className="mb-20" aria-label="Photos de presse">
-            <h3 className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground/30 mb-6">
+            <h3 className="text-xs md:text-sm tracking-[0.3em] uppercase text-foreground/40 mb-6">
               Photos de presse
             </h3>
             <div className="relative -mr-6 md:-mr-10">
@@ -147,7 +147,7 @@ const Artistes = () => {
         {/* Clips */}
         {activeArtist.clips.length > 0 && (
           <section aria-label="Clips vidéo">
-            <h3 className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground/30 mb-8">
+            <h3 className="text-xs md:text-sm tracking-[0.3em] uppercase text-foreground/40 mb-8">
               Clips
             </h3>
             <VideoGrid
@@ -166,7 +166,7 @@ const Artistes = () => {
         style={{ background: "linear-gradient(to top, hsl(var(--background)) 60%, transparent)" }}
         aria-label="Navigation principale"
       >
-        <a href="/artistes" className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
+        <a href="/artistes" className="text-foreground text-sm md:text-base tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
       </nav>
     </div>
   );
