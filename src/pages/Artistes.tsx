@@ -79,20 +79,31 @@ const Artistes = () => {
 
       {/* Active Artist Content */}
       <main className="flex-1 px-6 md:px-10 py-10 md:py-24 pb-32 max-w-6xl">
-        <h1 className="text-foreground text-3xl sm:text-4xl md:text-7xl tracking-[0.08em] uppercase font-extralight mb-4">
-          {activeArtist.name}
-        </h1>
-
-        <div className="mb-12 md:mb-16">
-          <a
-            href={activeArtist.linktree}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-foreground/40 text-xs md:text-sm tracking-[0.15em] uppercase hover:text-foreground/70 transition-colors group"
-          >
-            <span>Linktree</span>
-            <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
-          </a>
+        <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-10 mb-12 md:mb-16">
+          {/* Profile image */}
+          {activeArtist.profileImage && (
+            <div className="w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden shrink-0">
+              <img
+                src={activeArtist.profileImage}
+                alt={activeArtist.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+          <div>
+            <h1 className="text-foreground text-3xl sm:text-4xl md:text-7xl tracking-[0.08em] uppercase font-extralight mb-3">
+              {activeArtist.name}
+            </h1>
+            <a
+              href={activeArtist.linktree}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-foreground/40 text-xs md:text-sm tracking-[0.15em] uppercase hover:text-foreground/70 transition-colors group"
+            >
+              <span>Linktree</span>
+              <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
+            </a>
+          </div>
         </div>
 
         {/* Photos de presse */}
