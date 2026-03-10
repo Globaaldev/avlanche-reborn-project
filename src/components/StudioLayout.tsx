@@ -2,10 +2,8 @@ import avlancheLogo from "@/assets/avlanche-logo-white.webp";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 const STUDIO_NAV = [
-  { label: "ACCUEIL", href: "/studio" },
   { label: "LE STUDIO", href: "/studio/about" },
   { label: "SERVICES & TARIFS", href: "/studio/services" },
-  { label: "CONTACT", href: "/studio/contact" },
 ];
 
 const StudioLayout = () => {
