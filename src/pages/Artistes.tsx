@@ -8,6 +8,7 @@ import sherifflazoneProfile from "@/assets/sherifflazone-profile.png";
 const ARTISTS = [
   {
     name: "Sherifflazone",
+    slug: "sherifflazone",
     linktree: "https://linktr.ee/sherifflazone",
     profileImage: sherifflazoneProfile,
     clips: [
