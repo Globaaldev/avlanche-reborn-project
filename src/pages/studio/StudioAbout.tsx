@@ -61,7 +61,7 @@ const StudioAbout = () => {
           <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.15em] font-light uppercase">
             Le Studio
           </h1>
-          <p className="text-foreground/50 text-sm md:text-base font-light leading-relaxed tracking-wide">
+          <p className="text-foreground/60 text-base md:text-lg font-light leading-relaxed tracking-wide">
             Un studio moderne et chaleureux, conçu pour créer dans les meilleures conditions.
           </p>
         </div>
