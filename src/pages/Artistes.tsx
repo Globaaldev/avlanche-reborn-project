@@ -47,7 +47,7 @@ const Artistes = () => {
   const [playingId, setPlayingId] = useState<string | null>(null);
 
   return (
-    <div className="relative min-h-screen w-screen bg-gradient-to-br from-white via-neutral-50 to-neutral-100 flex flex-col">
+    <div className="relative min-h-screen w-screen bg-gradient-to-br from-white via-neutral-50 to-neutral-100 flex flex-col overflow-y-auto">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         <a href="/" className="block">
@@ -194,7 +194,6 @@ const Artistes = () => {
       <nav className="fixed bottom-0 left-0 right-0 z-20 flex items-center justify-between px-6 py-5 md:px-10 md:py-8 bg-white/80 backdrop-blur-md">
         <a href="/artistes" className="text-neutral-900 text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
         <a href="/about" className="text-neutral-900 text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ABOUT</a>
-        <a href="https://avlanchestudio.fr" target="_blank" rel="noopener noreferrer" className="text-neutral-900 text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">STUDIO</a>
       </nav>
     </div>
   );
