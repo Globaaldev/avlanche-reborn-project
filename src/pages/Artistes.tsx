@@ -126,7 +126,7 @@ const Artistes = () => {
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               {activeArtist.photos.map((photo, i) => (
-                <div key={i} className="overflow-hidden">
+                <div key={i} className="overflow-hidden rounded-xl">
                   <img
                     src={photo}
                     alt={`${activeArtist.name} photo de presse ${i + 1}`}
