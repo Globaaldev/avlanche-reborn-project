@@ -91,7 +91,7 @@ const Artistes = () => {
       </div>
 
       {/* Active Artist Content */}
-      <main className="flex-1 px-6 md:px-10 py-10 md:py-24 pb-32 max-w-6xl">
+      <main className="flex-1 px-4 md:px-10 py-10 md:py-24 pb-32">
         <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-10 mb-12 md:mb-16">
           {/* Profile image */}
           {activeArtist.profileImage && (
