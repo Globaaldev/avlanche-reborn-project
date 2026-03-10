@@ -124,6 +124,42 @@ const StudioServices = () => {
           Réserver →
         </a>
       </section>
+
+      {/* Mentions légales */}
+      <section className="border-t border-foreground/[0.06] pt-8 pb-4">
+        <details className="group">
+          <summary className="text-foreground/30 text-xs tracking-[0.15em] uppercase cursor-pointer hover:text-foreground/50 transition-colors duration-300 select-none">
+            Mentions légales
+          </summary>
+          <div className="mt-6 text-foreground/40 text-xs leading-relaxed space-y-4 max-w-3xl">
+            <div>
+              <p className="font-medium text-foreground/50 mb-1">Éditeur du site</p>
+              <p>AVLANCHE MUSIC — Société par actions simplifiée (SAS)</p>
+              <p>44 rue Jules Vanzuppe, 94200 Ivry-sur-Seine, France</p>
+              <p>SIREN : 898 534 151 — SIRET : 898 534 151 00011</p>
+              <p>N° TVA : FR13 898 534 151</p>
+              <p>Directeur de la publication : Nathan-Meyer Kassabi</p>
+            </div>
+            <div>
+              <p className="font-medium text-foreground/50 mb-1">Activité</p>
+              <p>Enregistrement sonore et édition musicale (NAF 5920Z)</p>
+              <p>Date de création : 22 avril 2021</p>
+            </div>
+            <div>
+              <p className="font-medium text-foreground/50 mb-1">Hébergement</p>
+              <p>Ce site est hébergé par Lovable (https://lovable.dev).</p>
+            </div>
+            <div>
+              <p className="font-medium text-foreground/50 mb-1">Propriété intellectuelle</p>
+              <p>L'ensemble du contenu de ce site (textes, images, logos, vidéos) est protégé par le droit d'auteur. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
+            </div>
+            <div>
+              <p className="font-medium text-foreground/50 mb-1">Données personnelles</p>
+              <p>Ce site ne collecte aucune donnée personnelle sans votre consentement. Pour toute question relative à vos données, contactez-nous à l'adresse indiquée sur la page Contact.</p>
+            </div>
+          </div>
+        </details>
+      </section>
     </div>
   );
 };
