@@ -1,15 +1,22 @@
+import SEOHead from "@/components/SEOHead";
+
 const StudioServices = () => {
   return (
     <div className="px-6 md:px-16 lg:px-24 py-10 md:py-16 space-y-20 md:space-y-28 max-w-6xl mx-auto">
+      <SEOHead
+        title="Services & Tarifs — Avlanche Studio"
+        description="Tarifs d'enregistrement, mixage et mastering chez Avlanche Studio. Packs Single et EP disponibles."
+        path="/studio/services"
+      />
       {/* Header */}
       <div>
-        <h1 className="text-foreground text-3xl md:text-5xl tracking-[0.15em] font-light uppercase">
+        <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.15em] font-light uppercase">
           Services & Tarifs
         </h1>
       </div>
 
-      {/* Tarifs de base */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      {/* Tarifs */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
         {/* Enregistrement */}
         <div>
           <h3 className="text-foreground text-base md:text-lg tracking-[0.1em] font-light mb-6">
@@ -53,14 +60,14 @@ const StudioServices = () => {
             <span className="text-foreground/90">70€</span>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Packs */}
-      <div>
+      <section>
         <h2 className="text-foreground text-xl md:text-3xl tracking-[0.15em] font-light uppercase mb-12 md:mb-16">
           Packs
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {[
             {
               name: "Pack Single Jour",
@@ -83,7 +90,7 @@ const StudioServices = () => {
               total: "3 450€",
             },
           ].map((pack) => (
-            <div key={pack.name} className="border border-foreground/[0.08] rounded-md p-6 md:p-8 space-y-4 hover:border-foreground/20 transition-colors duration-300">
+            <div key={pack.name} className="border border-foreground/[0.08] rounded-md p-5 md:p-8 space-y-4 hover:border-foreground/20 transition-colors duration-300">
               <h4 className="text-foreground text-xs md:text-sm tracking-[0.25em] uppercase font-light">
                 {pack.name}
               </h4>
@@ -101,10 +108,10 @@ const StudioServices = () => {
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Note + CTA */}
-      <div className="flex flex-col items-center text-center space-y-6 pb-10">
+      <section className="flex flex-col items-center text-center space-y-6 pb-10">
         <p className="text-foreground/40 text-xs md:text-sm font-light leading-relaxed tracking-wide max-w-2xl">
           Pour toute demande concernant les forfaits, séminaires, tournages, releases & listening parties, veuillez nous contacter par mail ou téléphone.
         </p>
@@ -116,7 +123,7 @@ const StudioServices = () => {
         >
           Réserver →
         </a>
-      </div>
+      </section>
     </div>
   );
 };
