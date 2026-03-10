@@ -147,7 +147,7 @@ const Artistes = () => {
         {/* Clips */}
         {activeArtist.clips.length > 0 && (
           <section aria-label="Clips vidéo">
-            <h3 className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground/30 mb-8">
+            <h3 className="text-xs md:text-sm tracking-[0.3em] uppercase text-foreground/40 mb-8">
               Clips
             </h3>
             <VideoGrid
