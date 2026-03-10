@@ -73,7 +73,7 @@ const StudioAbout = () => {
               src={studioConsole}
               alt="Console d'enregistrement Avlanche Studio"
               loading="eager"
-              className="w-full h-56 sm:h-72 md:h-[28rem] object-cover hover:scale-[1.02] transition-transform duration-1000"
+              className="w-full h-56 sm:h-72 md:h-[22rem] object-cover hover:scale-[1.02] transition-transform duration-1000"
             />
           </div>
           <div className="sm:col-span-5 flex flex-row sm:flex-col gap-3 md:gap-4">
