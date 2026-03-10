@@ -56,7 +56,7 @@ const Artistes = () => {
             <img
               src={avlancheLogo}
               alt="Avlanche Logo"
-              className="h-6 md:h-[55px] w-auto"
+              className="h-6 md:h-[55px] w-auto brightness-0"
             />
           </a>
           <div className="flex items-baseline gap-1 md:gap-2 ml-0.5 md:ml-1">
@@ -187,12 +187,12 @@ const Artistes = () => {
                           alt={firstClip.title}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent group-hover:from-background/50 transition-colors flex items-center justify-center">
-                          <div className="w-16 h-16 rounded-full bg-foreground/90 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <Play className="w-6 h-6 text-background ml-1" fill="currentColor" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/50 transition-colors flex items-center justify-center">
+                          <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <Play className="w-6 h-6 text-black ml-1" fill="currentColor" />
                           </div>
                         </div>
-                        <span className="absolute bottom-4 left-5 text-foreground text-sm md:text-base tracking-[0.1em] font-light">
+                        <span className="absolute bottom-4 left-5 text-white text-sm md:text-base tracking-[0.1em] font-light">
                           {firstClip.title}
                         </span>
                       </button>
@@ -237,12 +237,12 @@ const Artistes = () => {
                               alt={clip.title}
                               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-background/10 group-hover:bg-background/30 transition-colors duration-300 flex items-center justify-center rounded-md">
-                              <div className="w-10 h-10 rounded-full bg-foreground/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-100 scale-90">
-                                <Play className="w-4 h-4 text-background ml-0.5" fill="currentColor" />
+                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center rounded-md">
+                              <div className="w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-100 scale-90">
+                                <Play className="w-4 h-4 text-black ml-0.5" fill="currentColor" />
                               </div>
                             </div>
-                            <span className="absolute bottom-2 left-3 text-foreground text-[11px] md:text-xs tracking-[0.08em] font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span className="absolute bottom-2 left-3 text-white text-[11px] md:text-xs tracking-[0.08em] font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                               {clip.title}
                             </span>
                           </button>
@@ -259,7 +259,7 @@ const Artistes = () => {
 
       {/* Bottom Navigation */}
       <nav className="sticky bottom-0 z-20 flex items-center justify-between px-6 py-5 md:px-10 md:py-6"
-        style={{ background: "linear-gradient(to top, hsl(0 0% 0%) 60%, transparent)" }}
+        style={{ background: "linear-gradient(to top, hsl(var(--background)) 60%, transparent)" }}
       >
         <a href="/artistes" className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
         <a href="/about" className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ABOUT</a>

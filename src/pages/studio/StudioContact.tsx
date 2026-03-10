@@ -1,14 +1,16 @@
 const StudioContact = () => {
   return (
     <div className="flex items-center justify-center h-full px-6">
-      <div className="text-foreground font-light tracking-wide space-y-5 text-left max-w-md w-full">
-        <h1 className="text-3xl md:text-5xl tracking-tight font-bold mb-8">
+      <div className="text-foreground font-light tracking-wide space-y-6 text-center">
+        <h1 className="text-2xl md:text-4xl tracking-[0.15em] uppercase mb-10">
           Contact
         </h1>
-        <div className="space-y-1 text-base md:text-lg text-foreground/80 leading-relaxed">
-          <p className="font-medium text-foreground">Avlanche Studio</p>
+        <div className="space-y-1 text-sm md:text-base text-foreground/50 leading-relaxed">
+          <p className="text-foreground">Avlanche Studio</p>
           <p>44 rue Jules Vanzuppe</p>
           <p>94200 Ivry-sur-Seine</p>
+        </div>
+        <div className="space-y-1 text-sm md:text-base">
           <p>
             <a href="mailto:studio@avlanche.fr" className="text-foreground hover:opacity-70 transition-opacity">
               studio@avlanche.fr
@@ -20,15 +22,14 @@ const StudioContact = () => {
             </a>
           </p>
         </div>
-        <div className="pt-6">
+        <div className="pt-4">
           <a
             href="https://www.instagram.com/avlanche.studio/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block w-full text-center px-8 py-4 rounded-full text-sm md:text-base tracking-wide transition-opacity hover:opacity-80"
-            style={{ background: "hsl(35 40% 55%)", color: "hsl(0 0% 100%)" }}
+            className="text-foreground/30 text-xs tracking-[0.2em] uppercase hover:text-foreground/60 transition-colors"
           >
-            Suivez-nous sur Instagram
+            Instagram
           </a>
         </div>
       </div>

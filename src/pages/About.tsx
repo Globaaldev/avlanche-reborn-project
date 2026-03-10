@@ -1,7 +1,7 @@
 import avlancheLogo from "@/assets/avlanche-logo-white.webp";
 import { useNavigate } from "react-router-dom";
 
-const Contact = () => {
+const About = () => {
   const navigate = useNavigate();
 
   return (
@@ -41,10 +41,9 @@ const Contact = () => {
       <div className="flex-1 flex items-center justify-center px-6">
         <div className="text-foreground font-light tracking-wide space-y-6 text-center">
           <h1 className="text-2xl md:text-4xl tracking-[0.15em] uppercase mb-10">
-            Contact
+            Avlanche Studio
           </h1>
           <div className="space-y-1 text-sm md:text-base text-foreground/50 leading-relaxed">
-            <p className="text-foreground">Avlanche Studio</p>
             <p>44 rue Jules Vanzuppe</p>
             <p>94200 Ivry-sur-Seine</p>
           </div>
@@ -72,4 +71,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default About;

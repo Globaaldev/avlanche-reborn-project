@@ -30,7 +30,7 @@ const Index = () => {
             <img
               src={avlancheLogo}
               alt="Avlanche"
-              className="h-6 md:h-[55px] w-auto"
+              className="h-6 md:h-[55px] w-auto brightness-0"
             />
           </a>
           <div className="flex items-baseline gap-1 md:gap-2 ml-0.5 md:ml-1">

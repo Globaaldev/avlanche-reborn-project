@@ -13,7 +13,7 @@ const StudioLayout = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative h-screen w-screen bg-background overflow-hidden flex flex-col">
+    <div className="studio-theme relative h-screen w-screen bg-background overflow-hidden flex flex-col">
       {/* Header */}
       <header className="relative z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         <div className="flex items-baseline gap-0">
@@ -21,7 +21,7 @@ const StudioLayout = () => {
             <img
               src={avlancheLogo}
               alt="Avlanche"
-              className="h-6 md:h-[55px] w-auto"
+              className="h-6 md:h-[55px] w-auto brightness-0"
             />
           </Link>
           <div className="flex items-baseline gap-1 md:gap-2 ml-0.5 md:ml-1">
