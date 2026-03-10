@@ -19,7 +19,7 @@ const StudioServices = () => {
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
         {/* Enregistrement */}
         <div>
-          <h3 className="text-foreground text-base md:text-lg tracking-[0.1em] font-light mb-6">
+          <h3 className="text-foreground text-lg md:text-xl tracking-[0.1em] font-light mb-6">
             Enregistrement
           </h3>
           <div className="space-y-0">
