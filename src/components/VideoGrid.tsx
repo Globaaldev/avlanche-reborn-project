@@ -30,7 +30,7 @@ const VideoEmbed = ({
     <iframe
       src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
       title={title}
-      className="absolute inset-0 w-full h-full"
+      className="absolute inset-0 w-full h-full rounded-[inherit]"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
     />
@@ -56,7 +56,7 @@ const VideoThumbnail = ({
 }) => (
   <button
     onClick={onPlay}
-    className="relative w-full h-full cursor-pointer group/thumb"
+    className="relative w-full h-full cursor-pointer group/thumb rounded-[inherit] overflow-hidden"
   >
     <img
       src={`https://img.youtube.com/vi/${videoId}/${large ? "maxresdefault" : "hqdefault"}.jpg`}
