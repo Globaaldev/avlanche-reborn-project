@@ -41,7 +41,7 @@ const StudioServices = () => {
 
         {/* Mix */}
         <div>
-          <h3 className="text-foreground text-base md:text-lg tracking-[0.1em] font-light mb-6">
+          <h3 className="text-foreground text-lg md:text-xl tracking-[0.1em] font-light mb-6">
             Mix
           </h3>
           <div className="flex justify-between text-foreground/70 text-xs md:text-sm font-light tracking-wide py-3 border-b border-foreground/[0.06]">
