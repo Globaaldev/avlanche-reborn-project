@@ -8,11 +8,6 @@ const ARTISTS = [
   { name: "Magie!", slug: "magie" },
 ];
 
-const NAV_ITEMS = [
-  { label: "ARTISTES", href: "/artistes" },
-  { label: "ABOUT", href: "/about" },
-];
-
 const Index = () => {
   const [showArtistes, setShowArtistes] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -27,17 +22,7 @@ const Index = () => {
   };
 
   return (
-    <div
-      className="relative h-screen w-screen overflow-hidden"
-      style={{
-        background: "linear-gradient(160deg, hsl(0 0% 96%) 0%, hsl(0 0% 92%) 40%, hsl(30 4% 90%) 70%, hsl(0 0% 94%) 100%)",
-      }}
-    >
-      {/* Subtle grain */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")" }}
-      />
-
+    <div className="relative h-screen w-screen bg-background overflow-hidden">
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         <div className="flex items-baseline gap-0">
@@ -46,23 +31,16 @@ const Index = () => {
               src={avlancheLogo}
               alt="Avlanche"
               className="h-6 md:h-[55px] w-auto"
-              style={{ filter: "invert(1)" }}
             />
           </a>
           <div className="flex items-baseline gap-1 md:gap-2 ml-0.5 md:ml-1">
-            <span
-              className="text-xs md:text-xl tracking-[0.12em] font-light"
-              style={{ color: "hsl(0 0% 10%)" }}
-            >
+            <span className="text-foreground text-xs md:text-xl tracking-[0.12em] font-light">
               music
             </span>
-            <span className="text-[8px] md:text-sm font-light" style={{ color: "hsl(0 0% 10% / 0.25)" }}>/</span>
+            <span className="text-foreground/25 text-[8px] md:text-sm font-light">/</span>
             <button
               onClick={() => navigate("/studio")}
-              className="text-xs md:text-xl tracking-[0.12em] font-light cursor-pointer transition-all duration-300"
-              style={{ color: "hsl(0 0% 10% / 0.25)" }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = "hsl(0 0% 10% / 0.7)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = "hsl(0 0% 10% / 0.25)"; }}
+              className="text-foreground/25 text-xs md:text-xl tracking-[0.12em] font-light cursor-pointer transition-all duration-300 hover:text-foreground/70"
             >
               studio
             </button>
@@ -70,8 +48,7 @@ const Index = () => {
         </div>
         <a
           href="/contact"
-          className="text-xs md:text-base tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase"
-          style={{ color: "hsl(0 0% 15%)" }}
+          className="text-foreground text-xs md:text-base tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase"
         >
           Contact
         </a>
@@ -86,8 +63,7 @@ const Index = () => {
         >
           <a
             href="/artistes"
-            className="text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase"
-            style={{ color: "hsl(0 0% 15%)" }}
+            className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase"
           >
             ARTISTES
           </a>
@@ -100,8 +76,7 @@ const Index = () => {
               <a
                 key={artist.slug}
                 href={`/artistes?tab=${artist.slug}`}
-                className="text-xs md:text-sm tracking-[0.15em] font-light hover:opacity-70 transition-opacity py-1 whitespace-nowrap"
-                style={{ color: "hsl(0 0% 15%)" }}
+                className="text-foreground text-xs md:text-sm tracking-[0.15em] font-light hover:opacity-70 transition-opacity py-1 whitespace-nowrap"
               >
                 {artist.name}
               </a>
@@ -109,16 +84,12 @@ const Index = () => {
           </div>
         </div>
 
-        {NAV_ITEMS.filter((i) => i.label !== "ARTISTES").map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            className="text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase"
-            style={{ color: "hsl(0 0% 15%)" }}
-          >
-            {item.label}
-          </a>
-        ))}
+        <a
+          href="/about"
+          className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase"
+        >
+          ABOUT
+        </a>
       </nav>
     </div>
   );

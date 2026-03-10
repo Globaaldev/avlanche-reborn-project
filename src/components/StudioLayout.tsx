@@ -8,39 +8,12 @@ const STUDIO_NAV = [
   { label: "CONTACT", href: "/studio/contact" },
 ];
 
-const EqualizerBars = () => (
-  <div className="absolute inset-0 flex items-end justify-center gap-[3px] opacity-[0.04] pointer-events-none overflow-hidden pb-20">
-    {Array.from({ length: 48 }).map((_, i) => (
-      <div
-        key={i}
-        className="w-[2px] md:w-[3px] rounded-full bg-foreground"
-        style={{
-          height: "20%",
-          animation: `eq-bar ${0.8 + Math.random() * 1.2}s ease-in-out ${Math.random() * 0.5}s infinite alternate`,
-        }}
-      />
-    ))}
-  </div>
-);
-
 const StudioLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   return (
-    <div
-      className="relative h-screen w-screen overflow-hidden flex flex-col"
-      style={{
-        background: "linear-gradient(160deg, hsl(0 0% 4%) 0%, hsl(0 0% 8%) 40%, hsl(30 8% 10%) 70%, hsl(0 0% 4%) 100%)",
-      }}
-    >
-      <EqualizerBars />
-
-      <div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-[0.06] pointer-events-none"
-        style={{ background: "radial-gradient(circle, hsl(35 30% 50%) 0%, transparent 70%)" }}
-      />
-
+    <div className="relative h-screen w-screen bg-background overflow-hidden flex flex-col">
       {/* Header */}
       <header className="relative z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         <div className="flex items-baseline gap-0">
@@ -59,12 +32,15 @@ const StudioLayout = () => {
               music
             </button>
             <span className="text-foreground/25 text-[8px] md:text-sm font-light">/</span>
-            <span className="text-foreground text-xs md:text-xl tracking-[0.12em] font-light cursor-default">
+            <span
+              className="text-xs md:text-xl tracking-[0.12em] font-light cursor-default"
+              style={{ color: "hsl(var(--studio-accent))" }}
+            >
               studio
             </span>
           </div>
         </div>
-        <span className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light uppercase opacity-60">
+        <span className="text-foreground/60 text-xs md:text-sm tracking-[0.2em] font-light uppercase">
           Studio
         </span>
       </header>
@@ -76,25 +52,22 @@ const StudioLayout = () => {
 
       {/* Bottom Navigation */}
       <nav className="relative z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
-        {STUDIO_NAV.map((item) => (
-          <Link
-            key={item.label}
-            to={item.href}
-            className={`text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase ${
-              location.pathname === item.href ? "opacity-100" : "opacity-60"
-            }`}
-          >
-            {item.label}
-          </Link>
-        ))}
+        {STUDIO_NAV.map((item) => {
+          const isActive = location.pathname === item.href;
+          return (
+            <Link
+              key={item.label}
+              to={item.href}
+              className={`text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-all uppercase ${
+                isActive ? "opacity-100" : "text-foreground opacity-50"
+              }`}
+              style={isActive ? { color: "hsl(var(--studio-accent))" } : undefined}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
-
-      <style>{`
-        @keyframes eq-bar {
-          0% { height: 8%; }
-          100% { height: 60%; }
-        }
-      `}</style>
     </div>
   );
 };
