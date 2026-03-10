@@ -45,44 +45,9 @@ const Artistes = () => {
   const activeTab = searchParams.get("tab") || ARTISTS[0].slug;
   const activeArtist = ARTISTS.find((a) => a.slug === activeTab) || ARTISTS[0];
   const [playingId, setPlayingId] = useState<string | null>(null);
-  const navigate = useNavigate();
 
   return (
-    <div className="relative w-full flex flex-col min-h-screen bg-background">
-      {/* Header */}
-      <header className="flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
-        <div className="flex items-baseline">
-          <a href="/" className="block shrink-0">
-            <img
-              src={avlancheLogo}
-              alt="Avlanche Logo"
-              className="h-6 md:h-[55px] w-auto brightness-0"
-            />
-          </a>
-          <div className="flex items-baseline gap-1 md:gap-2 ml-0.5 md:ml-1">
-            <button
-              onClick={() => navigate("/")}
-              className="text-foreground text-xs md:text-xl tracking-[0.12em] font-light cursor-pointer transition-all duration-300"
-            >
-              music
-            </button>
-            <span className="text-foreground/25 text-[8px] md:text-sm font-light">/</span>
-            <button
-              onClick={() => navigate("/studio")}
-              className="text-foreground/25 text-xs md:text-xl tracking-[0.12em] font-light cursor-pointer transition-all duration-300 hover:text-foreground/70"
-            >
-              studio
-            </button>
-          </div>
-        </div>
-        <a
-          href="/contact"
-          className="text-foreground text-sm md:text-base tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase"
-        >
-          Contact
-        </a>
-      </header>
-
+    <div className="relative flex-1 flex flex-col overflow-y-auto">
       {/* Artist Tabs */}
       <div className="flex gap-8 md:gap-12 px-6 md:px-10 pt-2 pb-0">
         {ARTISTS.map((artist) => (
