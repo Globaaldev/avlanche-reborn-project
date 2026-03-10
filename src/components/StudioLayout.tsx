@@ -39,15 +39,15 @@ const StudioLayout = () => {
       {/* Bottom Navigation */}
       <nav className="relative z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         {STUDIO_NAV.map((item) => (
-          <a
+          <Link
             key={item.label}
-            href={item.href}
+            to={item.href}
             className={`text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase ${
               location.pathname === item.href ? "opacity-100" : "opacity-60"
             }`}
           >
             {item.label}
-          </a>
+          </Link>
         ))}
       </nav>
     </div>

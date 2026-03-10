@@ -17,7 +17,7 @@ const SUB_CATEGORIES = [
 const NAV_ITEMS = [
   { label: "ARTISTES", href: "/artistes" },
   { label: "ABOUT", href: "/about" },
-  { label: "STUDIO", href: "https://avlanchestudio.fr", external: true },
+  { label: "STUDIO", href: "/studio" },
 ];
 
 const Index = () => {
