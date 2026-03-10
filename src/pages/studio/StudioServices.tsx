@@ -104,7 +104,7 @@ const StudioServices = () => {
       </div>
 
       {/* Note + CTA */}
-      <div className="space-y-8 pb-10">
+      <div className="flex flex-col items-center text-center space-y-6 pb-10">
         <p className="text-foreground/40 text-xs md:text-sm font-light leading-relaxed tracking-wide max-w-2xl">
           Pour toute demande concernant les forfaits, séminaires, tournages, releases & listening parties, veuillez nous contacter par mail ou téléphone.
         </p>
@@ -112,9 +112,9 @@ const StudioServices = () => {
           href="https://avlanchestudio.simplybook.me"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block border border-foreground/40 text-foreground text-xs md:text-sm tracking-[0.2em] font-light uppercase px-8 py-3 hover:bg-foreground hover:text-background transition-colors duration-300 rounded-sm"
+          className="text-foreground/40 text-xs tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
         >
-          Je réserve ma session
+          Réserver →
         </a>
       </div>
     </div>
