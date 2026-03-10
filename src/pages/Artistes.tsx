@@ -47,7 +47,7 @@ const Artistes = () => {
   const [playingId, setPlayingId] = useState<string | null>(null);
 
   return (
-    <div className="relative min-h-screen w-screen bg-gradient-to-br from-white via-neutral-50 to-neutral-100 flex flex-col overflow-y-auto">
+    <div className="relative w-screen bg-gradient-to-br from-white via-neutral-50 to-neutral-100 flex flex-col min-h-screen">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         <a href="/" className="block">
@@ -86,7 +86,7 @@ const Artistes = () => {
       </div>
 
       {/* Active Artist Content */}
-      <main className="flex-1 px-6 md:px-10 py-12 md:py-20 pb-28">
+      <main className="flex-1 px-6 md:px-10 py-12 md:py-20 pb-32">
         <h1 className="text-3xl md:text-6xl tracking-[0.15em] uppercase font-light text-neutral-900 mb-14">
           {activeArtist.name}
         </h1>
