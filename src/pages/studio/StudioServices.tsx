@@ -96,7 +96,7 @@ const StudioServices = () => {
               </h4>
               <div className="space-y-0">
                 {pack.items.map(([label, price]) => (
-                  <div key={label} className="flex justify-between text-foreground/60 text-xs md:text-sm font-light py-2">
+                  <div key={label} className="flex justify-between text-foreground/70 text-sm md:text-base font-light py-2">
                     <span>{label}</span>
                     <span className="text-foreground/40">{price}</span>
                   </div>
