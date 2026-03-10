@@ -102,7 +102,7 @@ const VideoGrid = ({ clips, playingId, onPlay, onStop }: VideoGridProps) => {
             const videoId = getYouTubeId(clip.url);
             if (!videoId) return null;
             return (
-              <div key={i} className="relative aspect-video overflow-hidden">
+              <div key={i} className="relative aspect-video overflow-hidden rounded-lg">
                 {playingId === videoId ? (
                   <VideoEmbed videoId={videoId} title={clip.title} onStop={onStop} />
                 ) : (
