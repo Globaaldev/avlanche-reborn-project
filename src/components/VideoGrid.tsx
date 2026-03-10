@@ -80,7 +80,7 @@ const VideoGrid = ({ clips, playingId, onPlay, onStop }: VideoGridProps) => {
   if (clips.length === 0) return null;
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
       {clips.map((clip) => {
         const videoId = getYouTubeId(clip.url);
         if (!videoId) return null;
