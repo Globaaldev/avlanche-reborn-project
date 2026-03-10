@@ -36,8 +36,8 @@ const AppLayout = () => {
           <span className="text-foreground/30 text-[10px] md:text-sm font-light">/</span>
           <button
             onClick={() => { if (!isStudio) navigate("/studio"); }}
-            className={`text-xs md:text-xl tracking-[0.12em] font-light transition-all duration-300 cursor-pointer ${
-              isStudio ? "text-foreground" : "text-foreground/25 hover:text-foreground/70"
+            className={`text-sm md:text-xl tracking-[0.12em] font-light transition-all duration-300 cursor-pointer ${
+              isStudio ? "text-foreground" : "text-foreground/30 hover:text-foreground/70"
             }`}
             style={isStudio ? { color: "hsl(var(--studio-accent))" } : undefined}
           >
