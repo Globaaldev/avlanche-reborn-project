@@ -56,7 +56,7 @@ const VideoThumbnail = ({
 }) => (
   <button
     onClick={onPlay}
-    className="relative w-full h-full cursor-pointer group/thumb"
+    className="relative w-full h-full cursor-pointer group/thumb rounded-[inherit] overflow-hidden"
   >
     <img
       src={`https://img.youtube.com/vi/${videoId}/${large ? "maxresdefault" : "hqdefault"}.jpg`}
