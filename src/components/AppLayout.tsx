@@ -33,7 +33,7 @@ const AppLayout = () => {
           >
             music
           </button>
-          <span className="text-foreground/25 text-[8px] md:text-sm font-light">/</span>
+          <span className="text-foreground/30 text-[10px] md:text-sm font-light">/</span>
           <button
             onClick={() => { if (!isStudio) navigate("/studio"); }}
             className={`text-xs md:text-xl tracking-[0.12em] font-light transition-all duration-300 cursor-pointer ${
