@@ -1,6 +1,6 @@
 import avlancheLogo from "@/assets/avlanche-logo-white.webp";
-import avlancheBg from "@/assets/avlanche-bg.jpg";
 import { useState, useRef } from "react";
+import SiteSwitcher from "@/components/SiteSwitcher";
 
 const ARTISTS = [
   { name: "Sherifflazone", slug: "sherifflazone" },
@@ -33,22 +33,29 @@ const Index = () => {
   };
 
   return (
-    <div className="relative h-screen w-screen bg-background overflow-hidden">
-      {/* Background image */}
-      <img src={avlancheBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+    <div
+      className="relative h-screen w-screen overflow-hidden"
+      style={{
+        background: "linear-gradient(160deg, hsl(0 0% 96%) 0%, hsl(0 0% 92%) 40%, hsl(30 4% 90%) 70%, hsl(0 0% 94%) 100%)",
+      }}
+    >
+      {/* Subtle grain texture */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")" }}
+      />
+
+      {/* Radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-[0.08] pointer-events-none"
+        style={{ background: "radial-gradient(circle, hsl(0 0% 100%) 0%, transparent 70%)" }}
+      />
 
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
-        <a href="/" className="block">
-          <img
-            src={avlancheLogo}
-            alt="Avlanche Logo"
-            className="h-8 md:h-[55px] w-auto"
-          />
-        </a>
+        <SiteSwitcher logoSrc={avlancheLogo} variant="light" />
         <a
           href="/contact"
-          className="text-foreground text-sm md:text-base tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase"
+          className="text-sm md:text-base tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase"
+          style={{ color: "hsl(0 0% 15%)" }}
         >
           Contact
         </a>
@@ -64,7 +71,8 @@ const Index = () => {
         >
           <a
             href="/artistes"
-            className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase"
+            className="text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase"
+            style={{ color: "hsl(0 0% 15%)" }}
           >
             ARTISTES
           </a>
@@ -79,7 +87,8 @@ const Index = () => {
               <a
                 key={artist.slug}
                 href={`/artistes?tab=${artist.slug}`}
-                className="text-foreground text-xs md:text-sm tracking-[0.15em] font-light hover:opacity-70 transition-opacity py-1 whitespace-nowrap"
+                className="text-xs md:text-sm tracking-[0.15em] font-light hover:opacity-70 transition-opacity py-1 whitespace-nowrap"
+                style={{ color: "hsl(0 0% 15%)" }}
               >
                 {artist.name}
               </a>
@@ -91,7 +100,8 @@ const Index = () => {
           <a
             key={item.label}
             href={item.href}
-            className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase"
+            className="text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase"
+            style={{ color: "hsl(0 0% 15%)" }}
           >
             {item.label}
           </a>
