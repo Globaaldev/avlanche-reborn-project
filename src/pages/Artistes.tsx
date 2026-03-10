@@ -122,7 +122,7 @@ const Artistes = () => {
         {/* Photos de presse — horizontal scroll */}
         {activeArtist.photos.length > 0 && (
           <section className="mb-20" aria-label="Photos de presse">
-            <h3 className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground/30 mb-6">
+            <h3 className="text-xs md:text-sm tracking-[0.3em] uppercase text-foreground/40 mb-6">
               Photos de presse
             </h3>
             <div className="relative -mr-6 md:-mr-10">
