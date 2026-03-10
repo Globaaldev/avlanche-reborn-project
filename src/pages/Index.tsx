@@ -1,6 +1,4 @@
-import avlancheLogo from "@/assets/avlanche-logo-white.webp";
 import { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 
 const ARTISTS = [
   { name: "Sherifflazone", slug: "sherifflazone" },
@@ -11,7 +9,6 @@ const ARTISTS = [
 const Index = () => {
   const [showArtistes, setShowArtistes] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const navigate = useNavigate();
 
   const handleEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -22,38 +19,7 @@ const Index = () => {
   };
 
   return (
-    <div className="relative h-screen w-screen bg-background overflow-hidden flex items-center justify-center">
-      {/* Header */}
-      <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
-        <div className="flex items-baseline gap-0">
-          <a href="/" className="block shrink-0">
-            <img
-              src={avlancheLogo}
-              alt="Avlanche"
-              className="h-6 md:h-[55px] w-auto brightness-0"
-            />
-          </a>
-          <div className="flex items-baseline gap-1 md:gap-2 ml-0.5 md:ml-1">
-            <span className="text-foreground text-xs md:text-xl tracking-[0.12em] font-light">
-              music
-            </span>
-            <span className="text-foreground/25 text-[8px] md:text-sm font-light">/</span>
-            <button
-              onClick={() => navigate("/studio")}
-              className="text-foreground/25 text-xs md:text-xl tracking-[0.12em] font-light cursor-pointer transition-all duration-300 hover:text-foreground/70"
-            >
-              studio
-            </button>
-          </div>
-        </div>
-        <a
-          href="/contact"
-          className="text-foreground text-xs md:text-base tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase"
-        >
-          Contact
-        </a>
-      </header>
-
+    <div className="relative flex-1 flex items-center justify-center">
       {/* Central text */}
       <div className="text-center max-w-2xl px-6">
         <p className="text-foreground/50 text-sm md:text-lg font-light leading-relaxed tracking-wide">
@@ -62,7 +28,7 @@ const Index = () => {
       </div>
 
       {/* Bottom Navigation */}
-      <nav className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
+      <nav className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
         <div
           className="relative"
           onMouseEnter={handleEnter}
