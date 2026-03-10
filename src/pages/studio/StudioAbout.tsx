@@ -48,57 +48,59 @@ const EquipmentSection = ({ title, items }: { title: string; items: string[] }) 
 
 const StudioAbout = () => {
   return (
-    <div className="px-6 md:px-16 lg:px-24 py-10 md:py-16 space-y-20 md:space-y-28 max-w-6xl mx-auto">
-      {/* Header */}
-      <div className="space-y-6 max-w-2xl">
-        <h1 className="text-foreground text-3xl md:text-5xl tracking-[0.15em] font-light uppercase">
-          Le Studio
-        </h1>
-        <p className="text-foreground/70 text-sm md:text-base font-light leading-relaxed tracking-wide">
-          Un studio moderne et chaleureux, conçu pour créer dans les meilleures conditions. Une équipe passionnée et du matériel haut de gamme pour donner vie à vos projets musicaux.
-        </p>
-      </div>
-
-      {/* Two photos side by side */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-        <div className="overflow-hidden rounded-md">
-          <img
-            src={studioConsole}
-            alt="Console d'enregistrement Avlanche Studio"
-            className="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-700"
-          />
-        </div>
-        <div className="overflow-hidden rounded-md">
-          <img
-            src={studioSalon}
-            alt="Espace détente du studio"
-            className="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-700"
-          />
-        </div>
-      </div>
-
-      {/* Cabine section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div className="overflow-hidden rounded-md">
-          <img
-            src={studioCabine}
-            alt="Cabine d'enregistrement"
-            className="w-full h-72 md:h-96 object-cover hover:scale-105 transition-transform duration-700"
-          />
-        </div>
-        <div className="space-y-6 text-center md:text-left">
-          <p className="text-foreground text-lg md:text-2xl tracking-[0.1em] font-light">
-            Profitez de la spacieuse cabine&nbsp;!
+    <div className="px-6 md:px-16 lg:px-24 py-10 md:py-16 space-y-24 md:space-y-32 max-w-6xl mx-auto">
+      {/* Hero — full-width immersive photo */}
+      <div className="space-y-10">
+        <div className="space-y-4 max-w-2xl">
+          <h1 className="text-foreground text-3xl md:text-5xl tracking-[0.15em] font-light uppercase">
+            Le Studio
+          </h1>
+          <p className="text-foreground/50 text-sm md:text-base font-light leading-relaxed tracking-wide">
+            Un studio moderne et chaleureux, conçu pour créer dans les meilleures conditions.
           </p>
-          <a
-            href="https://avlanchestudio.simplybook.me"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block border border-foreground/40 text-foreground text-xs md:text-sm tracking-[0.2em] font-light uppercase px-8 py-3 hover:bg-foreground hover:text-background transition-colors duration-300 rounded-sm"
-          >
-            Je réserve ma session
-          </a>
         </div>
+
+        {/* Immersive photo grid — asymmetric layout */}
+        <div className="grid grid-cols-12 gap-3 md:gap-4">
+          <div className="col-span-12 md:col-span-7 overflow-hidden">
+            <img
+              src={studioConsole}
+              alt="Console d'enregistrement Avlanche Studio"
+              className="w-full h-72 md:h-[28rem] object-cover hover:scale-[1.02] transition-transform duration-1000"
+            />
+          </div>
+          <div className="col-span-12 md:col-span-5 flex flex-col gap-3 md:gap-4">
+            <div className="overflow-hidden flex-1">
+              <img
+                src={studioSalon}
+                alt="Espace détente du studio"
+                className="w-full h-36 md:h-full object-cover hover:scale-[1.02] transition-transform duration-1000"
+              />
+            </div>
+            <div className="overflow-hidden flex-1">
+              <img
+                src={studioCabine}
+                alt="Cabine d'enregistrement"
+                className="w-full h-36 md:h-full object-cover hover:scale-[1.02] transition-transform duration-1000"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA — minimal, centered */}
+      <div className="flex flex-col items-center text-center space-y-6">
+        <p className="text-foreground text-lg md:text-2xl tracking-[0.1em] font-light">
+          Réservez votre session
+        </p>
+        <a
+          href="https://avlanchestudio.simplybook.me"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-foreground/40 text-xs tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
+        >
+          Réserver →
+        </a>
       </div>
 
       {/* Fiche technique */}
@@ -119,23 +121,23 @@ const StudioAbout = () => {
         <h2 className="text-foreground text-xl md:text-3xl tracking-[0.15em] font-light uppercase mb-8">
           Ils nous ont fait confiance
         </h2>
-        <p className="text-foreground/50 text-sm md:text-base font-light leading-relaxed tracking-wide max-w-3xl italic">
+        <p className="text-foreground/40 text-sm md:text-base font-light leading-relaxed tracking-wide max-w-3xl">
           {TRUSTED_BY}
         </p>
       </div>
 
-      {/* Playlist CTA */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pb-10">
+      {/* Playlist CTA — discret */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-10">
         <a
           href="https://open.spotify.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block border border-foreground/40 text-foreground text-xs md:text-sm tracking-[0.2em] font-light uppercase px-8 py-3 hover:bg-foreground hover:text-background transition-colors duration-300 rounded-sm"
+          className="text-foreground/30 text-xs tracking-[0.25em] uppercase hover:text-foreground/70 transition-colors duration-300 pb-0.5 border-b border-foreground/10 hover:border-foreground/40"
         >
           Rec / Mix by Avlanche
         </a>
-        <span className="text-foreground/30 text-xs tracking-wide font-light">
-          Découvrez la playlist des morceaux enregistrés par Avlanche
+        <span className="text-foreground/20 text-xs tracking-wide font-light">
+          — Playlist des morceaux enregistrés par Avlanche
         </span>
       </div>
     </div>
