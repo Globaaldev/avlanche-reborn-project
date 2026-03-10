@@ -40,7 +40,7 @@ const Index = () => {
 
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
-        <div className="flex items-center">
+        <div className="flex items-baseline gap-0">
           <a href="/" className="block shrink-0">
             <img
               src={avlancheLogo}
@@ -49,19 +49,20 @@ const Index = () => {
               style={{ filter: "invert(1)" }}
             />
           </a>
-          <div className="flex flex-col ml-1 md:ml-2 leading-none">
+          <div className="flex items-baseline gap-1 md:gap-2 ml-0.5 md:ml-1">
             <span
-              className="text-[10px] md:text-base tracking-[0.12em] font-light cursor-default"
+              className="text-xs md:text-xl tracking-[0.12em] font-light"
               style={{ color: "hsl(0 0% 10%)" }}
             >
               music
             </span>
+            <span className="text-[8px] md:text-sm font-light" style={{ color: "hsl(0 0% 10% / 0.25)" }}>/</span>
             <button
               onClick={() => navigate("/studio")}
-              className="text-[10px] md:text-base tracking-[0.12em] font-light text-left cursor-pointer transition-all duration-300 hover:tracking-[0.18em]"
-              style={{ color: "hsl(0 0% 10% / 0.3)" }}
+              className="text-xs md:text-xl tracking-[0.12em] font-light cursor-pointer transition-all duration-300"
+              style={{ color: "hsl(0 0% 10% / 0.25)" }}
               onMouseEnter={(e) => { e.currentTarget.style.color = "hsl(0 0% 10% / 0.7)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = "hsl(0 0% 10% / 0.3)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "hsl(0 0% 10% / 0.25)"; }}
             >
               studio
             </button>

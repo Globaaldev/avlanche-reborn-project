@@ -43,7 +43,7 @@ const StudioLayout = () => {
 
       {/* Header */}
       <header className="relative z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
-        <div className="flex items-center">
+        <div className="flex items-baseline gap-0">
           <Link to="/studio" className="block shrink-0">
             <img
               src={avlancheLogo}
@@ -51,16 +51,15 @@ const StudioLayout = () => {
               className="h-6 md:h-[55px] w-auto"
             />
           </Link>
-          <div className="flex flex-col ml-1 md:ml-2 leading-none">
+          <div className="flex items-baseline gap-1 md:gap-2 ml-0.5 md:ml-1">
             <button
               onClick={() => navigate("/")}
-              className="text-foreground/30 text-[10px] md:text-base tracking-[0.12em] font-light text-left cursor-pointer transition-all duration-300 hover:text-foreground/70 hover:tracking-[0.18em]"
+              className="text-foreground/25 text-xs md:text-xl tracking-[0.12em] font-light cursor-pointer transition-all duration-300 hover:text-foreground/70"
             >
               music
             </button>
-            <span
-              className="text-foreground text-[10px] md:text-base tracking-[0.12em] font-light cursor-default"
-            >
+            <span className="text-foreground/25 text-[8px] md:text-sm font-light">/</span>
+            <span className="text-foreground text-xs md:text-xl tracking-[0.12em] font-light cursor-default">
               studio
             </span>
           </div>
