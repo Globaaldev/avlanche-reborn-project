@@ -31,7 +31,7 @@ const TRUSTED_BY = "LaFève, Niska, Meryl, BbTrickz, Theodora, Skuna, LaMano, Mo
 
 const EquipmentSection = ({ title, items }: { title: string; items: string[] }) => (
   <div>
-    <h4 className="text-foreground/30 text-[10px] md:text-xs tracking-[0.3em] uppercase mb-4 md:mb-6 font-light">
+    <h4 className="text-foreground/40 text-xs md:text-sm tracking-[0.3em] uppercase mb-4 md:mb-6 font-light">
       {title}
     </h4>
     <ul className="space-y-0">
