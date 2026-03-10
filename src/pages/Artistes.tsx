@@ -30,8 +30,8 @@ const ARTISTS = [
   },
   {
     name: "Magie!",
-    slug: "magie",
     linktree: "https://linktr.ee/magie",
+    profileImage: null as string | null,
     clips: [] as { title: string; url: string }[],
     photos: [] as string[],
   },
