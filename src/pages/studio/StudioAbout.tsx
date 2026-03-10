@@ -31,14 +31,14 @@ const TRUSTED_BY = "LaFève, Niska, Meryl, BbTrickz, Theodora, Skuna, LaMano, Mo
 
 const EquipmentSection = ({ title, items }: { title: string; items: string[] }) => (
   <div>
-    <h4 className="text-foreground/40 text-xs md:text-sm tracking-[0.3em] uppercase mb-4 md:mb-6 font-light">
+    <h4 className="text-foreground/50 text-sm md:text-base tracking-[0.3em] uppercase mb-4 md:mb-6 font-normal">
       {title}
     </h4>
     <ul className="space-y-0">
       {items.map((item, i) => (
         <li
           key={i}
-          className="text-foreground/90 text-sm md:text-base font-light tracking-wide py-2.5 border-b border-foreground/[0.06]"
+          className="text-foreground text-base md:text-lg font-normal tracking-wide py-2.5 border-b border-foreground/[0.08]"
         >
           {item}
         </li>
@@ -58,10 +58,10 @@ const StudioAbout = () => {
       {/* Hero */}
       <section className="space-y-10">
         <div className="space-y-4 max-w-2xl">
-          <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.15em] font-light uppercase">
+          <h1 className="text-foreground text-3xl sm:text-4xl md:text-5xl tracking-[0.15em] font-normal uppercase">
             Le Studio
           </h1>
-          <p className="text-foreground/60 text-base md:text-lg font-light leading-relaxed tracking-wide">
+          <p className="text-foreground/70 text-lg md:text-xl font-normal leading-relaxed tracking-wide">
             Un studio moderne et chaleureux, conçu pour créer dans les meilleures conditions.
           </p>
         </div>
@@ -99,14 +99,14 @@ const StudioAbout = () => {
 
       {/* CTA */}
       <section className="flex flex-col items-center text-center space-y-6">
-        <p className="text-foreground text-lg md:text-2xl tracking-[0.1em] font-light">
+        <p className="text-foreground text-xl md:text-3xl tracking-[0.1em] font-normal">
           Réservez votre session
         </p>
         <a
           href="https://avlanchestudio.simplybook.me"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-foreground/50 text-sm tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
+          className="text-foreground/60 text-base tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
         >
           Réserver →
         </a>
@@ -114,7 +114,7 @@ const StudioAbout = () => {
 
       {/* Fiche technique */}
       <section>
-        <h2 className="text-foreground text-xl md:text-3xl tracking-[0.15em] font-light uppercase mb-12 md:mb-16">
+        <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.15em] font-normal uppercase mb-12 md:mb-16">
           Fiche technique
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-x-20 md:gap-y-16">
@@ -127,10 +127,10 @@ const StudioAbout = () => {
 
       {/* Confiance */}
       <section>
-        <h2 className="text-foreground text-xl md:text-3xl tracking-[0.15em] font-light uppercase mb-8">
+        <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.15em] font-normal uppercase mb-8">
           Ils nous ont fait confiance
         </h2>
-        <p className="text-foreground/50 text-base md:text-lg font-light leading-relaxed tracking-wide max-w-3xl">
+        <p className="text-foreground/60 text-lg md:text-xl font-normal leading-relaxed tracking-wide max-w-3xl">
           {TRUSTED_BY}
         </p>
       </section>
@@ -141,11 +141,11 @@ const StudioAbout = () => {
           href="https://open.spotify.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-foreground/30 text-xs tracking-[0.25em] uppercase hover:text-foreground/70 transition-colors duration-300 pb-0.5 border-b border-foreground/10 hover:border-foreground/40"
+          className="text-foreground/40 text-sm tracking-[0.25em] uppercase hover:text-foreground/70 transition-colors duration-300 pb-0.5 border-b border-foreground/10 hover:border-foreground/40"
         >
           Rec / Mix by Avlanche
         </a>
-        <span className="text-foreground/20 text-xs tracking-wide font-light">
+        <span className="text-foreground/30 text-sm tracking-wide font-normal">
           — Playlist des morceaux enregistrés par Avlanche
         </span>
       </div>
