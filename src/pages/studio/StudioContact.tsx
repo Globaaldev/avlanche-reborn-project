@@ -8,16 +8,16 @@ const StudioContact = () => {
         description="Contactez Avlanche Studio : 44 rue Jules Vanzuppe, 94200 Ivry-sur-Seine. Email: studio@avlanche.fr."
         path="/studio/contact"
       />
-      <div className="text-foreground font-light tracking-wide space-y-6 text-center">
-        <h1 className="text-2xl md:text-4xl tracking-[0.15em] uppercase mb-10">
+      <div className="text-foreground font-normal tracking-wide space-y-6 text-center">
+        <h1 className="text-3xl md:text-5xl tracking-[0.15em] uppercase mb-10">
           Contact
         </h1>
-        <address className="not-italic space-y-1 text-sm md:text-base text-foreground/50 leading-relaxed">
+        <address className="not-italic space-y-1 text-base md:text-lg text-foreground/60 leading-relaxed">
           <p className="text-foreground">Avlanche Studio</p>
           <p>44 rue Jules Vanzuppe</p>
           <p>94200 Ivry-sur-Seine</p>
         </address>
-        <div className="space-y-1 text-sm md:text-base">
+        <div className="space-y-1 text-base md:text-lg">
           <p>
             <a href="mailto:studio@avlanche.fr" className="text-foreground hover:opacity-70 transition-opacity">
               studio@avlanche.fr
@@ -34,7 +34,7 @@ const StudioContact = () => {
             href="https://www.instagram.com/avlanche.studio/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/30 text-xs tracking-[0.2em] uppercase hover:text-foreground/60 transition-colors"
+            className="text-foreground/40 text-sm tracking-[0.2em] uppercase hover:text-foreground/60 transition-colors"
           >
             Instagram
           </a>

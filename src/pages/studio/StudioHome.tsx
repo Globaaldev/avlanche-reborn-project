@@ -9,10 +9,10 @@ const StudioHome = () => {
         path="/studio"
       />
       <div className="text-center space-y-4">
-        <h1 className="text-foreground text-2xl sm:text-3xl md:text-6xl tracking-[0.2em] font-light uppercase">
+        <h1 className="text-foreground text-3xl sm:text-4xl md:text-6xl tracking-[0.2em] font-normal uppercase">
           Avlanche Studio
         </h1>
-        <p className="text-foreground/70 text-base md:text-xl tracking-[0.15em] font-light max-w-xl mx-auto">
+        <p className="text-foreground/80 text-lg md:text-2xl tracking-[0.15em] font-normal max-w-xl mx-auto">
           Studio d'enregistrement, mixage & mastering
         </p>
       </div>
