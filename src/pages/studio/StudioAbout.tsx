@@ -130,7 +130,7 @@ const StudioAbout = () => {
         <h2 className="text-foreground text-xl md:text-3xl tracking-[0.15em] font-light uppercase mb-8">
           Ils nous ont fait confiance
         </h2>
-        <p className="text-foreground/40 text-sm md:text-base font-light leading-relaxed tracking-wide max-w-3xl">
+        <p className="text-foreground/50 text-base md:text-lg font-light leading-relaxed tracking-wide max-w-3xl">
           {TRUSTED_BY}
         </p>
       </section>
