@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import VideoGrid from "@/components/VideoGrid";
 import SEOHead from "@/components/SEOHead";
+import sherifflazoneProfile from "@/assets/sherifflazone-profile.png";
 
 const ARTISTS = [
   {
