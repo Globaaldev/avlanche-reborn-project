@@ -62,32 +62,33 @@ const Artistes = () => {
         description={`Découvrez ${activeArtist.name} sur Avlanche. Clips, photos et liens.`}
         path="/artistes"
       />
-      {/* Artist Tabs */}
-      <nav className="flex gap-6 sm:gap-8 md:gap-12 px-6 md:px-10 pt-2 pb-0 overflow-x-auto" aria-label="Artistes">
-        {ARTISTS.map((artist) => (
-          <button
-            key={artist.slug}
-            onClick={() => {
-              setSearchParams({ tab: artist.slug });
-              setPlayingId(null);
-            }}
-            className={`text-xs md:text-sm tracking-[0.2em] uppercase font-light transition-all duration-300 pb-3 relative whitespace-nowrap ${
-              activeTab === artist.slug
-                ? "text-foreground"
-                : "text-foreground/30 hover:text-foreground/60"
-            }`}
-            aria-current={activeTab === artist.slug ? "page" : undefined}
-          >
-            {artist.name}
-            {activeTab === artist.slug && (
-              <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-foreground" />
-            )}
-          </button>
-        ))}
-      </nav>
-
-      {/* Thin separator */}
-      <div className="mx-6 md:mx-10 h-[1px] bg-foreground/10" role="separator" />
+      {/* Artist Tabs — sticky */}
+      <div className="sticky top-0 z-10 bg-background">
+        <nav className="flex gap-6 sm:gap-8 md:gap-12 px-6 md:px-10 pt-2 pb-0 overflow-x-auto" aria-label="Artistes">
+          {ARTISTS.map((artist) => (
+            <button
+              key={artist.slug}
+              onClick={() => {
+                setSearchParams({ tab: artist.slug });
+                setPlayingId(null);
+              }}
+              className={`text-xs md:text-sm tracking-[0.2em] uppercase font-light transition-all duration-300 pb-3 relative whitespace-nowrap ${
+                activeTab === artist.slug
+                  ? "text-foreground"
+                  : "text-foreground/30 hover:text-foreground/60"
+              }`}
+              aria-current={activeTab === artist.slug ? "page" : undefined}
+            >
+              {artist.name}
+              {activeTab === artist.slug && (
+                <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-foreground" />
+              )}
+            </button>
+          ))}
+        </nav>
+        {/* Thin separator */}
+        <div className="mx-6 md:mx-10 h-[1px] bg-foreground/10" role="separator" />
+      </div>
 
       {/* Active Artist Content */}
       <main className="flex-1 px-6 md:px-10 py-10 md:py-24 pb-32 max-w-6xl">
