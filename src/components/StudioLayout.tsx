@@ -1,6 +1,5 @@
 import avlancheLogo from "@/assets/avlanche-logo-white.webp";
-import { Link, Outlet, useLocation } from "react-router-dom";
-import { useState, useRef } from "react";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 const STUDIO_NAV = [
   { label: "ACCUEIL", href: "/studio" },
@@ -26,16 +25,7 @@ const EqualizerBars = () => (
 
 const StudioLayout = () => {
   const location = useLocation();
-  const [showSwitch, setShowSwitch] = useState(false);
-  const switchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const handleSwitchEnter = () => {
-    if (switchTimeoutRef.current) clearTimeout(switchTimeoutRef.current);
-    setShowSwitch(true);
-  };
-  const handleSwitchLeave = () => {
-    switchTimeoutRef.current = setTimeout(() => setShowSwitch(false), 300);
-  };
+  const navigate = useNavigate();
 
   return (
     <div
@@ -53,37 +43,26 @@ const StudioLayout = () => {
 
       {/* Header */}
       <header className="relative z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
-        <div className="flex items-center gap-0">
-          <Link to="/studio" className="block">
+        <div className="flex items-center">
+          <Link to="/studio" className="block shrink-0">
             <img
               src={avlancheLogo}
               alt="Avlanche"
-              className="h-8 md:h-[55px] w-auto"
+              className="h-6 md:h-[55px] w-auto"
             />
           </Link>
-          <div
-            className="relative"
-            onMouseEnter={handleSwitchEnter}
-            onMouseLeave={handleSwitchLeave}
-          >
+          <div className="flex flex-col ml-1 md:ml-2 leading-none">
+            <button
+              onClick={() => navigate("/")}
+              className="text-foreground/30 text-[10px] md:text-base tracking-[0.12em] font-light text-left cursor-pointer transition-all duration-300 hover:text-foreground/70 hover:tracking-[0.18em]"
+            >
+              music
+            </button>
             <span
-              className="text-foreground text-sm md:text-lg tracking-[0.1em] font-light cursor-default select-none"
+              className="text-foreground text-[10px] md:text-base tracking-[0.12em] font-light cursor-default"
             >
-              -studio
+              studio
             </span>
-            {/* Switch to music */}
-            <Link
-              to="/"
-              className={`absolute top-full left-0 mt-1 whitespace-nowrap text-foreground text-sm md:text-lg tracking-[0.1em] font-light transition-all duration-200 ${
-                showSwitch
-                  ? "opacity-60 translate-y-0 pointer-events-auto"
-                  : "opacity-0 -translate-y-1 pointer-events-none"
-              }`}
-              onMouseEnter={(e) => { e.currentTarget.style.opacity = "1"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.opacity = "0.6"; }}
-            >
-              -music
-            </Link>
           </div>
         </div>
         <span className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light uppercase opacity-60">
