@@ -12,7 +12,7 @@ const About = () => {
         <h1 className="text-2xl md:text-4xl tracking-[0.15em] uppercase mb-10">
           Avlanche Studio
         </h1>
-        <address className="not-italic space-y-1 text-sm md:text-base text-foreground/50 leading-relaxed">
+        <address className="not-italic space-y-1 text-base md:text-lg text-foreground/60 leading-relaxed">
           <p>44 rue Jules Vanzuppe</p>
           <p>94200 Ivry-sur-Seine</p>
         </address>
