@@ -118,23 +118,25 @@ const Artistes = () => {
           </div>
         </div>
 
-        {/* Photos de presse */}
+        {/* Photos de presse — horizontal scroll */}
         {activeArtist.photos.length > 0 && (
-          <section className="mb-20" aria-label="Photos de presse">
-            <h3 className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground/30 mb-8">
+          <section className="mb-20 -mx-6 md:-mx-10" aria-label="Photos de presse">
+            <h3 className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground/30 mb-6 px-6 md:px-10">
               Photos de presse
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            <div className="flex gap-3 md:gap-4 overflow-x-auto px-6 md:px-10 pb-4 scrollbar-hide snap-x snap-mandatory">
               {activeArtist.photos.map((photo, i) => (
-                <div key={i} className="overflow-hidden rounded-xl">
+                <div key={i} className="shrink-0 w-[70vw] sm:w-[45vw] md:w-[35vw] lg:w-[28vw] overflow-hidden rounded-xl snap-start">
                   <img
                     src={photo}
                     alt={`${activeArtist.name} photo de presse ${i + 1}`}
                     loading="lazy"
-                    className="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-500"
+                    className="w-full aspect-[3/4] object-cover hover:scale-[1.03] transition-transform duration-700"
                   />
                 </div>
               ))}
+              {/* Spacer for last photo padding */}
+              <div className="shrink-0 w-1" />
             </div>
           </section>
         )}
