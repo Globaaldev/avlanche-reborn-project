@@ -28,7 +28,7 @@ const Index = () => {
       </div>
 
       {/* Bottom Navigation */}
-      <nav className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-6 py-5 md:px-10 md:py-8">
+      <nav className="absolute bottom-0 left-0 right-0 flex items-center justify-center px-6 py-5 md:px-10 md:py-8">
         <div
           className="relative"
           onMouseEnter={handleEnter}
@@ -41,7 +41,7 @@ const Index = () => {
             ARTISTES
           </a>
           <div
-            className={`absolute bottom-full left-0 mb-3 flex flex-col gap-1 transition-all duration-200 ${
+            className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 flex flex-col items-center gap-1 transition-all duration-200 ${
               showArtistes ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"
             }`}
           >
@@ -56,13 +56,6 @@ const Index = () => {
             ))}
           </div>
         </div>
-
-        <a
-          href="/about"
-          className="text-foreground text-xs md:text-sm tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase"
-        >
-          ABOUT
-        </a>
       </nav>
     </div>
   );
