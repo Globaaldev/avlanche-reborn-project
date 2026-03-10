@@ -8,8 +8,8 @@ import sherifflazoneProfile from "@/assets/sherifflazone-profile.png";
 const ARTISTS = [
   {
     name: "Sherifflazone",
-    slug: "sherifflazone",
     linktree: "https://linktr.ee/sherifflazone",
+    profileImage: sherifflazoneProfile,
     clips: [
       { title: "G-SHOCK", url: "https://www.youtube.com/watch?v=8av0S63V2SQ" },
       { title: "JUMPIN JACK", url: "https://www.youtube.com/watch?v=ii65vUN6y3A" },
