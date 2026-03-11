@@ -127,7 +127,7 @@ const Artistes = () => {
         </div>
 
         {/* Photos de presse — horizontal scroll */}
-        {activeArtist.photos.length > 0 && (
+        {activeArtist.photos.length > 0 ? (
           <section className="mb-20" aria-label="Photos de presse">
             <h3 className="text-xs md:text-sm tracking-[0.3em] uppercase text-foreground/40 mb-6">
               Photos de presse
@@ -149,7 +149,13 @@ const Artistes = () => {
               <div className="absolute top-0 right-0 bottom-4 w-20 md:w-32 pointer-events-none bg-gradient-to-l from-background to-transparent" />
             </div>
           </section>
-        )}
+        ) : activeArtist.clips.length === 0 ? (
+          <section className="mb-20">
+            <p className="text-foreground/30 text-sm md:text-base tracking-[0.2em] uppercase italic">
+              Coming soon…
+            </p>
+          </section>
+        ) : null}
 
         {/* Clips */}
         {activeArtist.clips.length > 0 && (
