@@ -17,6 +17,7 @@ import magieProfile from "@/assets/magie-profile.png";
 import magiePress1 from "@/assets/magie-press-1.jpg";
 import magiePress2 from "@/assets/magie-press-2.png";
 import magiePress3 from "@/assets/magie-press-3.png";
+import marguierProfile from "@/assets/marguier-profile-square.png";
 
 const ARTISTS = [
   {
@@ -39,7 +40,7 @@ const ARTISTS = [
     name: "Marguier",
     slug: "marguier",
     linktree: "https://linktr.ee/marguier",
-    profileImage: null as string | null,
+    profileImage: marguierProfile,
     clips: [] as { title: string; url: string }[],
     photos: [] as string[],
   },
@@ -126,7 +127,7 @@ const Artistes = () => {
         </div>
 
         {/* Photos de presse — horizontal scroll */}
-        {activeArtist.photos.length > 0 && (
+        {activeArtist.photos.length > 0 ? (
           <section className="mb-20" aria-label="Photos de presse">
             <h3 className="text-xs md:text-sm tracking-[0.3em] uppercase text-foreground/40 mb-6">
               Photos de presse
@@ -148,7 +149,13 @@ const Artistes = () => {
               <div className="absolute top-0 right-0 bottom-4 w-20 md:w-32 pointer-events-none bg-gradient-to-l from-background to-transparent" />
             </div>
           </section>
-        )}
+        ) : activeArtist.clips.length === 0 ? (
+          <section className="mb-20">
+            <p className="text-foreground/30 text-sm md:text-base tracking-[0.2em] uppercase italic">
+              Coming soon…
+            </p>
+          </section>
+        ) : null}
 
         {/* Clips */}
         {activeArtist.clips.length > 0 && (
