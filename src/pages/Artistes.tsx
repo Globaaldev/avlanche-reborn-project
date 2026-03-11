@@ -137,7 +137,10 @@ const Artistes = () => {
               </div>
             )}
             <div>
-              <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl lg:text-7xl tracking-[0.08em] uppercase font-extralight mb-2 sm:mb-3">
+              <h1
+                className="text-foreground text-3xl sm:text-4xl md:text-6xl lg:text-8xl tracking-[-0.02em] uppercase font-bold mb-2 sm:mb-3"
+                style={{ fontFamily: 'var(--display-font)' }}
+              >
                 {activeArtist.name}
               </h1>
               <a
