@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -36,6 +36,7 @@
     --sidebar-ring: 0 0% 5%;
 
     --nav-font: 'Darker Grotesque', sans-serif;
+    --display-font: 'Syne', sans-serif;
 
     --studio-accent: 35 40% 40%;
   }
