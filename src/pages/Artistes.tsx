@@ -47,9 +47,11 @@ const ARTISTS = [
     name: "Magie!",
     slug: "magie",
     linktree: "https://linktr.ee/magie",
-    profileImage: null as string | null,
-    clips: [] as { title: string; url: string }[],
-    photos: [] as string[],
+    profileImage: magieProfile,
+    clips: [
+      { title: "MAGIE! - Clip", url: "https://www.youtube.com/watch?v=sYWvDOjUK9w" },
+    ],
+    photos: [magiePress1, magiePress2, magiePress3],
   },
 ];
 
