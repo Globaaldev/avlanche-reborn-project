@@ -40,7 +40,7 @@ const ARTISTS = [
     name: "Marguier",
     slug: "marguier",
     linktree: "https://linktr.ee/marguier",
-    profileImage: null as string | null,
+    profileImage: marguierProfile,
     clips: [] as { title: string; url: string }[],
     photos: [] as string[],
   },
