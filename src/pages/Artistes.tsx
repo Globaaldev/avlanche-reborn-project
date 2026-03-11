@@ -13,6 +13,10 @@ import sheriffPress6 from "@/assets/sheriff-press-6.jpg";
 import sheriffPress7 from "@/assets/sheriff-press-7.jpeg";
 import sheriffPress8 from "@/assets/sheriff-press-8.jpeg";
 import sheriffPress9 from "@/assets/sheriff-press-9.jpg";
+import magieProfile from "@/assets/magie-profile.png";
+import magiePress1 from "@/assets/magie-press-1.jpg";
+import magiePress2 from "@/assets/magie-press-2.png";
+import magiePress3 from "@/assets/magie-press-3.png";
 
 const ARTISTS = [
   {
