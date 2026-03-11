@@ -98,7 +98,7 @@ const Artistes = () => {
 
       {/* Active Artist Content */}
       <main className="flex-1 px-6 md:px-10 py-10 md:py-16 pb-32">
-        <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-10 mb-12 md:mb-16 max-w-5xl">
+        <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-10 mb-12 md:mb-16 items-start">
           {/* Profile image */}
           {activeArtist.profileImage && (
             <div className="w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden shrink-0">
