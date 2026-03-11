@@ -149,13 +149,13 @@ const Artistes = () => {
               <div className="absolute top-0 right-0 bottom-4 w-20 md:w-32 pointer-events-none bg-gradient-to-l from-background to-transparent" />
             </div>
           </section>
-        ) : activeArtist.clips.length === 0 ? (
-          <section className="mb-20">
-            <p className="text-foreground/30 text-sm md:text-base tracking-[0.2em] uppercase italic">
+        ) : (
+          <section className="mb-20 py-10">
+            <p className="text-foreground/40 text-base md:text-lg tracking-[0.15em] italic">
               Coming soon…
             </p>
           </section>
-        ) : null}
+        )}
 
         {/* Clips */}
         {activeArtist.clips.length > 0 && (
