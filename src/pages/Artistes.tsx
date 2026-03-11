@@ -1,8 +1,10 @@
 import { ExternalLink } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import VideoGrid from "@/components/VideoGrid";
 import SEOHead from "@/components/SEOHead";
+import ScrollReveal from "@/components/ScrollReveal";
 import sherifflazoneProfile from "@/assets/sherifflazone-profile.png";
 import sheriffPress1 from "@/assets/sheriff-press-1.jpg";
 import sheriffPress2 from "@/assets/sheriff-press-2.jpg";
@@ -56,6 +58,12 @@ const ARTISTS = [
   },
 ];
 
+const contentVariants = {
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -8 },
+};
+
 const Artistes = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeTab = searchParams.get("tab") || ARTISTS[0].slug;
@@ -68,10 +76,16 @@ const Artistes = () => {
         title={`${activeArtist.name} — Avlanche Artistes`}
         description={`Découvrez ${activeArtist.name} sur Avlanche. Clips, photos et liens.`}
         path="/artistes"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "MusicGroup",
+          "name": activeArtist.name,
+          "url": `https://avlanche.fr/artistes?tab=${activeArtist.slug}`,
+        }}
       />
       {/* Artist Tabs — sticky */}
       <div className="sticky top-0 z-10 bg-background">
-        <nav className="flex gap-6 sm:gap-8 md:gap-12 px-6 md:px-10 pt-2 pb-0 overflow-x-auto" aria-label="Artistes">
+        <nav className="flex gap-6 sm:gap-8 md:gap-12 px-6 md:px-10 pt-2 pb-0 overflow-x-auto scrollbar-hide" aria-label="Artistes">
           {ARTISTS.map((artist) => (
             <button
               key={artist.slug}
@@ -79,7 +93,7 @@ const Artistes = () => {
                 setSearchParams({ tab: artist.slug });
                 setPlayingId(null);
               }}
-              className={`text-sm md:text-base tracking-[0.2em] uppercase font-light transition-all duration-300 pb-3 relative whitespace-nowrap ${
+              className={`text-xs sm:text-sm md:text-base tracking-[0.2em] uppercase font-light transition-all duration-300 pb-3 relative whitespace-nowrap ${
                 activeTab === artist.slug
                   ? "text-foreground"
                   : "text-foreground/30 hover:text-foreground/60"
@@ -88,98 +102,114 @@ const Artistes = () => {
             >
               {artist.name}
               {activeTab === artist.slug && (
-                <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-foreground" />
+                <motion.span
+                  layoutId="artist-tab-indicator"
+                  className="absolute bottom-0 left-0 right-0 h-[1px] bg-foreground"
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
               )}
             </button>
           ))}
         </nav>
-        {/* Thin separator */}
         <div className="mx-6 md:mx-10 h-[1px] bg-foreground/10" role="separator" />
       </div>
 
       {/* Active Artist Content */}
-      <main className="flex-1 px-6 md:px-10 py-10 md:py-16 pb-32">
-        <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-10 mb-12 md:mb-16 items-start">
-          {/* Profile image */}
-          {activeArtist.profileImage && (
-            <div className="w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden shrink-0">
-              <img
-                src={activeArtist.profileImage}
-                alt={activeArtist.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          )}
-          <div>
-            <h1 className="text-foreground text-3xl sm:text-4xl md:text-7xl tracking-[0.08em] uppercase font-extralight mb-3">
-              {activeArtist.name}
-            </h1>
-            <a
-              href={activeArtist.linktree}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-foreground/50 text-sm md:text-base tracking-[0.15em] uppercase hover:text-foreground/70 transition-colors group"
-            >
-              <span>Linktree</span>
-              <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
-            </a>
-          </div>
-        </div>
-
-        {/* Photos de presse — horizontal scroll */}
-        {activeArtist.photos.length > 0 ? (
-          <section className="mb-20" aria-label="Photos de presse">
-            <h3 className="text-xs md:text-sm tracking-[0.3em] uppercase text-foreground/40 mb-6">
-              Photos de presse
-            </h3>
-            <div className="relative -mr-6 md:-mr-10">
-              <div className="flex gap-3 md:gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory pr-6 md:pr-10">
-                {activeArtist.photos.map((photo, i) => (
-                  <div key={i} className="shrink-0 h-[40vh] md:h-[38vh] overflow-hidden rounded-xl snap-start">
-                    <img
-                      src={photo}
-                      alt={`${activeArtist.name} photo de presse ${i + 1}`}
-                      loading="lazy"
-                      className="h-full w-auto object-cover hover:scale-[1.03] transition-transform duration-700"
-                    />
-                  </div>
-                ))}
+      <AnimatePresence mode="wait">
+        <motion.main
+          key={activeArtist.slug}
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+          className="flex-1 px-6 md:px-10 py-8 sm:py-10 md:py-16 pb-32"
+        >
+          <div className="flex flex-col md:flex-row md:items-end gap-4 sm:gap-6 md:gap-10 mb-10 sm:mb-12 md:mb-16 items-start">
+            {/* Profile image */}
+            {activeArtist.profileImage && (
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-full overflow-hidden shrink-0">
+                <img
+                  src={activeArtist.profileImage}
+                  alt={`Photo de profil de ${activeArtist.name}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              {/* Fade hint on right edge */}
-              <div className="absolute top-0 right-0 bottom-4 w-20 md:w-32 pointer-events-none bg-gradient-to-l from-background to-transparent" />
+            )}
+            <div>
+              <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl lg:text-7xl tracking-[0.08em] uppercase font-extralight mb-2 sm:mb-3">
+                {activeArtist.name}
+              </h1>
+              <a
+                href={activeArtist.linktree}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-foreground/50 text-xs sm:text-sm md:text-base tracking-[0.15em] uppercase hover:text-foreground/70 transition-colors group"
+              >
+                <span>Linktree</span>
+                <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
+              </a>
             </div>
-          </section>
-        ) : (
-          <section className="mb-20 py-10">
-            <p className="text-foreground/40 text-base md:text-lg tracking-[0.15em] italic">
-              Coming soon…
-            </p>
-          </section>
-        )}
+          </div>
 
-        {/* Clips */}
-        {activeArtist.clips.length > 0 && (
-          <section aria-label="Clips vidéo">
-            <h3 className="text-xs md:text-sm tracking-[0.3em] uppercase text-foreground/40 mb-8">
-              Clips
-            </h3>
-            <VideoGrid
-              clips={activeArtist.clips}
-              playingId={playingId}
-              onPlay={(id) => setPlayingId(id)}
-              onStop={() => setPlayingId(null)}
-            />
-          </section>
-        )}
-      </main>
+          {/* Photos de presse — horizontal scroll */}
+          {activeArtist.photos.length > 0 ? (
+            <ScrollReveal>
+              <section className="mb-16 sm:mb-20" aria-label="Photos de presse">
+                <h3 className="text-xs md:text-sm tracking-[0.3em] uppercase text-foreground/40 mb-4 sm:mb-6">
+                  Photos de presse
+                </h3>
+                <div className="relative -mr-6 md:-mr-10">
+                  <div className="flex gap-3 md:gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory pr-6 md:pr-10">
+                    {activeArtist.photos.map((photo, i) => (
+                      <div key={i} className="shrink-0 h-[35vh] sm:h-[40vh] md:h-[38vh] overflow-hidden rounded-xl snap-start">
+                        <img
+                          src={photo}
+                          alt={`${activeArtist.name} photo de presse ${i + 1}`}
+                          loading="lazy"
+                          className="h-full w-auto object-cover hover:scale-[1.03] transition-transform duration-700"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <div className="absolute top-0 right-0 bottom-4 w-16 sm:w-20 md:w-32 pointer-events-none bg-gradient-to-l from-background to-transparent" />
+                </div>
+              </section>
+            </ScrollReveal>
+          ) : (
+            <section className="mb-16 sm:mb-20 py-8 sm:py-10">
+              <p className="text-foreground/40 text-sm sm:text-base md:text-lg tracking-[0.15em] italic">
+                Coming soon…
+              </p>
+            </section>
+          )}
+
+          {/* Clips */}
+          {activeArtist.clips.length > 0 && (
+            <ScrollReveal>
+              <section aria-label="Clips vidéo">
+                <h3 className="text-xs md:text-sm tracking-[0.3em] uppercase text-foreground/40 mb-6 sm:mb-8">
+                  Clips
+                </h3>
+                <VideoGrid
+                  clips={activeArtist.clips}
+                  playingId={playingId}
+                  onPlay={(id) => setPlayingId(id)}
+                  onStop={() => setPlayingId(null)}
+                />
+              </section>
+            </ScrollReveal>
+          )}
+        </motion.main>
+      </AnimatePresence>
 
       {/* Bottom Navigation */}
       <nav
-        className="sticky bottom-0 z-20 flex items-center justify-center px-6 py-5 md:px-10 md:py-6"
+        className="sticky bottom-0 z-20 flex items-center justify-center px-6 py-4 sm:py-5 md:px-10 md:py-6"
         style={{ background: "linear-gradient(to top, hsl(var(--background)) 60%, transparent)" }}
         aria-label="Navigation principale"
       >
-        <a href="/artistes" className="text-foreground text-sm md:text-base tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
+        <a href="/artistes" className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
       </nav>
     </div>
   );
