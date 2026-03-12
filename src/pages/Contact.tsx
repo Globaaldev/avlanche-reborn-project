@@ -1,12 +1,13 @@
 import SEOHead from "@/components/SEOHead";
 import AnimatedSection from "@/components/AnimatedSection";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const Contact = () => {
   return (
-    <div className="flex-1 flex items-center justify-center px-6">
+    <div className="flex-1 flex items-center justify-center px-6 py-10">
       <SEOHead
-        title="Contact — Avlanche"
-        description="Contactez Avlanche Studio à Ivry-sur-Seine. Email: studio@avlanche.fr, Tél: 01 55 53 31 36."
+        title="Contact — Avlanche Music & Studio"
+        description="Contactez Avlanche Music (label, publishing, production, presse) et Avlanche Studio (enregistrement, mixage, mastering) à Ivry-sur-Seine."
         path="/contact"
         jsonLd={{
           "@context": "https://schema.org",
@@ -16,27 +17,73 @@ const Contact = () => {
         }}
       />
       <AnimatedSection>
-        <div className="text-foreground font-light tracking-wide space-y-6 text-center">
+        <div className="text-foreground font-light tracking-wide space-y-12 text-center max-w-lg mx-auto">
           <h1 className="text-2xl md:text-4xl tracking-[0.15em] uppercase mb-10">
             Contact
           </h1>
-          <address className="not-italic space-y-1 text-base md:text-lg text-foreground/60 leading-relaxed">
-            <p className="text-foreground">Avlanche Studio</p>
-            <p>44 rue Jules Vanzuppe</p>
-            <p>94200 Ivry-sur-Seine</p>
-          </address>
-          <div className="space-y-1 text-base md:text-lg">
-            <p>
-              <a href="mailto:studio@avlanche.fr" className="text-foreground hover:opacity-70 transition-opacity">
-                studio@avlanche.fr
-              </a>
-            </p>
-            <p>
-              <a href="tel:+33155533136" className="text-foreground hover:opacity-70 transition-opacity underline">
-                01 55 53 31 36
-              </a>
-            </p>
-          </div>
+
+          {/* AVLANCHE MUSIC */}
+          <ScrollReveal delay={0.1}>
+            <div className="space-y-4">
+              <h2 className="text-foreground text-base md:text-lg tracking-[0.2em] uppercase font-normal">
+                Avlanche Music
+              </h2>
+              <p className="text-foreground/60 text-sm md:text-base">
+                <a href="tel:+33142509383" className="text-foreground hover:opacity-70 transition-opacity underline">
+                  01 42 50 93 83
+                </a>
+              </p>
+              <div className="space-y-2 text-sm md:text-base text-foreground/60">
+                <p>
+                  <span className="text-foreground/40 tracking-[0.1em] uppercase text-xs">Publishing</span>
+                  <br />
+                  Dhelat Mabiala —{" "}
+                  <a href="mailto:dhelat@avlanche.fr" className="text-foreground hover:opacity-70 transition-opacity">
+                    dhelat@avlanche.fr
+                  </a>
+                </p>
+                <p>
+                  <span className="text-foreground/40 tracking-[0.1em] uppercase text-xs">Production</span>
+                  <br />
+                  Valentin Rey —{" "}
+                  <a href="mailto:valentin@avlanche.fr" className="text-foreground hover:opacity-70 transition-opacity">
+                    valentin@avlanche.fr
+                  </a>
+                </p>
+                <p>
+                  <span className="text-foreground/40 tracking-[0.1em] uppercase text-xs">Presse</span>
+                  <br />
+                  <a href="mailto:presse@avlanche.fr" className="text-foreground hover:opacity-70 transition-opacity">
+                    presse@avlanche.fr
+                  </a>
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* AVLANCHE STUDIO */}
+          <ScrollReveal delay={0.2}>
+            <div className="space-y-4 pt-6 border-t border-foreground/10">
+              <h2 className="text-foreground text-base md:text-lg tracking-[0.2em] uppercase font-normal">
+                Avlanche Studio
+              </h2>
+              <p className="text-foreground/60 text-sm md:text-base">
+                <a href="tel:+33155533136" className="text-foreground hover:opacity-70 transition-opacity underline">
+                  01 55 53 31 36
+                </a>
+              </p>
+              <p className="text-sm md:text-base text-foreground/60">
+                Marie-Soleil Fabrègues —{" "}
+                <a href="mailto:marie-soleil@avlanche.fr" className="text-foreground hover:opacity-70 transition-opacity">
+                  marie-soleil@avlanche.fr
+                </a>
+              </p>
+              <address className="not-italic space-y-1 text-sm md:text-base text-foreground/40 leading-relaxed pt-2">
+                <p>44 rue Jules Vanzuppe</p>
+                <p>94200 Ivry-sur-Seine</p>
+              </address>
+            </div>
+          </ScrollReveal>
         </div>
       </AnimatedSection>
     </div>
