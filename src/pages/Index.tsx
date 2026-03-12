@@ -4,7 +4,7 @@ import SEOHead from "@/components/SEOHead";
 
 const ARTISTS = [
   { name: "Sherifflazone", slug: "sherifflazone" },
-  { name: "Marguier", slug: "marguier" },
+  { name: "Louis Marguier", slug: "marguier" },
   { name: "Magie!", slug: "magie" },
 ];
 
