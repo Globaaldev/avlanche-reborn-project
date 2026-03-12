@@ -23,15 +23,15 @@ const Index = () => {
   return (
     <div className="relative flex-1 flex items-center justify-center">
       <SEOHead
-        title="Avlanche — Label, Édition & Studio"
-        description="Avlanche est un label de musique, une maison d'édition et un studio d'enregistrement, de mixage et de mastering à Ivry-sur-Seine."
+        title="Avlanche — Label, Publishing & Studio d'enregistrement"
+        description="Avlanche est un label de musique indépendant, une maison d'édition musicale (publishing) et un studio d'enregistrement professionnel (Rec / Mix / Master) basé à Ivry-sur-Seine, près de Paris."
         path="/"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "Avlanche",
           "url": "https://avlanche.fr",
-          "description": "Label de musique, maison d'édition et studio d'enregistrement à Ivry-sur-Seine.",
+          "description": "Label de musique indépendant, maison d'édition musicale et studio d'enregistrement professionnel à Ivry-sur-Seine.",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "44 rue Jules Vanzuppe",
@@ -39,8 +39,11 @@ const Index = () => {
             "postalCode": "94200",
             "addressCountry": "FR",
           },
-          "telephone": "+33155533136",
+          "telephone": "+33142509383",
           "email": "studio@avlanche.fr",
+          "sameAs": [
+            "https://www.instagram.com/avlanche.studio/",
+          ],
         }}
       />
       {/* Central text */}
@@ -50,11 +53,17 @@ const Index = () => {
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
         className="text-center max-w-2xl px-6"
       >
-        <h1 className="sr-only">Avlanche — Label, Édition & Studio</h1>
+        <h1 className="sr-only">Avlanche — Label, Publishing & Studio d'enregistrement</h1>
         <p className="text-foreground/60 text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide">
-          Avlanche est un label de musique, une maison d'édition et un studio d'enregistrement, de mixage et de mastering.
+          Label / Publishing / Studio d'enregistrement
+          <span className="block text-foreground/40 text-base sm:text-lg md:text-xl mt-1">(Rec / Mix / Master)</span>
         </p>
       </motion.div>
+
+      {/* SEO hidden text */}
+      <p className="sr-only">
+        Avlanche est un label de musique indépendant et une maison d'édition musicale basé à Ivry-sur-Seine, dans le Val-de-Marne, à proximité de Paris. Le studio d'enregistrement Avlanche propose des services professionnels d'enregistrement, de mixage et de mastering pour les artistes rap, hip-hop, R&B et pop. Découvrez nos artistes Sherifflazone, Marguier et Magie!.
+      </p>
 
       {/* Bottom Navigation */}
       <nav

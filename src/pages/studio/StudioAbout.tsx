@@ -33,7 +33,7 @@ const TRUSTED_BY = "LaFève, Niska, Meryl, BbTrickz, Theodora, Skuna, LaMano, Mo
 
 const EquipmentSection = ({ title, items }: { title: string; items: string[] }) => (
   <div>
-    <h4 className="text-foreground/50 text-sm md:text-base tracking-[0.3em] uppercase mb-4 md:mb-6 font-normal">
+    <h4 className="text-foreground/50 text-sm md:text-base tracking-[0.15em] uppercase mb-4 md:mb-6 font-normal">
       {title}
     </h4>
     <ul className="space-y-0">
@@ -53,15 +53,15 @@ const StudioAbout = () => {
   return (
     <div className="px-6 md:px-16 lg:px-24 py-10 md:py-16 space-y-24 md:space-y-32 max-w-6xl mx-auto">
       <SEOHead
-        title="Le Studio — Avlanche Studio"
-        description="Découvrez Avlanche Studio : équipement haut de gamme, cabine d'enregistrement, salon et espace de création à Ivry-sur-Seine."
+        title="Le Studio — Avlanche Studio d'enregistrement"
+        description="Avlanche Studio : studio d'enregistrement professionnel à Ivry-sur-Seine. Cabine acoustique, régie équipée Neve, Neumann U87, TubeTech. Enregistrement, mixage et mastering hip-hop, rap, R&B."
         path="/studio/about"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "name": "Avlanche Studio",
           "url": "https://avlanche.fr/studio/about",
-          "description": "Studio d'enregistrement haut de gamme à Ivry-sur-Seine.",
+          "description": "Studio d'enregistrement professionnel à Ivry-sur-Seine, spécialisé en rap, hip-hop et R&B. Équipement haut de gamme Neve, Neumann, TubeTech.",
           "image": studioConsole,
           "address": {
             "@type": "PostalAddress",
@@ -76,11 +76,11 @@ const StudioAbout = () => {
       <AnimatedSection>
         <section className="space-y-10">
           <div className="space-y-4 max-w-2xl">
-            <h1 className="text-foreground text-3xl sm:text-4xl md:text-5xl tracking-[0.15em] font-normal uppercase">
+            <h1 className="text-foreground text-3xl sm:text-4xl md:text-5xl tracking-[0.06em] font-normal uppercase">
               Le Studio
             </h1>
             <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-normal leading-relaxed tracking-wide">
-              Un studio moderne et chaleureux, conçu pour créer dans les meilleures conditions.
+              Un studio d'enregistrement moderne et chaleureux, conçu pour créer dans les meilleures conditions. Situé à Ivry-sur-Seine, Avlanche Studio offre un environnement professionnel idéal pour l'enregistrement, le mixage et le mastering.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ const StudioAbout = () => {
             <div className="sm:col-span-7 overflow-hidden rounded-xl">
               <img
                 src={studioConsole}
-                alt="Console d'enregistrement Avlanche Studio"
+                alt="Console d'enregistrement professionnelle Avlanche Studio Ivry-sur-Seine"
                 loading="eager"
                 className="w-full h-48 sm:h-72 md:h-[22rem] object-cover rounded-xl hover:scale-[1.02] transition-transform duration-1000"
               />
@@ -98,7 +98,7 @@ const StudioAbout = () => {
               <div className="overflow-hidden rounded-xl flex-1">
                 <img
                   src={studioSalon}
-                  alt="Espace détente du studio"
+                  alt="Espace détente du studio d'enregistrement"
                   loading="lazy"
                   className="w-full h-28 sm:h-full object-cover hover:scale-[1.02] transition-transform duration-1000"
                 />
@@ -106,7 +106,7 @@ const StudioAbout = () => {
               <div className="overflow-hidden rounded-xl flex-1">
                 <img
                   src={studioCabine}
-                  alt="Cabine d'enregistrement"
+                  alt="Cabine d'enregistrement acoustique Avlanche Studio"
                   loading="lazy"
                   className="w-full h-28 sm:h-full object-cover hover:scale-[1.02] transition-transform duration-1000"
                 />
@@ -116,17 +116,42 @@ const StudioAbout = () => {
         </section>
       </AnimatedSection>
 
+      {/* La Cabine */}
+      <ScrollReveal>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="overflow-hidden rounded-xl">
+            <img
+              src={studioCabine}
+              alt="Cabine d'enregistrement insonorisée Avlanche Studio"
+              loading="lazy"
+              className="w-full h-64 sm:h-80 md:h-[28rem] object-cover hover:scale-[1.02] transition-transform duration-1000"
+            />
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-normal uppercase">
+              La Cabine
+            </h2>
+            <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-normal leading-relaxed tracking-wide">
+              Notre cabine d'enregistrement offre une isolation acoustique optimale pour des prises de voix et d'instruments d'une qualité irréprochable. Traitée avec des matériaux professionnels, elle garantit un son pur et précis, sans coloration ni résonance indésirable.
+            </p>
+            <p className="text-foreground/50 text-sm sm:text-base font-normal leading-relaxed tracking-wide">
+              Équipée d'un Neumann U87 et d'un préampli Neve 1073SPX, la chaîne d'enregistrement assure un rendu chaleureux et détaillé, parfait pour le rap, le chant, les voix off et les instruments acoustiques.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* CTA */}
       <ScrollReveal>
         <section className="flex flex-col items-center text-center space-y-6">
-          <p className="text-foreground text-xl md:text-3xl tracking-[0.1em] font-normal">
+          <p className="text-foreground text-xl md:text-3xl tracking-[0.06em] font-normal">
             Réservez votre session
           </p>
           <a
             href="https://avlanchestudio.simplybook.me"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/60 text-base tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
+            className="text-foreground/60 text-base tracking-[0.15em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
           >
             Réserver →
           </a>
@@ -136,7 +161,7 @@ const StudioAbout = () => {
       {/* Fiche technique */}
       <ScrollReveal>
         <section>
-          <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.15em] font-normal uppercase mb-12 md:mb-16">
+          <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-normal uppercase mb-12 md:mb-16">
             Fiche technique
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-x-20 md:gap-y-16">
@@ -151,7 +176,7 @@ const StudioAbout = () => {
       {/* Confiance */}
       <ScrollReveal>
         <section>
-          <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.15em] font-normal uppercase mb-8">
+          <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-normal uppercase mb-8">
             Ils nous ont fait confiance
           </h2>
           <p className="text-foreground/60 text-base sm:text-lg md:text-xl font-normal leading-relaxed tracking-wide max-w-3xl">
@@ -167,7 +192,7 @@ const StudioAbout = () => {
             href="https://open.spotify.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/70 text-base md:text-lg tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/30 hover:border-foreground/60"
+            className="text-foreground/70 text-base md:text-lg tracking-[0.15em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/30 hover:border-foreground/60"
           >
             Rec / Mix by Avlanche
           </a>

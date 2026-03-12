@@ -6,8 +6,8 @@ const StudioServices = () => {
   return (
     <div className="px-6 md:px-16 lg:px-24 py-10 md:py-16 space-y-20 md:space-y-28 max-w-6xl mx-auto">
       <SEOHead
-        title="Services & Tarifs — Avlanche Studio"
-        description="Tarifs d'enregistrement, mixage et mastering chez Avlanche Studio. Packs Single et EP disponibles."
+        title="Tarifs Enregistrement, Mixage & Mastering — Avlanche Studio"
+        description="Tarifs studio d'enregistrement Avlanche : enregistrement dès 45€/h, mix 350€, master 70€. Packs Single et EP disponibles. Studio professionnel à Ivry-sur-Seine."
         path="/studio/services"
         jsonLd={{
           "@context": "https://schema.org",
@@ -18,13 +18,13 @@ const StudioServices = () => {
             "name": "Avlanche Studio",
           },
           "url": "https://avlanche.fr/studio/services",
-          "description": "Enregistrement, mixage et mastering. Packs Single et EP.",
+          "description": "Enregistrement, mixage et mastering professionnels. Packs Single et EP à Ivry-sur-Seine.",
         }}
       />
       {/* Header */}
       <AnimatedSection>
         <div>
-          <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.15em] font-normal uppercase">
+          <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.06em] font-normal uppercase">
             Services & Tarifs
           </h1>
         </div>
@@ -35,7 +35,7 @@ const StudioServices = () => {
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           {/* Enregistrement */}
           <div>
-            <h3 className="text-foreground text-lg sm:text-xl md:text-2xl tracking-[0.1em] font-normal mb-6">
+            <h3 className="text-foreground text-lg sm:text-xl md:text-2xl tracking-[0.06em] font-normal mb-6">
               Enregistrement
             </h3>
             <div className="space-y-0">
@@ -57,7 +57,7 @@ const StudioServices = () => {
 
           {/* Mix */}
           <div>
-            <h3 className="text-foreground text-lg sm:text-xl md:text-2xl tracking-[0.1em] font-normal mb-6">
+            <h3 className="text-foreground text-lg sm:text-xl md:text-2xl tracking-[0.06em] font-normal mb-6">
               Mix
             </h3>
             <div className="flex justify-between text-foreground text-sm sm:text-base md:text-lg font-normal tracking-wide py-3 border-b border-foreground/[0.08]">
@@ -68,7 +68,7 @@ const StudioServices = () => {
 
           {/* Master */}
           <div>
-            <h3 className="text-foreground text-lg sm:text-xl md:text-2xl tracking-[0.1em] font-normal mb-6">
+            <h3 className="text-foreground text-lg sm:text-xl md:text-2xl tracking-[0.06em] font-normal mb-6">
               Master
             </h3>
             <div className="flex justify-between text-foreground text-sm sm:text-base md:text-lg font-normal tracking-wide py-3 border-b border-foreground/[0.08]">
@@ -82,7 +82,7 @@ const StudioServices = () => {
       {/* Packs */}
       <ScrollReveal>
         <section>
-          <h2 className="text-foreground text-xl sm:text-2xl md:text-4xl tracking-[0.15em] font-normal uppercase mb-12 md:mb-16">
+          <h2 className="text-foreground text-xl sm:text-2xl md:text-4xl tracking-[0.06em] font-normal uppercase mb-12 md:mb-16">
             Packs
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
@@ -109,7 +109,7 @@ const StudioServices = () => {
               },
             ].map((pack) => (
               <div key={pack.name} className="border border-foreground/[0.1] rounded-md p-4 sm:p-5 md:p-8 space-y-4 hover:border-foreground/25 transition-colors duration-300">
-                <h4 className="text-foreground text-sm sm:text-base md:text-lg tracking-[0.25em] uppercase font-normal">
+                <h4 className="text-foreground text-sm sm:text-base md:text-lg tracking-[0.15em] uppercase font-normal">
                   {pack.name}
                 </h4>
                 <div className="space-y-0">
@@ -139,7 +139,7 @@ const StudioServices = () => {
             href="https://avlanchestudio.simplybook.me"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/60 text-base tracking-[0.25em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
+            className="text-foreground/60 text-base tracking-[0.15em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/20 hover:border-foreground/60"
           >
             Réserver →
           </a>

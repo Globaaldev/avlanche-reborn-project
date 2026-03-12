@@ -7,17 +7,11 @@ import SEOHead from "@/components/SEOHead";
 import ScrollReveal from "@/components/ScrollReveal";
 import sherifflazoneProfile from "@/assets/sherifflazone-profile.png";
 import sheriffPress1 from "@/assets/sheriff-press-1.jpg";
-import sheriffPress2 from "@/assets/sheriff-press-2.jpg";
 import sheriffPress3 from "@/assets/sheriff-press-3.jpg";
-import sheriffPress4 from "@/assets/sheriff-press-4.jpg";
 import sheriffPress5 from "@/assets/sheriff-press-5.jpg";
-import sheriffPress6 from "@/assets/sheriff-press-6.jpg";
 import sheriffPress7 from "@/assets/sheriff-press-7.jpeg";
-import sheriffPress8 from "@/assets/sheriff-press-8.jpeg";
-import sheriffPress9 from "@/assets/sheriff-press-9.jpg";
 import magieProfile from "@/assets/magie-profile.png";
 import magiePress1 from "@/assets/magie-press-1.jpg";
-import magiePress2 from "@/assets/magie-press-2.png";
 import magiePress3 from "@/assets/magie-press-3.png";
 import marguierProfile from "@/assets/marguier-profile-square.png";
 
@@ -27,6 +21,7 @@ const ARTISTS = [
     slug: "sherifflazone",
     linktree: "https://linktr.ee/sherifflazone",
     profileImage: sherifflazoneProfile,
+    bio: "Originaire de la région parisienne, Sherifflazone s'impose comme l'une des voix les plus singulières de sa génération. Entre mélodies entêtantes et textes incisifs, il façonne un univers musical à la croisée du rap et de la pop urbaine. Signé chez Avlanche, il enchaîne les projets et les collaborations, affirmant un style reconnaissable entre mille.",
     clips: [
       { title: "G-SHOCK", url: "https://www.youtube.com/watch?v=8av0S63V2SQ" },
       { title: "JUMPIN JACK", url: "https://www.youtube.com/watch?v=ii65vUN6y3A" },
@@ -36,13 +31,14 @@ const ARTISTS = [
       { title: "FUTURAMA", url: "https://www.youtube.com/watch?v=XZYCpI5fs5k" },
       { title: "Dans ma bulle", url: "https://www.youtube.com/watch?v=Lhx2llMul6g" },
     ],
-    photos: [sheriffPress1, sheriffPress2, sheriffPress3, sheriffPress4, sheriffPress5, sheriffPress6, sheriffPress7, sheriffPress8, sheriffPress9],
+    photos: [sheriffPress1, sheriffPress3, sheriffPress5, sheriffPress7],
   },
   {
     name: "Marguier",
     slug: "marguier",
     linktree: "https://linktr.ee/marguier",
     profileImage: marguierProfile,
+    bio: "Marguier cultive un art de la nuance, entre productions ciselées et textes introspectifs. Artiste en développement chez Avlanche, il prépare ses premières sorties avec une exigence rare. Son univers, aussi intime que cinématographique, promet de marquer durablement le paysage musical français.",
     clips: [] as { title: string; url: string }[],
     photos: [] as string[],
   },
@@ -51,10 +47,11 @@ const ARTISTS = [
     slug: "magie",
     linktree: "https://linktr.ee/magie",
     profileImage: magieProfile,
+    bio: "Magie! incarne une énergie brute et une créativité débordante. Avec un sens aigu de la mélodie et des productions audacieuses, cet artiste Avlanche explore les frontières entre rap, électro et musique expérimentale. Chaque morceau est une invitation à plonger dans un univers sonore unique et envoûtant.",
     clips: [
       { title: "MAGIE! - Clip", url: "https://www.youtube.com/watch?v=sYWvDOjUK9w" },
     ],
-    photos: [magiePress1, magiePress2, magiePress3],
+    photos: [magiePress1, magiePress3],
   },
 ];
 
@@ -74,13 +71,14 @@ const Artistes = () => {
     <div className="relative flex-1 flex flex-col overflow-y-auto">
       <SEOHead
         title={`${activeArtist.name} — Avlanche Artistes`}
-        description={`Découvrez ${activeArtist.name} sur Avlanche. Clips, photos et liens.`}
+        description={`Découvrez ${activeArtist.name}, artiste du label Avlanche. Clips vidéo, photos et biographie. Label indépendant basé à Ivry-sur-Seine.`}
         path="/artistes"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "MusicGroup",
           "name": activeArtist.name,
           "url": `https://avlanche.fr/artistes?tab=${activeArtist.slug}`,
+          "description": activeArtist.bio,
         }}
       />
       {/* Artist Tabs — sticky */}
@@ -125,8 +123,8 @@ const Artistes = () => {
           transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           className="flex-1 px-6 md:px-10 py-8 sm:py-10 md:py-16 pb-32"
         >
+          {/* Header: Profile + Name */}
           <div className="flex flex-col md:flex-row md:items-end gap-4 sm:gap-6 md:gap-10 mb-10 sm:mb-12 md:mb-16 items-start">
-            {/* Profile image */}
             {activeArtist.profileImage && (
               <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-full overflow-hidden shrink-0">
                 <img
@@ -137,10 +135,7 @@ const Artistes = () => {
               </div>
             )}
             <div>
-              <h1
-                className="text-foreground text-3xl sm:text-4xl md:text-6xl lg:text-8xl tracking-[-0.02em] uppercase font-bold mb-2 sm:mb-3"
-                style={{ fontFamily: 'var(--display-font)' }}
-              >
+              <h1 className="text-foreground text-3xl sm:text-4xl md:text-6xl lg:text-8xl tracking-[-0.01em] uppercase font-black mb-2 sm:mb-3">
                 {activeArtist.name}
               </h1>
               <a
@@ -155,33 +150,41 @@ const Artistes = () => {
             </div>
           </div>
 
-          {/* Photos de presse — horizontal scroll */}
+          {/* Bio */}
+          <ScrollReveal>
+            <section className="mb-14 sm:mb-16 md:mb-20 max-w-2xl">
+              <p className="text-foreground/60 text-sm sm:text-base md:text-lg font-normal leading-relaxed tracking-wide">
+                {activeArtist.bio}
+              </p>
+            </section>
+          </ScrollReveal>
+
+          {/* Photos — visual mosaic, no title */}
           {activeArtist.photos.length > 0 ? (
             <ScrollReveal>
-              <section className="mb-16 sm:mb-20" aria-label="Photos de presse">
-                <h3 className="text-xs md:text-sm tracking-[0.3em] uppercase text-foreground/40 mb-4 sm:mb-6">
-                  Photos de presse
-                </h3>
-                <div className="relative -mr-6 md:-mr-10">
-                  <div className="flex gap-3 md:gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory pr-6 md:pr-10">
-                    {activeArtist.photos.map((photo, i) => (
-                      <div key={i} className="shrink-0 h-[35vh] sm:h-[40vh] md:h-[38vh] overflow-hidden rounded-xl snap-start">
-                        <img
-                          src={photo}
-                          alt={`${activeArtist.name} photo de presse ${i + 1}`}
-                          loading="lazy"
-                          className="h-full w-auto object-cover hover:scale-[1.03] transition-transform duration-700"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                  <div className="absolute top-0 right-0 bottom-4 w-16 sm:w-20 md:w-32 pointer-events-none bg-gradient-to-l from-background to-transparent" />
+              <section className="mb-16 sm:mb-20" aria-label="Photos">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+                  {activeArtist.photos.map((photo, i) => (
+                    <div
+                      key={i}
+                      className={`overflow-hidden rounded-xl ${
+                        i === 0 ? "col-span-2 aspect-[16/9]" : "aspect-[3/4]"
+                      }`}
+                    >
+                      <img
+                        src={photo}
+                        alt={`${activeArtist.name} — photo ${i + 1}`}
+                        loading="lazy"
+                        className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
+                      />
+                    </div>
+                  ))}
                 </div>
               </section>
             </ScrollReveal>
           ) : (
-            <section className="mb-16 sm:mb-20 py-8 sm:py-10">
-              <p className="text-foreground/40 text-sm sm:text-base md:text-lg tracking-[0.15em] italic">
+            <section className="mb-20 py-10">
+              <p className="text-foreground/40 text-base md:text-lg tracking-[0.15em] italic">
                 Coming soon…
               </p>
             </section>
