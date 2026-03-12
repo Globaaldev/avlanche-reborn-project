@@ -34,11 +34,11 @@ const ARTISTS = [
     photos: [sheriffPress1, sheriffPress3, sheriffPress5, sheriffPress7],
   },
   {
-    name: "Marguier",
+    name: "Louis Marguier",
     slug: "marguier",
     linktree: "https://linktr.ee/marguier",
     profileImage: marguierProfile,
-    bio: "Marguier cultive un art de la nuance, entre productions ciselées et textes introspectifs. Artiste en développement chez Avlanche, il prépare ses premières sorties avec une exigence rare. Son univers, aussi intime que cinématographique, promet de marquer durablement le paysage musical français.",
+    bio: "Louis Marguier cultive un art de la nuance, entre productions ciselées et textes introspectifs. Artiste en développement chez Avlanche, il prépare ses premières sorties avec une exigence rare. Son univers, aussi intime que cinématographique, promet de marquer durablement le paysage musical français.",
     clips: [] as { title: string; url: string }[],
     photos: [] as string[],
   },
