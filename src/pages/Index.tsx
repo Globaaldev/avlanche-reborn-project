@@ -62,7 +62,7 @@ const Index = () => {
 
       {/* SEO hidden text */}
       <p className="sr-only">
-        Avlanche est un label de musique indépendant et une maison d'édition musicale basé à Ivry-sur-Seine, dans le Val-de-Marne, à proximité de Paris. Le studio d'enregistrement Avlanche propose des services professionnels d'enregistrement, de mixage et de mastering pour les artistes rap, hip-hop, R&B et pop. Découvrez nos artistes Sherifflazone, Marguier et Magie!.
+        Avlanche est un label de musique indépendant et une maison d'édition musicale basé à Ivry-sur-Seine, dans le Val-de-Marne, à proximité de Paris. Le studio d'enregistrement Avlanche propose des services professionnels d'enregistrement, de mixage et de mastering pour les artistes rap, hip-hop, R&B et pop. Découvrez nos artistes Sherifflazone, Louis Marguier et Magie!.
       </p>
 
       {/* Bottom Navigation */}
