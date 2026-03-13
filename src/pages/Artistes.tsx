@@ -32,6 +32,7 @@ const ARTISTS = [
       { title: "Dans ma bulle", url: "https://www.youtube.com/watch?v=Lhx2llMul6g" },
     ],
     photos: [sheriffPress1, sheriffPress3, sheriffPress5, sheriffPress7],
+    photoCredits: "Photos N&B : @aveuglance",
   },
   {
     name: "Louis Marguier",
