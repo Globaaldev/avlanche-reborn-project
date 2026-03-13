@@ -42,6 +42,7 @@ const ARTISTS = [
     bio: "Louis Marguier cultive un art de la nuance, entre productions ciselées et textes introspectifs. Artiste en développement chez Avlanche, il prépare ses premières sorties avec une exigence rare. Son univers, aussi intime que cinématographique, promet de marquer durablement le paysage musical français.",
     clips: [] as { title: string; url: string }[],
     photos: [] as string[],
+    photoCredits: "",
   },
   {
     name: "Magie!",
