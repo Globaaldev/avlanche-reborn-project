@@ -32,6 +32,7 @@ const ARTISTS = [
       { title: "Dans ma bulle", url: "https://www.youtube.com/watch?v=Lhx2llMul6g" },
     ],
     photos: [sheriffPress1, sheriffPress3, sheriffPress5, sheriffPress7],
+    photoCredits: "Photos N&B : @aveuglance",
   },
   {
     name: "Louis Marguier",
@@ -41,6 +42,7 @@ const ARTISTS = [
     bio: "Louis Marguier cultive un art de la nuance, entre productions ciselées et textes introspectifs. Artiste en développement chez Avlanche, il prépare ses premières sorties avec une exigence rare. Son univers, aussi intime que cinématographique, promet de marquer durablement le paysage musical français.",
     clips: [] as { title: string; url: string }[],
     photos: [] as string[],
+    photoCredits: "",
   },
   {
     name: "Magie!",
@@ -52,6 +54,7 @@ const ARTISTS = [
       { title: "MAGIE! - Clip", url: "https://www.youtube.com/watch?v=sYWvDOjUK9w" },
     ],
     photos: [magiePress1, magiePress3],
+    photoCredits: "📸 @emiebrg",
   },
 ];
 
@@ -180,6 +183,11 @@ const Artistes = () => {
                     </div>
                   ))}
                 </div>
+                {activeArtist.photoCredits && (
+                  <p className="mt-3 text-foreground/30 text-xs tracking-[0.1em]">
+                    {activeArtist.photoCredits}
+                  </p>
+                )}
               </section>
             </ScrollReveal>
           ) : (
