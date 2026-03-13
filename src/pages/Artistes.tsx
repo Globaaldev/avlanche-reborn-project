@@ -183,6 +183,11 @@ const Artistes = () => {
                     </div>
                   ))}
                 </div>
+                {activeArtist.photoCredits && (
+                  <p className="mt-3 text-foreground/30 text-xs tracking-[0.1em]">
+                    {activeArtist.photoCredits}
+                  </p>
+                )}
               </section>
             </ScrollReveal>
           ) : (
