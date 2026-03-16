@@ -166,13 +166,11 @@ const Artistes = () => {
           {activeArtist.photos.length > 0 ? (
             <ScrollReveal>
               <section className="mb-16 sm:mb-20" aria-label="Photos">
-                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+                <div className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide pb-2">
                   {activeArtist.photos.map((photo, i) => (
                     <div
                       key={i}
-                      className={`overflow-hidden rounded-xl ${
-                        i === 0 ? "col-span-2 aspect-[16/9]" : "aspect-[3/4]"
-                      }`}
+                      className="shrink-0 overflow-hidden rounded-xl h-[35vh] sm:h-[40vh] aspect-[3/4]"
                     >
                       <img
                         src={photo}
