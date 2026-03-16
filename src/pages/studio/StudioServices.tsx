@@ -167,8 +167,8 @@ const StudioServices = () => {
               <p>Date de création : 22 avril 2021</p>
             </div>
             <div>
-              <p className="font-medium text-foreground/60 mb-1">Hébergement</p>
-              <p>Ce site est hébergé par Lovable (https://lovable.dev).</p>
+              <p className="font-medium text-foreground/60 mb-1">Conception & Hébergement</p>
+              <p>Ce site a été conçu et est hébergé par Globaaaal Agency.</p>
             </div>
             <div>
               <p className="font-medium text-foreground/60 mb-1">Propriété intellectuelle</p>
