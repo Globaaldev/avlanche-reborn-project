@@ -6,10 +6,12 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // Also scroll any overflow containers
-    document.querySelectorAll('[class*="overflow-y-auto"]').forEach((el) => {
+    // Scroll all scrollable containers back to top
+    document.querySelectorAll('[class*="overflow-y-auto"], [class*="overflow-auto"], main, [role="main"]').forEach((el) => {
       el.scrollTop = 0;
     });
+    // Also try the first scrollable child of body
+    document.querySelector('.flex-1')?.scrollTo?.(0, 0);
   }, [pathname]);
 
   return null;
