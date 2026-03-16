@@ -7,11 +7,17 @@ import SEOHead from "@/components/SEOHead";
 import ScrollReveal from "@/components/ScrollReveal";
 import sherifflazoneProfile from "@/assets/sherifflazone-profile.png";
 import sheriffPress1 from "@/assets/sheriff-press-1.jpg";
+import sheriffPress2 from "@/assets/sheriff-press-2.jpg";
 import sheriffPress3 from "@/assets/sheriff-press-3.jpg";
+import sheriffPress4 from "@/assets/sheriff-press-4.jpg";
 import sheriffPress5 from "@/assets/sheriff-press-5.jpg";
+import sheriffPress6 from "@/assets/sheriff-press-6.jpg";
 import sheriffPress7 from "@/assets/sheriff-press-7.jpeg";
+import sheriffPress8 from "@/assets/sheriff-press-8.jpeg";
+import sheriffPress9 from "@/assets/sheriff-press-9.jpg";
 import magieProfile from "@/assets/magie-profile.png";
 import magiePress1 from "@/assets/magie-press-1.jpg";
+import magiePress2 from "@/assets/magie-press-2.png";
 import magiePress3 from "@/assets/magie-press-3.png";
 import marguierProfile from "@/assets/marguier-profile-square.png";
 
@@ -31,7 +37,7 @@ const ARTISTS = [
       { title: "FUTURAMA", url: "https://www.youtube.com/watch?v=XZYCpI5fs5k" },
       { title: "Dans ma bulle", url: "https://www.youtube.com/watch?v=Lhx2llMul6g" },
     ],
-    photos: [sheriffPress1, sheriffPress3, sheriffPress5, sheriffPress7],
+    photos: [sheriffPress1, sheriffPress2, sheriffPress3, sheriffPress4, sheriffPress5, sheriffPress6, sheriffPress7, sheriffPress8, sheriffPress9],
     photoCredits: "Photos N&B : @aveuglance",
   },
   {
@@ -53,7 +59,7 @@ const ARTISTS = [
     clips: [
       { title: "MAGIE! - Clip", url: "https://www.youtube.com/watch?v=sYWvDOjUK9w" },
     ],
-    photos: [magiePress1, magiePress3],
+    photos: [magiePress1, magiePress2, magiePress3],
     photoCredits: "Photos : @emiebrg",
   },
 ];
