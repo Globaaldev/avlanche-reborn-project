@@ -59,7 +59,7 @@ const ARTISTS = [
     clips: [
       { title: "MAGIE! - Clip", url: "https://www.youtube.com/watch?v=sYWvDOjUK9w" },
     ],
-    photos: [magiePress1, magiePress3],
+    photos: [magiePress1, magiePress2, magiePress3],
     photoCredits: "Photos : @emiebrg",
   },
 ];
