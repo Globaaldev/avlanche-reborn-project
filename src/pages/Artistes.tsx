@@ -153,7 +153,7 @@ const Artistes = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-foreground/50 text-xs sm:text-sm md:text-base tracking-[0.15em] uppercase hover:text-foreground/70 transition-colors group"
               >
-                <span>Linktree</span>
+                <span>Découvrir</span>
                 <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
               </a>
             </div>
