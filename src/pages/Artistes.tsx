@@ -100,7 +100,7 @@ const Artistes = () => {
                 setSearchParams({ tab: artist.slug });
                 setPlayingId(null);
               }}
-              className={`text-xs sm:text-sm md:text-base tracking-[0.2em] uppercase font-light transition-all duration-300 pb-3 relative whitespace-nowrap ${
+              className={`text-xs sm:text-sm md:text-base tracking-[0.2em] uppercase font-normal transition-all duration-300 pb-3 relative whitespace-nowrap ${
                 activeTab === artist.slug
                   ? "text-foreground"
                   : "text-foreground/30 hover:text-foreground/60"
@@ -227,7 +227,7 @@ const Artistes = () => {
         style={{ background: "linear-gradient(to top, hsl(var(--background)) 60%, transparent)" }}
         aria-label="Navigation principale"
       >
-        <a href="/artistes" className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
+        <a href="/artistes" className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.2em] font-normal hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
       </nav>
     </div>
   );
