@@ -25,55 +25,59 @@ const StudioServices = () => {
       <AnimatedSection>
         <div>
           <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.06em] font-normal uppercase">
-            Services & Tarifs
+            Grille Tarifaire
           </h1>
+          <div className="mt-4 space-y-1">
+            <p className="text-foreground/50 text-xs sm:text-sm tracking-[0.1em] uppercase">
+              Tous les prix sont affichés hors taxes
+            </p>
+            <p className="text-foreground/50 text-xs sm:text-sm tracking-[0.1em] uppercase">
+              Jour : entre 12h et 20h / Nuit : entre 20h et 8h
+            </p>
+          </div>
         </div>
       </AnimatedSection>
 
-      {/* Tarifs */}
+      {/* Tarifs — layout matching reference */}
       <ScrollReveal>
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-          {/* Enregistrement */}
-          <div>
-            <h3 className="text-foreground text-lg sm:text-xl md:text-2xl tracking-[0.06em] font-normal mb-6">
-              Enregistrement
-            </h3>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {/* Left block: Enregistrement + Mix + Master */}
+          <div className="border border-foreground/[0.1] rounded-md p-5 sm:p-6 md:p-8 space-y-6">
+            <div>
+              <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-normal mb-3">
+                Enregistrement
+              </h3>
+              <p className="text-foreground/70 text-sm sm:text-base md:text-lg">45€/h le jour</p>
+              <p className="text-foreground/70 text-sm sm:text-base md:text-lg">55€/h la nuit</p>
+            </div>
+            <div>
+              <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-normal mb-3">
+                Mix
+              </h3>
+              <p className="text-foreground/70 text-sm sm:text-base md:text-lg">350€ par titre</p>
+            </div>
+            <div>
+              <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-normal mb-3">
+                Master
+              </h3>
+              <p className="text-foreground/70 text-sm sm:text-base md:text-lg">70€ par titre</p>
+            </div>
+          </div>
+
+          {/* Right block: Forfaits */}
+          <div className="border border-foreground/[0.1] rounded-md p-5 sm:p-6 md:p-8">
             <div className="space-y-0">
               {[
-                ["Journée (12h – 20h)", "45€/h"],
-                ["Nuit (20h – 8h)", "55€/h"],
                 ["Demi-journée (4h)", "170€"],
                 ["Demi-soirée (4h)", "210€"],
                 ["Journée (8h)", "320€"],
                 ["Soirée (8h)", "400€"],
               ].map(([label, price]) => (
-                <div key={label} className="flex justify-between text-foreground text-sm sm:text-base md:text-lg font-normal tracking-wide py-3 border-b border-foreground/[0.08]">
+                <div key={label} className="flex justify-between text-foreground text-sm sm:text-base md:text-lg font-normal tracking-wide py-3 border-b border-foreground/[0.08] last:border-b-0">
                   <span>{label}</span>
                   <span className="text-foreground ml-4 shrink-0">{price}</span>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Mix */}
-          <div>
-            <h3 className="text-foreground text-lg sm:text-xl md:text-2xl tracking-[0.06em] font-normal mb-6">
-              Mix
-            </h3>
-            <div className="flex justify-between text-foreground text-sm sm:text-base md:text-lg font-normal tracking-wide py-3 border-b border-foreground/[0.08]">
-              <span>Par titre</span>
-              <span className="text-foreground">350€</span>
-            </div>
-          </div>
-
-          {/* Master */}
-          <div>
-            <h3 className="text-foreground text-lg sm:text-xl md:text-2xl tracking-[0.06em] font-normal mb-6">
-              Master
-            </h3>
-            <div className="flex justify-between text-foreground text-sm sm:text-base md:text-lg font-normal tracking-wide py-3 border-b border-foreground/[0.08]">
-              <span>Par titre</span>
-              <span className="text-foreground">70€</span>
             </div>
           </div>
         </section>
@@ -82,47 +86,39 @@ const StudioServices = () => {
       {/* Packs */}
       <ScrollReveal>
         <section>
-          <h2 className="text-foreground text-xl sm:text-2xl md:text-4xl tracking-[0.06em] font-normal uppercase mb-12 md:mb-16">
-            Packs
-          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             {[
               {
                 name: "Pack Single Jour",
-                items: [["5h d'enregistrement", "225€"], ["Mix", "350€"], ["Master", "70€"]],
+                description: "5h d'enregistrement / Mix / Master",
                 total: "600€",
               },
               {
                 name: "Pack Single Nuit",
-                items: [["5h d'enregistrement", "275€"], ["Mix", "350€"], ["Master", "70€"]],
+                description: "5h d'enregistrement / Mix / Master",
                 total: "650€",
               },
               {
-                name: "Pack EP 5 Titres Jour",
-                items: [["30h d'enregistrement", "1 350€"], ["5 Mixs", "1 750€"], ["Master", "350€"]],
-                total: "3 150€",
+                name: "Pack 5 Titres Jour",
+                description: "5h d'enregistrement / Mix / Master",
+                total: "3150€",
               },
               {
-                name: "Pack EP 5 Titres Nuit",
-                items: [["30h d'enregistrement", "1 650€"], ["5 Mixs", "1 750€"], ["Master", "350€"]],
-                total: "3 450€",
+                name: "Pack 5 Titres Nuit",
+                description: "5h d'enregistrement / Mix / Master",
+                total: "3450€",
               },
             ].map((pack) => (
-              <div key={pack.name} className="border border-foreground/[0.1] rounded-md p-4 sm:p-5 md:p-8 space-y-4 hover:border-foreground/25 transition-colors duration-300">
-                <h4 className="text-foreground text-sm sm:text-base md:text-lg tracking-[0.15em] uppercase font-normal">
-                  {pack.name}
-                </h4>
-                <div className="space-y-0">
-                  {pack.items.map(([label, price]) => (
-                    <div key={label} className="flex justify-between text-foreground/80 text-sm sm:text-base md:text-lg font-normal py-2">
-                      <span>{label}</span>
-                      <span className="text-foreground/60 ml-4 shrink-0">{price}</span>
-                    </div>
-                  ))}
+              <div key={pack.name} className="border border-foreground/[0.1] rounded-md p-4 sm:p-5 md:p-8 flex justify-between items-center hover:border-foreground/25 transition-colors duration-300">
+                <div>
+                  <h4 className="text-foreground text-sm sm:text-base md:text-lg tracking-[0.12em] uppercase font-normal">
+                    {pack.name}
+                  </h4>
+                  <p className="text-foreground/50 text-xs sm:text-sm tracking-wide mt-1">
+                    {pack.description}
+                  </p>
                 </div>
-                <div className="pt-2 border-t border-foreground/[0.08]">
-                  <span className="text-foreground text-lg sm:text-xl md:text-3xl font-normal tracking-wide">{pack.total}</span>
-                </div>
+                <span className="text-foreground text-lg sm:text-xl md:text-2xl font-normal tracking-wide ml-4 shrink-0">{pack.total}</span>
               </div>
             ))}
           </div>

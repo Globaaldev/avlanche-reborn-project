@@ -28,7 +28,7 @@ const StudioHome = () => {
       />
       <AnimatedSection>
         <div className="text-center space-y-4">
-          <h1 className="text-foreground text-3xl sm:text-4xl md:text-6xl tracking-[0.08em] font-normal uppercase">
+          <h1 className="text-foreground text-3xl sm:text-4xl md:text-6xl tracking-[0.06em] font-normal uppercase" style={{ fontFamily: 'var(--nav-font)' }}>
             Avlanche Studio
           </h1>
           <p className="text-foreground/80 text-base sm:text-lg md:text-2xl tracking-[0.08em] font-normal max-w-xl mx-auto">

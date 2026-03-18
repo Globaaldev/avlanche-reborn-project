@@ -55,8 +55,7 @@ const Index = () => {
       >
         <h1 className="sr-only">Avlanche — Label, Publishing & Studio d'enregistrement</h1>
         <p className="text-foreground/60 text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide">
-          Label / Publishing / Studio d'enregistrement
-          <span className="block text-foreground/40 text-base sm:text-lg md:text-xl mt-1">(Rec / Mix / Master)</span>
+          Production / Edition
         </p>
       </motion.div>
 
