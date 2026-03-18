@@ -135,9 +135,7 @@ const Artistes = () => {
           {/* Header: Profile + Name */}
           {/* Hero: full-width profile image with gradient fade */}
           {activeArtist.profileImage && (
-            <div className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] -mx-6 md:-mx-10 mb-8 sm:mb-10 md:mb-14 overflow-hidden"
-              style={{ width: "calc(100% + 3rem)", maxWidth: "none" }}
-            >
+            <div className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] -mx-6 md:-mx-10 mb-8 sm:mb-10 md:mb-14 overflow-hidden">
               <img
                 src={activeArtist.profileImage}
                 alt={`Photo de profil de ${activeArtist.name}`}
@@ -146,7 +144,7 @@ const Artistes = () => {
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  background: "linear-gradient(to bottom, transparent 40%, hsl(var(--background)) 100%)",
+                  background: "linear-gradient(to bottom, transparent 55%, hsl(var(--background)) 100%)",
                 }}
               />
               {/* Name overlay at bottom */}
