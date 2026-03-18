@@ -29,7 +29,7 @@ const EQUIPMENT = {
   ],
 };
 
-const TRUSTED_BY = "LaFève, Niska, Meryl, BbTrickz, Theodora, Skuna, LaMano, Morad, Zequin, Louis Marguier, Sherifflazone, J9ueve, Malo, TyFontaine, Guy2Bezbar, Leto, Khali, DMS, Zed, Sofiane Pamart, Sonny Rave et bien d'autres !";
+const TRUSTED_BY = "Théodora, Hamza, Niska, Meryl, BbTrickz, LaMano, Morad, Tiakola, Leto, Zed, Jeune Morty, Louis Marguier, LaFève, Sherifflazone, J9ueve, Guy2Bezbar, Khali, Sofiane Pamart, Solalune, Ange, Nonolagrinta, Mojisboy, Lennie, Aupinard, Jeune Lion, Romsii, Rex Kudo, Jolagreen, 1pliké140, Jäde, Yvnis, Asinine, Bekar et bien d'autres...";
 
 const EquipmentSection = ({ title, items }: { title: string; items: string[] }) => (
   <div>

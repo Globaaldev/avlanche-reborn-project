@@ -37,7 +37,7 @@ const ARTISTS = [
       { title: "FUTURAMA", url: "https://www.youtube.com/watch?v=XZYCpI5fs5k" },
       { title: "Dans ma bulle", url: "https://www.youtube.com/watch?v=Lhx2llMul6g" },
     ],
-    photos: [sheriffPress1, sheriffPress2, sheriffPress3, sheriffPress4, sheriffPress5, sheriffPress6, sheriffPress7, sheriffPress8, sheriffPress9],
+    photos: [sheriffPress9, sheriffPress1, sheriffPress2, sheriffPress3, sheriffPress4, sheriffPress5, sheriffPress6, sheriffPress7, sheriffPress8],
     photoCredits: "Photos N&B : @aveuglance",
   },
   {
