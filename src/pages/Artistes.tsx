@@ -227,7 +227,7 @@ const Artistes = () => {
         style={{ background: "linear-gradient(to top, hsl(var(--background)) 60%, transparent)" }}
         aria-label="Navigation principale"
       >
-        <a href="/artistes" className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.2em] font-light hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
+        <a href="/artistes" className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.2em] font-normal hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
       </nav>
     </div>
   );

@@ -60,7 +60,7 @@ const AppLayout = () => {
         {/* Right — Contact */}
         <a
           href={contactHref}
-          className="text-foreground text-sm md:text-base tracking-[0.12em] md:tracking-[0.15em] font-light hover:opacity-70 transition-opacity uppercase shrink-0"
+          className="text-foreground text-sm md:text-base tracking-[0.12em] md:tracking-[0.15em] font-normal hover:opacity-70 transition-opacity uppercase shrink-0"
         >
           Contact
         </a>

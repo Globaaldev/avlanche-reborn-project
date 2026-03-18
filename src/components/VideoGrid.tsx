@@ -69,7 +69,7 @@ const VideoThumbnail = ({
       </div>
     </div>
     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent pt-8 pb-3 px-3">
-      <span className="text-white text-[11px] md:text-xs tracking-[0.08em] font-light line-clamp-2">
+      <span className="text-white text-[11px] md:text-xs tracking-[0.08em] font-normal line-clamp-2">
         {title}
       </span>
     </div>
