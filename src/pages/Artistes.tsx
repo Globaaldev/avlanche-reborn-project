@@ -91,7 +91,7 @@ const Artistes = () => {
         }}
       />
       {/* Artist Tabs — sticky */}
-      <div className="sticky top-0 z-10 bg-background">
+      <div className="sticky top-0 z-30 bg-background">
         <nav className="flex gap-6 sm:gap-8 md:gap-12 px-6 md:px-10 pt-2 pb-0 overflow-x-auto scrollbar-hide" aria-label="Artistes">
           {ARTISTS.map((artist) => (
             <button
@@ -149,7 +149,7 @@ const Artistes = () => {
               />
               {/* Name overlay at bottom */}
               <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-6 md:left-10 z-10">
-                <h1 className="text-foreground text-3xl sm:text-4xl md:text-6xl lg:text-8xl tracking-[-0.01em] uppercase font-black mb-2 sm:mb-3">
+                <h1 className="text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-[-0.01em] uppercase font-black mb-2 sm:mb-3">
                   {activeArtist.name}
                 </h1>
                 <a
@@ -166,7 +166,7 @@ const Artistes = () => {
           )}
           {!activeArtist.profileImage && (
             <div className="mb-10 sm:mb-12 md:mb-16">
-              <h1 className="text-foreground text-3xl sm:text-4xl md:text-6xl lg:text-8xl tracking-[-0.01em] uppercase font-black mb-2 sm:mb-3">
+              <h1 className="text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-[-0.01em] uppercase font-black mb-2 sm:mb-3">
                 {activeArtist.name}
               </h1>
               <a
