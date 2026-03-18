@@ -27,7 +27,7 @@ const AppLayout = () => {
         <div className="flex items-baseline gap-1 md:gap-2 shrink-0">
           <button
             onClick={() => { if (isStudio) navigate("/"); }}
-            className={`text-sm md:text-xl tracking-[0.12em] font-light transition-all duration-300 cursor-pointer ${
+            className={`text-sm md:text-xl tracking-[0.12em] font-normal transition-all duration-300 cursor-pointer ${
               !isStudio ? "text-foreground" : "text-foreground/30 hover:text-foreground/70"
             }`}
           >
