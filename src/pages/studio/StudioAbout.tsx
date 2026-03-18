@@ -189,9 +189,7 @@ const StudioAbout = () => {
       <ScrollReveal>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-10">
           <a
-            href="https://open.spotify.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://open.spotify.com/playlist/55u3EWt0s5yhOYKErSs1Ym?si=eglYBa-cQ_6YtubNo6O-Jg&nd=1&dlsi=15b96a1c9c3345e2"
             className="text-foreground/70 text-base md:text-lg tracking-[0.15em] uppercase hover:text-foreground transition-colors duration-300 pb-0.5 border-b border-foreground/30 hover:border-foreground/60"
           >
             Rec / Mix by Avlanche
