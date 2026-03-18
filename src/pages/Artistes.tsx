@@ -100,7 +100,7 @@ const Artistes = () => {
                 setSearchParams({ tab: artist.slug });
                 setPlayingId(null);
               }}
-              className={`text-xs sm:text-sm md:text-base tracking-[0.2em] uppercase font-light transition-all duration-300 pb-3 relative whitespace-nowrap ${
+              className={`text-xs sm:text-sm md:text-base tracking-[0.2em] uppercase font-normal transition-all duration-300 pb-3 relative whitespace-nowrap ${
                 activeTab === artist.slug
                   ? "text-foreground"
                   : "text-foreground/30 hover:text-foreground/60"
