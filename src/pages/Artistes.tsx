@@ -135,7 +135,14 @@ const Artistes = () => {
           {/* Header: Profile + Name */}
           <div className="flex flex-col md:flex-row md:items-end gap-4 sm:gap-6 md:gap-10 mb-10 sm:mb-12 md:mb-16 items-start">
             {activeArtist.profileImage && (
-              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-full overflow-hidden shrink-0">
+              <div className="w-24 h-28 sm:w-32 sm:h-36 md:w-44 md:h-52 shrink-0 relative overflow-hidden"
+                style={{
+                  maskImage: "linear-gradient(to bottom, black 60%, transparent 100%), linear-gradient(to right, black 60%, transparent 100%)",
+                  WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%), linear-gradient(to right, black 60%, transparent 100%)",
+                  maskComposite: "intersect",
+                  WebkitMaskComposite: "destination-in",
+                }}
+              >
                 <img
                   src={activeArtist.profileImage}
                   alt={`Photo de profil de ${activeArtist.name}`}
