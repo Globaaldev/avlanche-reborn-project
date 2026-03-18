@@ -133,24 +133,41 @@ const Artistes = () => {
           className="flex-1 px-6 md:px-10 py-8 sm:py-10 md:py-16 pb-32"
         >
           {/* Header: Profile + Name */}
-          <div className="flex flex-col md:flex-row md:items-end gap-4 sm:gap-6 md:gap-10 mb-10 sm:mb-12 md:mb-16 items-start">
-            {activeArtist.profileImage && (
-              <div className="w-24 h-28 sm:w-32 sm:h-36 md:w-44 md:h-52 shrink-0 relative overflow-hidden"
+          {/* Hero: full-width profile image with gradient fade */}
+          {activeArtist.profileImage && (
+            <div className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] -mx-6 md:-mx-10 mb-8 sm:mb-10 md:mb-14 overflow-hidden"
+              style={{ width: "calc(100% + 3rem)", maxWidth: "none" }}
+            >
+              <img
+                src={activeArtist.profileImage}
+                alt={`Photo de profil de ${activeArtist.name}`}
+                className="w-full h-full object-cover object-top"
+              />
+              <div
+                className="absolute inset-0 pointer-events-none"
                 style={{
-                  maskImage: "linear-gradient(to bottom, black 60%, transparent 100%), linear-gradient(to right, black 60%, transparent 100%)",
-                  WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%), linear-gradient(to right, black 60%, transparent 100%)",
-                  maskComposite: "intersect",
-                  WebkitMaskComposite: "destination-in",
+                  background: "linear-gradient(to bottom, transparent 40%, hsl(var(--background)) 100%)",
                 }}
-              >
-                <img
-                  src={activeArtist.profileImage}
-                  alt={`Photo de profil de ${activeArtist.name}`}
-                  className="w-full h-full object-cover"
-                />
+              />
+              {/* Name overlay at bottom */}
+              <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-6 md:left-10 z-10">
+                <h1 className="text-foreground text-3xl sm:text-4xl md:text-6xl lg:text-8xl tracking-[-0.01em] uppercase font-black mb-2 sm:mb-3">
+                  {activeArtist.name}
+                </h1>
+                <a
+                  href={activeArtist.linktree}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-foreground/50 text-xs sm:text-sm md:text-base tracking-[0.15em] uppercase hover:text-foreground/70 transition-colors group"
+                >
+                  <span>Découvrir</span>
+                  <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
+                </a>
               </div>
-            )}
-            <div>
+            </div>
+          )}
+          {!activeArtist.profileImage && (
+            <div className="mb-10 sm:mb-12 md:mb-16">
               <h1 className="text-foreground text-3xl sm:text-4xl md:text-6xl lg:text-8xl tracking-[-0.01em] uppercase font-black mb-2 sm:mb-3">
                 {activeArtist.name}
               </h1>
@@ -164,7 +181,7 @@ const Artistes = () => {
                 <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
               </a>
             </div>
-          </div>
+          )}
 
           {/* Bio */}
           <ScrollReveal>
