@@ -79,7 +79,7 @@ const Index = () => {
         >
           <a
             href="/artistes"
-            className="story-link text-red-500 text-base md:text-xl tracking-[0.2em] font-normal transition-all duration-300 uppercase hover:tracking-[0.35em]"
+            className="story-link text-red-500 text-base md:text-xl tracking-[0.2em] font-semibold transition-all duration-300 uppercase hover:tracking-[0.35em]"
           >
             ARTISTES
           </a>
