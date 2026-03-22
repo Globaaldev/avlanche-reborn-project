@@ -27,7 +27,7 @@ const AppLayout = () => {
         <div className="flex items-baseline gap-1 md:gap-2 shrink-0">
           <button
             onClick={() => { if (isStudio) navigate("/"); }}
-            className={`text-sm md:text-xl tracking-[0.12em] font-normal transition-all duration-300 cursor-pointer ${
+            className={`text-sm md:text-xl tracking-[0.12em] font-semibold transition-all duration-300 cursor-pointer ${
               !isStudio ? "text-foreground" : "text-foreground/30 hover:text-foreground/70"
             }`}
           >
@@ -36,7 +36,7 @@ const AppLayout = () => {
           <span className="text-foreground/30 text-[10px] md:text-sm font-normal">/</span>
           <button
             onClick={() => { if (!isStudio) navigate("/studio"); }}
-            className={`text-sm md:text-xl tracking-[0.12em] font-normal transition-all duration-300 cursor-pointer ${
+            className={`text-sm md:text-xl tracking-[0.12em] font-semibold transition-all duration-300 cursor-pointer ${
               isStudio ? "text-foreground" : "text-foreground/30 hover:text-foreground/70"
             }`}
             style={isStudio ? { color: "hsl(var(--studio-accent))" } : undefined}
@@ -60,7 +60,7 @@ const AppLayout = () => {
         {/* Right — Contact */}
         <a
           href={contactHref}
-          className="text-foreground text-sm md:text-base tracking-[0.12em] md:tracking-[0.15em] font-normal hover:opacity-70 transition-opacity uppercase shrink-0"
+          className="text-foreground text-sm md:text-base tracking-[0.12em] md:tracking-[0.15em] font-semibold hover:opacity-70 transition-opacity uppercase shrink-0"
         >
           Contact
         </a>
