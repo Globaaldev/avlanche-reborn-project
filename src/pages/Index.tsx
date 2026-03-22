@@ -92,7 +92,7 @@ const Index = () => {
               <a
                 key={artist.slug}
                 href={`/artistes?tab=${artist.slug}`}
-                className="text-foreground text-sm md:text-base tracking-[0.15em] font-normal hover:opacity-70 transition-opacity py-1 whitespace-nowrap"
+                className="text-foreground text-sm md:text-base tracking-[0.15em] font-semibold hover:opacity-70 transition-opacity py-1 whitespace-nowrap"
               >
                 {artist.name}
               </a>
