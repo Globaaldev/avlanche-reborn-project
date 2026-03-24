@@ -128,10 +128,10 @@ const StudioAbout = () => {
             />
           </div>
           <div className="space-y-4">
-            <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-normal uppercase">
+             <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-semibold uppercase">
               La Cabine
             </h2>
-            <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-normal leading-relaxed tracking-wide">
+            <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-semibold leading-relaxed tracking-wide">
               Notre cabine d'enregistrement offre une isolation acoustique optimale pour des prises de voix et d'instruments d'une qualité irréprochable. Traitée avec des matériaux professionnels, elle garantit un son pur et précis, sans coloration ni résonance indésirable.
             </p>
             <p className="text-foreground/50 text-sm sm:text-base font-normal leading-relaxed tracking-wide">
