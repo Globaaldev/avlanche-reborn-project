@@ -51,7 +51,7 @@ const StudioServices = () => {
               <p className="text-foreground/70 text-sm sm:text-base md:text-lg">55€/h la nuit</p>
             </div>
             <div>
-              <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-normal mb-3">
+               <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-semibold mb-3">
                 Mix
               </h3>
               <p className="text-foreground/70 text-sm sm:text-base md:text-lg">350€ par titre</p>
