@@ -111,7 +111,7 @@ const StudioServices = () => {
             ].map((pack) => (
               <div key={pack.name} className="border border-foreground/[0.1] rounded-md p-4 sm:p-5 md:p-8 flex justify-between items-center hover:border-foreground/25 transition-colors duration-300">
                 <div>
-                  <h4 className="text-foreground text-sm sm:text-base md:text-lg tracking-[0.12em] uppercase font-normal">
+                  <h4 className="text-foreground text-sm sm:text-base md:text-lg tracking-[0.12em] uppercase font-semibold">
                     {pack.name}
                   </h4>
                   <p className="text-foreground/50 text-xs sm:text-sm tracking-wide mt-1">
