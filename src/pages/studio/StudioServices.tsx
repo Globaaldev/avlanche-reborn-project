@@ -24,7 +24,7 @@ const StudioServices = () => {
       {/* Header */}
       <AnimatedSection>
         <div>
-          <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.06em] font-normal uppercase">
+          <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.06em] font-semibold uppercase">
             Grille Tarifaire
           </h1>
           <div className="mt-4 space-y-1">
@@ -44,20 +44,20 @@ const StudioServices = () => {
           {/* Left block: Enregistrement + Mix + Master */}
           <div className="border border-foreground/[0.1] rounded-md p-5 sm:p-6 md:p-8 space-y-6">
             <div>
-              <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-normal mb-3">
+               <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-semibold mb-3">
                 Enregistrement
               </h3>
               <p className="text-foreground/70 text-sm sm:text-base md:text-lg">45€/h le jour</p>
               <p className="text-foreground/70 text-sm sm:text-base md:text-lg">55€/h la nuit</p>
             </div>
             <div>
-              <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-normal mb-3">
+               <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-semibold mb-3">
                 Mix
               </h3>
               <p className="text-foreground/70 text-sm sm:text-base md:text-lg">350€ par titre</p>
             </div>
             <div>
-              <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-normal mb-3">
+               <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-semibold mb-3">
                 Master
               </h3>
               <p className="text-foreground/70 text-sm sm:text-base md:text-lg">70€ par titre</p>
@@ -73,7 +73,7 @@ const StudioServices = () => {
                 ["Journée (8h)", "320€"],
                 ["Soirée (8h)", "400€"],
               ].map(([label, price]) => (
-                <div key={label} className="flex justify-between text-foreground text-sm sm:text-base md:text-lg font-normal tracking-wide py-3 border-b border-foreground/[0.08] last:border-b-0">
+                <div key={label} className="flex justify-between text-foreground text-sm sm:text-base md:text-lg font-semibold tracking-wide py-3 border-b border-foreground/[0.08] last:border-b-0">
                   <span>{label}</span>
                   <span className="text-foreground ml-4 shrink-0">{price}</span>
                 </div>
@@ -111,14 +111,14 @@ const StudioServices = () => {
             ].map((pack) => (
               <div key={pack.name} className="border border-foreground/[0.1] rounded-md p-4 sm:p-5 md:p-8 flex justify-between items-center hover:border-foreground/25 transition-colors duration-300">
                 <div>
-                  <h4 className="text-foreground text-sm sm:text-base md:text-lg tracking-[0.12em] uppercase font-normal">
+                  <h4 className="text-foreground text-sm sm:text-base md:text-lg tracking-[0.12em] uppercase font-semibold">
                     {pack.name}
                   </h4>
                   <p className="text-foreground/50 text-xs sm:text-sm tracking-wide mt-1">
                     {pack.description}
                   </p>
                 </div>
-                <span className="text-foreground text-lg sm:text-xl md:text-2xl font-normal tracking-wide ml-4 shrink-0">{pack.total}</span>
+                <span className="text-foreground text-lg sm:text-xl md:text-2xl font-semibold tracking-wide ml-4 shrink-0">{pack.total}</span>
               </div>
             ))}
           </div>
@@ -128,7 +128,7 @@ const StudioServices = () => {
       {/* Note + CTA */}
       <ScrollReveal>
         <section className="flex flex-col items-center text-center space-y-6 pb-10">
-          <p className="text-foreground/60 text-sm sm:text-base md:text-lg font-normal leading-relaxed tracking-wide max-w-2xl">
+          <p className="text-foreground/60 text-sm sm:text-base md:text-lg font-semibold leading-relaxed tracking-wide max-w-2xl">
             Pour toute demande concernant les forfaits, séminaires, tournages, releases & listening parties, veuillez nous contacter par mail ou téléphone.
           </p>
           <a

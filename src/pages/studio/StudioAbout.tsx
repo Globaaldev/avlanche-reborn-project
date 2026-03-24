@@ -33,14 +33,14 @@ const TRUSTED_BY = "Théodora, Hamza, Niska, Meryl, BbTrickz, LaMano, Morad, Tia
 
 const EquipmentSection = ({ title, items }: { title: string; items: string[] }) => (
   <div>
-    <h4 className="text-foreground/50 text-sm md:text-base tracking-[0.15em] uppercase mb-4 md:mb-6 font-normal">
+    <h4 className="text-foreground/50 text-sm md:text-base tracking-[0.15em] uppercase mb-4 md:mb-6 font-semibold">
       {title}
     </h4>
     <ul className="space-y-0">
       {items.map((item, i) => (
         <li
           key={i}
-          className="text-foreground text-sm sm:text-base md:text-lg font-normal tracking-wide py-2.5 border-b border-foreground/[0.08]"
+          className="text-foreground text-sm sm:text-base md:text-lg font-semibold tracking-wide py-2.5 border-b border-foreground/[0.08]"
         >
           {item}
         </li>
@@ -76,10 +76,10 @@ const StudioAbout = () => {
       <AnimatedSection>
         <section className="space-y-10">
           <div className="space-y-4 max-w-2xl">
-            <h1 className="text-foreground text-3xl sm:text-4xl md:text-5xl tracking-[0.06em] font-normal uppercase">
+            <h1 className="text-foreground text-3xl sm:text-4xl md:text-5xl tracking-[0.06em] font-semibold uppercase">
               Le Studio
             </h1>
-            <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-normal leading-relaxed tracking-wide">
+            <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-semibold leading-relaxed tracking-wide">
               Un studio d'enregistrement moderne et chaleureux, conçu pour créer dans les meilleures conditions. Situé à Ivry-sur-Seine, Avlanche Studio offre un environnement professionnel idéal pour l'enregistrement, le mixage et le mastering.
             </p>
           </div>
@@ -128,13 +128,13 @@ const StudioAbout = () => {
             />
           </div>
           <div className="space-y-4">
-            <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-normal uppercase">
+             <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-semibold uppercase">
               La Cabine
             </h2>
-            <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-normal leading-relaxed tracking-wide">
+            <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-semibold leading-relaxed tracking-wide">
               Notre cabine d'enregistrement offre une isolation acoustique optimale pour des prises de voix et d'instruments d'une qualité irréprochable. Traitée avec des matériaux professionnels, elle garantit un son pur et précis, sans coloration ni résonance indésirable.
             </p>
-            <p className="text-foreground/50 text-sm sm:text-base font-normal leading-relaxed tracking-wide">
+            <p className="text-foreground/50 text-sm sm:text-base font-semibold leading-relaxed tracking-wide">
               Équipée d'un Neumann U87 et d'un préampli Neve 1073SPX, la chaîne d'enregistrement assure un rendu chaleureux et détaillé, parfait pour le rap, le chant, les voix off et les instruments acoustiques.
             </p>
           </div>
@@ -144,7 +144,7 @@ const StudioAbout = () => {
       {/* CTA */}
       <ScrollReveal>
         <section className="flex flex-col items-center text-center space-y-6">
-          <p className="text-foreground text-xl md:text-3xl tracking-[0.06em] font-normal">
+          <p className="text-foreground text-xl md:text-3xl tracking-[0.06em] font-semibold">
             Réservez votre session
           </p>
           <a
@@ -161,7 +161,7 @@ const StudioAbout = () => {
       {/* Fiche technique */}
       <ScrollReveal>
         <section>
-          <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-normal uppercase mb-12 md:mb-16">
+          <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-semibold uppercase mb-12 md:mb-16">
             Fiche technique
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-x-20 md:gap-y-16">
@@ -176,10 +176,10 @@ const StudioAbout = () => {
       {/* Confiance */}
       <ScrollReveal>
         <section>
-          <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-normal uppercase mb-8">
+          <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-semibold uppercase mb-8">
             Ils nous ont fait confiance
           </h2>
-          <p className="text-foreground/60 text-base sm:text-lg md:text-xl font-normal leading-relaxed tracking-wide max-w-3xl">
+          <p className="text-foreground/60 text-base sm:text-lg md:text-xl font-semibold leading-relaxed tracking-wide max-w-3xl">
             {TRUSTED_BY}
           </p>
         </section>
@@ -194,7 +194,7 @@ const StudioAbout = () => {
           >
             Rec / Mix by Avlanche
           </a>
-          <span className="text-foreground/50 text-sm sm:text-base tracking-wide font-normal">
+          <span className="text-foreground/50 text-sm sm:text-base tracking-wide font-semibold">
             — Playlist des morceaux enregistrés par Avlanche
           </span>
         </div>

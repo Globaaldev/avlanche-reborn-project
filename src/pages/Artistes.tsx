@@ -100,7 +100,7 @@ const Artistes = () => {
                 setSearchParams({ tab: artist.slug });
                 setPlayingId(null);
               }}
-              className={`text-xs sm:text-sm md:text-base tracking-[0.2em] uppercase font-normal transition-all duration-300 pb-3 relative whitespace-nowrap ${
+              className={`text-xs sm:text-sm md:text-base tracking-[0.2em] uppercase font-semibold transition-all duration-300 pb-3 relative whitespace-nowrap ${
                 activeTab === artist.slug
                   ? "text-foreground"
                   : "text-foreground/30 hover:text-foreground/60"
@@ -184,7 +184,7 @@ const Artistes = () => {
           {/* Bio */}
           <ScrollReveal>
             <section className="mb-14 sm:mb-16 md:mb-20 max-w-2xl">
-              <p className="text-foreground/60 text-sm sm:text-base md:text-lg font-normal leading-relaxed tracking-wide">
+              <p className="text-foreground/60 text-sm sm:text-base md:text-lg font-semibold leading-relaxed tracking-wide">
                 {activeArtist.bio}
               </p>
             </section>
@@ -249,7 +249,7 @@ const Artistes = () => {
         style={{ background: "linear-gradient(to top, hsl(var(--background)) 60%, transparent)" }}
         aria-label="Navigation principale"
       >
-        <a href="/artistes" className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.2em] font-normal hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
+        <a href="/artistes" className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.2em] font-semibold hover:opacity-70 transition-opacity uppercase">ARTISTES</a>
       </nav>
     </div>
   );

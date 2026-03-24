@@ -17,15 +17,15 @@ const Contact = () => {
         }}
       />
       <AnimatedSection>
-        <div className="text-foreground font-normal tracking-wide space-y-12 text-center max-w-lg mx-auto">
-          <h1 className="text-2xl md:text-4xl tracking-[0.08em] uppercase mb-10" style={{ fontFamily: 'var(--nav-font)', fontWeight: 400 }}>
+        <div className="text-foreground font-semibold tracking-wide space-y-12 text-center max-w-lg mx-auto">
+          <h1 className="text-2xl md:text-4xl tracking-[0.08em] uppercase mb-10" style={{ fontFamily: 'var(--nav-font)', fontWeight: 600 }}>
             Contact
           </h1>
 
           {/* AVLANCHE MUSIC */}
           <ScrollReveal delay={0.1}>
             <div className="space-y-4">
-              <h2 className="text-foreground text-base md:text-lg tracking-[0.2em] uppercase font-normal">
+              <h2 className="text-foreground text-base md:text-lg tracking-[0.2em] uppercase font-semibold">
                 Avlanche Music
               </h2>
               <p className="text-foreground/60 text-sm md:text-base">
@@ -64,7 +64,7 @@ const Contact = () => {
           {/* AVLANCHE STUDIO */}
           <ScrollReveal delay={0.2}>
             <div className="space-y-4 pt-6 border-t border-foreground/10">
-              <h2 className="text-foreground text-base md:text-lg tracking-[0.12em] uppercase font-normal" style={{ fontFamily: 'var(--nav-font)' }}>
+              <h2 className="text-foreground text-base md:text-lg tracking-[0.12em] uppercase font-semibold" style={{ fontFamily: 'var(--nav-font)' }}>
                 Avlanche Studio
               </h2>
               <p className="text-foreground/60 text-sm md:text-base">

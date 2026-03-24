@@ -23,7 +23,7 @@ const StudioLayout = () => {
             <Link
               key={item.label}
               to={item.href}
-              className={`text-base md:text-lg tracking-[0.2em] font-normal hover:opacity-70 transition-all uppercase ${
+              className={`text-base md:text-lg tracking-[0.2em] font-semibold hover:opacity-70 transition-all uppercase ${
                 isActive ? "opacity-100" : "text-foreground opacity-60"
               }`}
               style={isActive ? { color: "hsl(var(--studio-accent))" } : undefined}
