@@ -132,31 +132,33 @@ const Artistes = () => {
           transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           className="flex-1 px-6 md:px-10 py-8 sm:py-10 md:py-16 pb-32"
         >
-          {/* Header: Profile + Name */}
-          <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-10 mb-10 sm:mb-12 md:mb-16">
-            {activeArtist.profileImage && (
-              <div className="w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[18vw] max-w-[280px] shrink-0 overflow-hidden rounded-sm">
-                <img
-                  src={activeArtist.profileImage}
-                  alt={`Photo de ${activeArtist.name}`}
-                  className="w-full aspect-[3/4] object-cover object-top"
-                />
-              </div>
-            )}
-            <div className="flex flex-col justify-end py-2">
-              <h1 className="text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-[-0.01em] uppercase font-black mb-3 sm:mb-4">
-                {activeArtist.name}
-              </h1>
+          {/* Hero — bold name */}
+          <div className="mb-14 sm:mb-16 md:mb-20 pt-6 sm:pt-10 md:pt-16">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-foreground text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw] leading-[0.85] tracking-[-0.03em] uppercase font-black"
+            >
+              {activeArtist.name}
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-4 sm:mt-5 flex items-center gap-4"
+            >
+              <div className="h-[1px] w-12 bg-foreground/20" />
               <a
                 href={activeArtist.linktree}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-foreground/50 text-xs sm:text-sm md:text-base tracking-[0.15em] uppercase hover:text-foreground/70 transition-colors group"
+                className="inline-flex items-center gap-1.5 text-foreground/50 text-xs sm:text-sm tracking-[0.15em] uppercase hover:text-foreground/70 transition-colors group font-semibold"
               >
                 <span>Découvrir</span>
                 <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
               </a>
-            </div>
+            </motion.div>
           </div>
 
           {/* Bio */}
