@@ -134,7 +134,7 @@ const StudioAbout = () => {
             <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-semibold leading-relaxed tracking-wide">
               Notre cabine d'enregistrement offre une isolation acoustique optimale pour des prises de voix et d'instruments d'une qualité irréprochable. Traitée avec des matériaux professionnels, elle garantit un son pur et précis, sans coloration ni résonance indésirable.
             </p>
-            <p className="text-foreground/50 text-sm sm:text-base font-normal leading-relaxed tracking-wide">
+            <p className="text-foreground/50 text-sm sm:text-base font-semibold leading-relaxed tracking-wide">
               Équipée d'un Neumann U87 et d'un préampli Neve 1073SPX, la chaîne d'enregistrement assure un rendu chaleureux et détaillé, parfait pour le rap, le chant, les voix off et les instruments acoustiques.
             </p>
           </div>
