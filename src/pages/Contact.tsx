@@ -25,7 +25,7 @@ const Contact = () => {
           {/* AVLANCHE MUSIC */}
           <ScrollReveal delay={0.1}>
             <div className="space-y-4">
-              <h2 className="text-foreground text-base md:text-lg tracking-[0.2em] uppercase font-normal">
+              <h2 className="text-foreground text-base md:text-lg tracking-[0.2em] uppercase font-semibold">
                 Avlanche Music
               </h2>
               <p className="text-foreground/60 text-sm md:text-base">
