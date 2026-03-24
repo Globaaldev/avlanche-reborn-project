@@ -161,7 +161,7 @@ const StudioAbout = () => {
       {/* Fiche technique */}
       <ScrollReveal>
         <section>
-          <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-normal uppercase mb-12 md:mb-16">
+          <h2 className="text-foreground text-2xl md:text-4xl tracking-[0.06em] font-semibold uppercase mb-12 md:mb-16">
             Fiche technique
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-x-20 md:gap-y-16">
