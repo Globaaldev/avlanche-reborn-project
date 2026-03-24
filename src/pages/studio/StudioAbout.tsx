@@ -79,7 +79,7 @@ const StudioAbout = () => {
             <h1 className="text-foreground text-3xl sm:text-4xl md:text-5xl tracking-[0.06em] font-semibold uppercase">
               Le Studio
             </h1>
-            <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-normal leading-relaxed tracking-wide">
+            <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-semibold leading-relaxed tracking-wide">
               Un studio d'enregistrement moderne et chaleureux, conçu pour créer dans les meilleures conditions. Situé à Ivry-sur-Seine, Avlanche Studio offre un environnement professionnel idéal pour l'enregistrement, le mixage et le mastering.
             </p>
           </div>
