@@ -44,7 +44,7 @@ const StudioServices = () => {
           {/* Left block: Enregistrement + Mix + Master */}
           <div className="border border-foreground/[0.1] rounded-md p-5 sm:p-6 md:p-8 space-y-6">
             <div>
-              <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-normal mb-3">
+               <h3 className="text-foreground text-base sm:text-lg md:text-xl tracking-[0.1em] uppercase font-semibold mb-3">
                 Enregistrement
               </h3>
               <p className="text-foreground/70 text-sm sm:text-base md:text-lg">45€/h le jour</p>
