@@ -73,7 +73,7 @@ const StudioServices = () => {
                 ["Journée (8h)", "320€"],
                 ["Soirée (8h)", "400€"],
               ].map(([label, price]) => (
-                <div key={label} className="flex justify-between text-foreground text-sm sm:text-base md:text-lg font-normal tracking-wide py-3 border-b border-foreground/[0.08] last:border-b-0">
+                <div key={label} className="flex justify-between text-foreground text-sm sm:text-base md:text-lg font-semibold tracking-wide py-3 border-b border-foreground/[0.08] last:border-b-0">
                   <span>{label}</span>
                   <span className="text-foreground ml-4 shrink-0">{price}</span>
                 </div>
