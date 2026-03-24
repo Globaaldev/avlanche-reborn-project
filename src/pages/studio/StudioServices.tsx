@@ -24,7 +24,7 @@ const StudioServices = () => {
       {/* Header */}
       <AnimatedSection>
         <div>
-          <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.06em] font-normal uppercase">
+          <h1 className="text-foreground text-2xl sm:text-3xl md:text-5xl tracking-[0.06em] font-semibold uppercase">
             Grille Tarifaire
           </h1>
           <div className="mt-4 space-y-1">
