@@ -16,7 +16,7 @@ const About = () => {
         }}
       />
       <AnimatedSection>
-        <div className="text-foreground font-normal tracking-wide space-y-6 text-center">
+        <div className="text-foreground font-semibold tracking-wide space-y-6 text-center">
           <h1 className="text-2xl md:text-4xl tracking-[0.15em] uppercase mb-10">
             Avlanche Studio
           </h1>
