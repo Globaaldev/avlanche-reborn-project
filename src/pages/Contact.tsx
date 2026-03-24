@@ -17,7 +17,7 @@ const Contact = () => {
         }}
       />
       <AnimatedSection>
-        <div className="text-foreground font-normal tracking-wide space-y-12 text-center max-w-lg mx-auto">
+        <div className="text-foreground font-semibold tracking-wide space-y-12 text-center max-w-lg mx-auto">
           <h1 className="text-2xl md:text-4xl tracking-[0.08em] uppercase mb-10" style={{ fontFamily: 'var(--nav-font)', fontWeight: 600 }}>
             Contact
           </h1>

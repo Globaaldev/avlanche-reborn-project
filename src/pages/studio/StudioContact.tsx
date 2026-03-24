@@ -16,7 +16,7 @@ const StudioContact = () => {
         }}
       />
       <AnimatedSection>
-        <div className="text-foreground font-normal tracking-wide space-y-6 text-center">
+        <div className="text-foreground font-semibold tracking-wide space-y-6 text-center">
           <h1 className="text-2xl sm:text-3xl md:text-5xl tracking-[0.08em] uppercase mb-10" style={{ fontFamily: 'var(--nav-font)', fontWeight: 600 }}>
             Contact
           </h1>

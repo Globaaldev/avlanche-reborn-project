@@ -128,7 +128,7 @@ const StudioServices = () => {
       {/* Note + CTA */}
       <ScrollReveal>
         <section className="flex flex-col items-center text-center space-y-6 pb-10">
-          <p className="text-foreground/60 text-sm sm:text-base md:text-lg font-normal leading-relaxed tracking-wide max-w-2xl">
+          <p className="text-foreground/60 text-sm sm:text-base md:text-lg font-semibold leading-relaxed tracking-wide max-w-2xl">
             Pour toute demande concernant les forfaits, séminaires, tournages, releases & listening parties, veuillez nous contacter par mail ou téléphone.
           </p>
           <a

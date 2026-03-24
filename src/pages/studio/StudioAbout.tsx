@@ -194,7 +194,7 @@ const StudioAbout = () => {
           >
             Rec / Mix by Avlanche
           </a>
-          <span className="text-foreground/50 text-sm sm:text-base tracking-wide font-normal">
+          <span className="text-foreground/50 text-sm sm:text-base tracking-wide font-semibold">
             — Playlist des morceaux enregistrés par Avlanche
           </span>
         </div>
