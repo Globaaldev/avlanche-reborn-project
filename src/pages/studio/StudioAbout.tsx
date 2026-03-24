@@ -144,7 +144,7 @@ const StudioAbout = () => {
       {/* CTA */}
       <ScrollReveal>
         <section className="flex flex-col items-center text-center space-y-6">
-          <p className="text-foreground text-xl md:text-3xl tracking-[0.06em] font-normal">
+          <p className="text-foreground text-xl md:text-3xl tracking-[0.06em] font-semibold">
             Réservez votre session
           </p>
           <a
