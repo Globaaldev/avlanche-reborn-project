@@ -118,7 +118,7 @@ const StudioServices = () => {
                     {pack.description}
                   </p>
                 </div>
-                <span className="text-foreground text-lg sm:text-xl md:text-2xl font-normal tracking-wide ml-4 shrink-0">{pack.total}</span>
+                <span className="text-foreground text-lg sm:text-xl md:text-2xl font-semibold tracking-wide ml-4 shrink-0">{pack.total}</span>
               </div>
             ))}
           </div>
