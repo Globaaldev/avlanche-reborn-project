@@ -184,7 +184,7 @@ const Artistes = () => {
           {/* Bio */}
           <ScrollReveal>
             <section className="mb-14 sm:mb-16 md:mb-20 max-w-2xl">
-              <p className="text-foreground/60 text-sm sm:text-base md:text-lg font-normal leading-relaxed tracking-wide">
+              <p className="text-foreground/60 text-sm sm:text-base md:text-lg font-semibold leading-relaxed tracking-wide">
                 {activeArtist.bio}
               </p>
             </section>
