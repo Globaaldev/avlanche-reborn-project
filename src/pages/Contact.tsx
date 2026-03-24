@@ -64,7 +64,7 @@ const Contact = () => {
           {/* AVLANCHE STUDIO */}
           <ScrollReveal delay={0.2}>
             <div className="space-y-4 pt-6 border-t border-foreground/10">
-              <h2 className="text-foreground text-base md:text-lg tracking-[0.12em] uppercase font-normal" style={{ fontFamily: 'var(--nav-font)' }}>
+              <h2 className="text-foreground text-base md:text-lg tracking-[0.12em] uppercase font-semibold" style={{ fontFamily: 'var(--nav-font)' }}>
                 Avlanche Studio
               </h2>
               <p className="text-foreground/60 text-sm md:text-base">
