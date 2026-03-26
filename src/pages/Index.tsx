@@ -1,27 +1,34 @@
 import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 
 const ARTISTS = [
-  { name: "Sherifflazone", slug: "sherifflazone" },
-  { name: "Louis Marguier", slug: "marguier" },
-  { name: "Magie!", slug: "magie" },
+  {
+    name: "Sherifflazone",
+    slug: "sherifflazone",
+    videoId: "8av0S63V2SQ", // G-SHOCK
+  },
+  {
+    name: "Louis Marguier",
+    slug: "marguier",
+    videoId: null, // à déterminer
+  },
+  {
+    name: "Magie!",
+    slug: "magie",
+    videoId: "sYWvDOjUK9w", // MAGIE! clip
+  },
 ];
 
 const Index = () => {
-  const [showArtistes, setShowArtistes] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [hoveredSlug, setHoveredSlug] = useState<string | null>(null);
+  const navigate = useNavigate();
 
-  const handleEnter = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setShowArtistes(true);
-  };
-  const handleLeave = () => {
-    timeoutRef.current = setTimeout(() => setShowArtistes(false), 300);
-  };
+  const hoveredArtist = ARTISTS.find((a) => a.slug === hoveredSlug);
 
   return (
-    <div className="relative flex-1 flex items-center justify-center">
+    <div className="relative flex-1 flex flex-col items-center justify-center overflow-hidden">
       <SEOHead
         title="Avlanche — Label, Publishing & Studio d'enregistrement"
         description="Avlanche est un label de musique indépendant, une maison d'édition musicale (publishing) et un studio d'enregistrement professionnel (Rec / Mix / Master) basé à Ivry-sur-Seine, près de Paris."
@@ -46,60 +53,63 @@ const Index = () => {
           ],
         }}
       />
-      {/* Central text */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-        className="text-center max-w-2xl px-6"
-      >
-        <h1 className="sr-only">Avlanche — Label, Publishing & Studio d'enregistrement</h1>
-        <p className="text-foreground/60 text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed tracking-wide">
-          Production / Edition
-        </p>
-      </motion.div>
+
+      {/* Video background on hover */}
+      <AnimatePresence>
+        {hoveredArtist?.videoId && (
+          <motion.div
+            key={hoveredArtist.slug}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="absolute inset-0 z-0 pointer-events-none"
+          >
+            <iframe
+              src={`https://www.youtube.com/embed/${hoveredArtist.videoId}?autoplay=1&mute=1&loop=1&playlist=${hoveredArtist.videoId}&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1`}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] h-[180%] min-w-[180%] min-h-[180%]"
+              allow="autoplay"
+              style={{ border: 0 }}
+              tabIndex={-1}
+            />
+            <div className="absolute inset-0 bg-background/30" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <h1 className="sr-only">Avlanche — Label, Publishing & Studio d'enregistrement</h1>
+
+      {/* Artist names */}
+      <nav className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 px-6 w-full" aria-label="Artistes">
+        {ARTISTS.map((artist) => (
+          <motion.button
+            key={artist.slug}
+            onClick={() => navigate(`/artistes?tab=${artist.slug}`)}
+            onMouseEnter={() => setHoveredSlug(artist.slug)}
+            onMouseLeave={() => setHoveredSlug(null)}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="relative text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-[0.08em] uppercase font-black transition-all duration-500 hover:tracking-[0.15em]"
+            style={{ fontFamily: 'var(--nav-font)' }}
+          >
+            <span className={`transition-opacity duration-300 ${hoveredSlug && hoveredSlug !== artist.slug ? 'opacity-20' : 'opacity-100'}`}>
+              {artist.name}
+            </span>
+            <motion.span
+              className="absolute -bottom-1 left-0 right-0 h-[2px] bg-foreground origin-left"
+              initial={{ scaleX: 0 }}
+              whileHover={{ scaleX: 1 }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.button>
+        ))}
+      </nav>
 
       {/* SEO hidden text */}
       <p className="sr-only">
         Avlanche est un label de musique indépendant et une maison d'édition musicale basé à Ivry-sur-Seine, dans le Val-de-Marne, à proximité de Paris. Le studio d'enregistrement Avlanche propose des services professionnels d'enregistrement, de mixage et de mastering pour les artistes rap, hip-hop, R&B et pop. Découvrez nos artistes Sherifflazone, Louis Marguier et Magie!.
       </p>
-
-      {/* Bottom Navigation */}
-      <nav
-        className="absolute bottom-0 left-0 right-0 flex items-center justify-center px-6 py-5 md:px-10 md:py-8"
-        aria-label="Artistes"
-      >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="relative"
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleLeave}
-        >
-          <a
-            href="/artistes"
-            className="story-link text-red-500 text-base md:text-xl tracking-[0.2em] font-semibold transition-all duration-300 uppercase hover:tracking-[0.35em]"
-          >
-            ARTISTES
-          </a>
-          <div
-            className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 flex flex-col items-center gap-1 transition-all duration-200 ${
-              showArtistes ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"
-            }`}
-          >
-            {ARTISTS.map((artist) => (
-              <a
-                key={artist.slug}
-                href={`/artistes?tab=${artist.slug}`}
-                className="text-foreground text-sm md:text-base tracking-[0.15em] font-semibold hover:opacity-70 transition-opacity py-1 whitespace-nowrap"
-              >
-                {artist.name}
-              </a>
-            ))}
-          </div>
-        </motion.div>
-      </nav>
     </div>
   );
 };
