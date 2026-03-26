@@ -63,7 +63,7 @@ const Index = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="absolute inset-0 z-0 pointer-events-none"
+            className="fixed inset-0 z-50 pointer-events-none"
           >
             <iframe
               src={`https://www.youtube.com/embed/${hoveredArtist.videoId}?autoplay=1&mute=1&loop=1&playlist=${hoveredArtist.videoId}&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1`}
