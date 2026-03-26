@@ -131,7 +131,7 @@ const StudioAbout = () => {
             </div>
           </div>
         </section>
-      </AnimatedSection>
+      </ScrollReveal>
 
       {/* La Cabine */}
       <ScrollReveal>
