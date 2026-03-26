@@ -72,17 +72,34 @@ const StudioAbout = () => {
           },
         }}
       />
-      {/* Hero */}
+      {/* CTA rapide */}
       <AnimatedSection>
-        <section className="space-y-10">
-          <div className="space-y-4 max-w-2xl">
+        <section className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="space-y-2">
             <h1 className="text-foreground text-3xl sm:text-4xl md:text-5xl tracking-[0.06em] font-semibold uppercase">
               Le Studio
             </h1>
-            <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-semibold leading-relaxed tracking-wide">
-              Un studio d'enregistrement moderne et chaleureux, conçu pour créer dans les meilleures conditions. Situé à Ivry-sur-Seine, Avlanche Studio offre un environnement professionnel idéal pour l'enregistrement, le mixage et le mastering.
+            <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-semibold leading-relaxed tracking-wide max-w-xl">
+              Enregistrement, mixage & mastering à Ivry-sur-Seine.
             </p>
           </div>
+          <a
+            href="https://avlanchestudio.simplybook.me"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 text-foreground text-sm sm:text-base tracking-[0.15em] uppercase font-semibold pb-0.5 border-b border-foreground/40 hover:border-foreground transition-colors duration-300"
+          >
+            Réserver une session →
+          </a>
+        </section>
+      </AnimatedSection>
+
+      {/* Description + Photos */}
+      <ScrollReveal>
+        <section className="space-y-10">
+          <p className="text-foreground/70 text-base sm:text-lg md:text-xl font-semibold leading-relaxed tracking-wide max-w-2xl">
+            Un studio d'enregistrement moderne et chaleureux, conçu pour créer dans les meilleures conditions. Avlanche Studio offre un environnement professionnel idéal pour l'enregistrement, le mixage et le mastering.
+          </p>
 
           {/* Photo grid */}
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 md:gap-4">
@@ -114,7 +131,7 @@ const StudioAbout = () => {
             </div>
           </div>
         </section>
-      </AnimatedSection>
+      </ScrollReveal>
 
       {/* La Cabine */}
       <ScrollReveal>

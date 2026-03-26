@@ -72,7 +72,7 @@ const Index = () => {
               style={{ border: 0 }}
               tabIndex={-1}
             />
-            <div className="absolute inset-0 bg-background/30" />
+            <div className="absolute inset-0 bg-background/10" />
           </motion.div>
         )}
       </AnimatePresence>
@@ -90,7 +90,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="relative text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-[0.08em] uppercase font-black transition-all duration-500 hover:tracking-[0.15em]"
+            className="relative text-foreground text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.08em] uppercase font-black transition-all duration-500 hover:tracking-[0.15em]"
             style={{ fontFamily: 'var(--nav-font)' }}
           >
             <span className={`transition-opacity duration-300 ${hoveredSlug && hoveredSlug !== artist.slug ? 'opacity-20' : 'opacity-100'}`}>
