@@ -96,11 +96,8 @@ const Index = () => {
             <span className={`transition-opacity duration-300 ${hoveredSlug && hoveredSlug !== artist.slug ? 'opacity-20' : 'opacity-100'}`}>
               {artist.name}
             </span>
-            <motion.span
-              className="absolute -bottom-1 left-0 right-0 h-[2px] bg-foreground origin-left"
-              initial={{ scaleX: 0 }}
-              whileHover={{ scaleX: 1 }}
-              transition={{ duration: 0.3 }}
+            <span
+              className={`absolute -bottom-1 left-0 right-0 h-[2px] bg-foreground origin-left transition-transform duration-300 ${hoveredSlug === artist.slug ? 'scale-x-100' : 'scale-x-0'}`}
             />
           </motion.button>
         ))}
