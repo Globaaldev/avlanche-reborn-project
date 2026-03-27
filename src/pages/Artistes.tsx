@@ -47,7 +47,8 @@ const ARTISTS = [
     profileImage: marguierProfile,
     bio: "Louis Marguier cultive un art de la nuance, entre productions ciselées et textes introspectifs. Artiste en développement chez Avlanche, il prépare ses premières sorties avec une exigence rare. Son univers, aussi intime que cinématographique, promet de marquer durablement le paysage musical français.",
     clips: [
-      { title: "Louis Marguier - Clip", url: "https://www.youtube.com/watch?v=Z82wj-jGFmU" },
+      { title: "Louis Marguier - Clip 1", url: "https://www.youtube.com/watch?v=Z82wj-jGFmU" },
+      { title: "Louis Marguier - Clip 2", url: "https://www.youtube.com/watch?v=dqxpzZY8fvM" },
     ],
     photos: [] as string[],
     photoCredits: "",
