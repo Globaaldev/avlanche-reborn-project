@@ -27,14 +27,9 @@ const StudioHome = () => {
         }}
       />
       <AnimatedSection>
-        <div className="text-center space-y-4">
-          <h1 className="text-foreground text-3xl sm:text-4xl md:text-6xl tracking-[0.06em] font-semibold uppercase" style={{ fontFamily: 'var(--nav-font)' }}>
-            Studio
-          </h1>
-          <p className="text-foreground/80 text-base sm:text-lg md:text-2xl tracking-[0.08em] font-semibold max-w-xl mx-auto">
-            Enregistrement, mixage & mastering
-          </p>
-        </div>
+        <h1 className="text-foreground/70 text-lg sm:text-xl md:text-2xl tracking-[0.12em] font-semibold" style={{ fontFamily: 'var(--nav-font)' }}>
+          studio d'enregistrement, mixage & mastering
+        </h1>
       </AnimatedSection>
     </div>
   );
